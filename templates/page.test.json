@@ -38,8 +38,8 @@
         "button_DPYYBF": {
           "type": "button",
           "settings": {
-            "button_label": "{{ page.metafields.custom.primary_button_label.value }}",
-            "button_link": "",
+            "button_label": "Contact",
+            "button_link": "shopify://pages/contact",
             "button_style_secondary": false
           }
         }
@@ -52,7 +52,7 @@
       "settings": {
         "image": "{{ page.metafields.custom.featured_image.value }}",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
