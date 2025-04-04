@@ -1,21 +1,16 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
-
-<div class="customer activate section-{{ section.id }}-padding">
-  <h1>
+<div class="customer activate section__inner">
+  <svg style="display: none">
+    <symbol id="icon-error" viewBox="0 0 512 512">
+      <path d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z" fill="none" stroke="currentColor"
+            stroke-miterlimit="10" stroke-width="32"/>
+      <path d="M250.26 166.05L256 288l5.73-121.95a5.74 5.74 0 00-5.79-6h0a5.74 5.74 0 00-5.68 6z" fill="none"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/>
+      <path d="M256 367.91a20 20 0 1120-20 20 20 0 01-20 20z" fill="currentColor"/>
+    </symbol>
+  </svg>
+  <h1 class="b-main-title">
     {{ 'customer.activate_account.title' | t }}
   </h1>
   <p>
@@ -24,9 +19,9 @@
   {%- form 'activate_customer_password' -%}
     {%- if form.errors -%}
       <h2 class="form__message" tabindex="-1" autofocus>
-        <span class="svg-wrapper">
-          {{- 'icon-error.svg' | inline_asset_content -}}
-        </span>
+        <svg aria-hidden="true" focusable="false">
+          <use href="#icon-error" />
+        </svg>
         {{ 'templates.contact.form.error_heading' | t }}
       </h2>
       <ul>
@@ -35,7 +30,7 @@
             {%- if field == 'form' -%}
               {{ form.errors.messages[field] }}
             {%- else -%}
-              <a href="#{{ field }}">
+              <a href="#{{ field }}" class="no-scroll">
                 {{ form.errors.translated_fields[field] | capitalize }}
                 {{ form.errors.messages[field] }}
               </a>
@@ -62,9 +57,9 @@
       </label>
       {%- if form.errors contains 'password' -%}
         <small id="password-error" class="form__message">
-          <span class="svg-wrapper">
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
+          <svg aria-hidden="true" focusable="false">
+            <use href="#icon-error" />
+          </svg>
           {{ form.errors.translated_fields.password | capitalize }}
           {{ form.errors.messages.password }}
         </small>
@@ -88,9 +83,9 @@
       </label>
       {%- if form.errors contains 'password_confirmation' -%}
         <small id="password_confirmation-error" class="form__message">
-          <span class="svg-wrapper">
-            {{- 'icon-error.svg' | inline_asset_content -}}
-          </span>
+          <svg aria-hidden="true" focusable="false">
+            <use href="#icon-error" />
+          </svg>
           {{ form.errors.translated_fields.password_confirmation | capitalize }}
           {{ form.errors.messages.password_confirmation }}
         </small>
@@ -108,32 +103,6 @@
 
 {% schema %}
 {
-  "name": "t:sections.main-activate-account.name",
-  "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ]
+  "name": "Account activation"
 }
 {% endschema %}

@@ -1,128 +1,73 @@
-.collapsible-content {
-  position: relative;
-  z-index: 0;
-}
-
-.collapsible-section-layout {
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .collapsible-section-layout {
-    padding-bottom: 7rem;
-    padding-top: 7rem;
-  }
-}
-
-/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
-.collapsible-content__media {
-  background: transparent;
-}
-
-.collapsible-content__media--small {
-  height: 19.4rem;
-}
-
-.collapsible-content__media--large {
-  height: 43.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .collapsible-content__media--small {
-    height: 31.4rem;
-  }
-
-  .collapsible-content__media--large {
-    height: 69.5rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .collapsible-content__grid--reverse {
-    flex-direction: row-reverse;
-  }
-}
-
-.collapsible-content-wrapper-narrow {
-  margin: 0 auto;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  max-width: 73.4rem;
-}
-
-.collapsible-content__header {
-  word-break: break-word;
-}
-
-.collapsible-content__heading {
-  margin-bottom: 2rem;
-  margin-top: 0;
-}
-
-@media screen and (min-width: 750px) {
-  .collapsible-content__heading {
-    margin-bottom: 3rem;
-  }
-}
-
-.collapsible-none-layout .accordion + .accordion {
+.accordion-container .accordion:first-child,
+.accordion-container .first-accordion {
   border-top: 0;
 }
 
-.collapsible-row-layout .accordion:not(:first-child):not(.color-scheme-1) {
-  margin-top: 1rem;
+.accordion-container .accordion:last-child {
+  border-bottom: 0;
 }
 
-.caption-with-letter-spacing + h2 {
-  margin-top: 1rem;
+.accordion-container--borderless .accordion {
+  border: 0;
 }
 
-@media screen and (min-width: 750px) {
-  .collapsible-content .accordion {
-    margin-top: 0;
+.accordion-container .accordion__content {
+  padding: 0 0 2rem;
+}
+
+.accordion-container custom-accordion {
+  --open-duration: var(--duration-longish);
+}
+
+.collapsible-content .accordion-container {
+  padding: 2.5rem 3rem;
+}
+
+.collapsible-content .accordion-container .icon-accordion {
+  position: relative;
+  top: 2px;
+}
+
+.collapsible-content .image-with-text__media.min-h-0 .banner__box {
+  position: static;
+}
+
+@media screen and (min-width: 990px) {
+  .collapsible-content .image-with-text__content {
+    padding: 6rem 7rem;
   }
 }
 
-.collapsible-row-layout .accordion {
-  border: var(--text-boxes-border-width) solid rgba(var(--color-foreground), var(--text-boxes-border-opacity));
-  margin-bottom: 1.5rem;
-  /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
-  transform: perspective(0);
+.collapsible-content .image-with-text__text-item .title-wrapper {
+  padding: 0;
 }
 
-.collapsible-row-layout .accordion summary,
-.collapsible-row-layout .accordion .accordion__content {
-  padding: 1.5rem;
+.collapsible-content .image-with-text__media-item .collapsible-content__title {
+  display: flex !important;
 }
 
-.collapsible-row-layout .accordion .accordion__content {
-  padding-top: 0;
+.collapsible-content__heading:not(:first-child) {
+  margin-top: 4rem;
 }
 
-.collapsible-content summary:hover {
-  background: rgba(var(--color-foreground), 0.04);
+.collapsible-content__heading + .accordion {
+  margin-top: 0;
 }
 
-.collapsible-content summary:hover .accordion__title {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+.revealed-image {
+  transition: opacity var(--duration-longish) var(--duration-longish), visibility var(--duration-longish) var(--duration-longish) !important;
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* check for flexbox gap in older Safari versions */
-@supports not (inset: 10px) {
-  @media screen and (min-width: 750px) {
-    .collapsible-content__grid:not(.collapsible-content__grid--reverse) .grid__item:last-child,
-    .collapsible-content__grid--reverse .collapsible-content__grid-item {
-      padding-left: 5rem;
-      padding-right: 0;
-    }
-  }
+.revealed-image.reveal {
+  transition-delay: 0s !important;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
 
-  @media screen and (min-width: 990px) {
-    .collapsible-content__grid:not(.collapsible-content__grid--reverse) .grid__item:last-child,
-    .collapsible-content__grid--reverse .collapsible-content__grid-item {
-      padding-left: 7rem;
-    }
-  }
+.collapsible-content-row__buttons {
+  justify-content: flex-start !important;
+  margin-left: calc(var(--buttons-border-width) + 1px);
 }

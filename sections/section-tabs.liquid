@@ -1,0 +1,423 @@
+{%- comment -%}theme-check-disable SchemaJsonFormat{%- endcomment -%}
+{{ 'component-section-tabs.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'section-tabs.js' | asset_url }}" defer="defer"></script>
+
+{%- assign num_section_tabs = section.settings.section_tabs | plus: 0 -%}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient" data-num-sections="{{ section.settings.section_tabs }}">
+  <div class="section__inner {{ section.settings.top_padding }} {{ section.settings.bottom_padding }}">
+    {% render 'standard-section-heading',
+        section_name: 'section-tabs',
+        section: section
+    %}
+
+    <div class="page-width flex justify-{{ section.settings.tab_alignment }}">
+      <div class="horizontal-scroll">
+        <section-tabs class="block responsive-margin-bottom custom-tabs custom-tabs--{{ section.settings.tab_style }} {{ section.settings.tab_text_size }}" role="tablist">
+          <div class="flex" role="tab">
+            <label class="custom-tab tap-target--small">
+              <input type="radio" class="field__checkbox" name="{{ section.id }}__radio" value="1"{% unless something_is_checked %} checked{%- assign something_is_checked = true -%}{% endunless %}/>
+              {{ section.settings.tab1 | default: 'Tab 1' }}
+            </label>
+          </div>
+
+          {% if num_section_tabs > 1 %}
+            <div class="flex" role="tab">
+              <label class="custom-tab tap-target--small">
+                <input type="radio" class="field__checkbox" name="{{ section.id }}__radio" value="2"{% unless something_is_checked %} checked{%- assign something_is_checked = true -%}{% endunless %}/>
+                {{ section.settings.tab2 | default: 'Tab 2' }}
+              </label>
+            </div>
+          {% endif %}
+
+          {% if num_section_tabs > 2 %}
+            <div class="flex" role="tab">
+              <label class="custom-tab tap-target--small">
+                <input type="radio" class="field__checkbox" name="{{ section.id }}__radio" value="3"{% unless something_is_checked %} checked{%- assign something_is_checked = true -%}{% endunless %}/>
+                {{ section.settings.tab3 | default: 'Tab 3' }}
+              </label>
+            </div>
+          {% endif %}
+
+          {% if num_section_tabs > 3 %}
+            <div class="flex" role="tab">
+              <label class="custom-tab tap-target--small">
+                <input type="radio" class="field__checkbox" name="{{ section.id }}__radio" value="4"{% unless something_is_checked %} checked{%- assign something_is_checked = true -%}{% endunless %}/>
+                {{ section.settings.tab4 | default: 'Tab 4' }}
+              </label>
+            </div>
+          {% endif %}
+        </section-tabs>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section tabs",
+  "tag": "div",
+  "class": "section section-section-tabs",
+  "disabled_on": {
+    "groups": ["header", "footer", "aside"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This converts sections that immediately follow this one into tabs. We recommend keep tabbed sections the same size as one another."
+    },
+    {
+      "type": "paragraph",
+      "content": "All tabs must have 'Visibility' of 'Both'."
+    },
+    {
+      "type": "select",
+      "id": "section_tabs",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3",
+      "info": "The number chosen here will be the number of sections below the section tabs section that will show as a tab",
+      "label": "Create tabs for the next X sections"
+    },
+    {
+      "type": "text",
+      "id": "tab1",
+      "label": "Tab 1 title"
+    },
+    {
+      "type": "text",
+      "id": "tab2",
+      "label": "Tab 2 title"
+    },
+    {
+      "type": "text",
+      "id": "tab3",
+      "label": "Tab 3 title"
+    },
+    {
+      "type": "text",
+      "id": "tab4",
+      "label": "Tab 4 title"
+    },
+    {
+      "type": "header",
+      "content": "Tab appearance"
+    },
+    {
+      "type": "select",
+      "id": "tab_style",
+      "options": [
+        {
+          "value": "simple",
+          "label": "Simple"
+        },
+        {
+          "value": "switch",
+          "label": "Switch"
+        }
+      ],
+      "default": "switch",
+      "label": "Tab style"
+    },
+    {
+      "type": "text_alignment",
+      "id": "tab_alignment",
+      "default": "center",
+      "label": "Tab alignment"
+    },
+    {
+      "type": "select",
+      "id": "tab_text_size",
+      "options": [
+        {
+          "value": "t4",
+          "label": "S"
+        },
+        {
+          "value": "t3",
+          "label": "M"
+        },
+        {
+          "value": "t2",
+          "label": "L"
+        },
+        {
+          "value": "t1",
+          "label": "XL"
+        },
+        {
+          "value": "t0",
+          "label": "2XL"
+        }
+      ],
+      "default": "t2",
+      "label": "Tab size"
+    },
+    {
+      "type": "header",
+      "content": "Header layout"
+    },
+    
+  {
+    "type": "select",
+    "id": "content_max_width",
+    "options": [
+      {
+        "value": "xs",
+        "label": "XS"
+      },
+      {
+        "value": "s",
+        "label": "S"
+      },
+      {
+        "value": "m",
+        "label": "M"
+      },
+      {
+        "value": "l",
+        "label": "L"
+      },
+      {
+        "value": "xl",
+        "label": "XL"
+      }
+    ],
+    "default": "m",
+    "label": "Maximum heading width"
+  },
+  {
+    "type": "text_alignment",
+    "id": "desktop_heading_alignment",
+    "default": "center",
+    "label": "Heading alignment on desktop"
+  },
+  {
+    "type": "text_alignment",
+    "id": "mobile_heading_alignment",
+    "default": "center",
+    "label": "Heading alignment on mobile"
+  }
+,
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    
+  {
+    "type": "inline_richtext",
+    "id": "title",
+    
+    "info": "Enter ++ for a line break.",
+    "label": "Heading"
+  },
+  {
+    "type": "select",
+    "id": "italic_convert",
+    "options": [
+      {
+        "value": "",
+        "label": "Off (keep as italics)"
+      },
+      {
+        "value": "light",
+        "label": "Lighter \"Text\" color"
+      },
+      {
+        "value": "accent",
+        "label": "\"Accent gradient\" color"
+      }
+    ],
+    "info": "The colors above can be set in the color schemes.",
+    "default": "",
+    "label": "Convert italic text to"
+  },
+  {
+    "type": "select",
+    "id": "heading_size",
+    "options": [
+      {
+        "value": "h4",
+        "label": "XS"
+      },
+      {
+        "value": "h3",
+        "label": "S"
+      },
+      {
+        "value": "h2",
+        "label": "M"
+      },
+      {
+        "value": "h1",
+        "label": "L"
+      },
+      {
+        "value": "h0",
+        "label": "XL"
+      }
+    ],
+    "default": "h2",
+    "label": "Heading size"
+  }
+,
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    
+  {
+    "type": "richtext",
+    "id": "text",
+    
+    "label": "Description"
+  },
+  {
+    "type": "select",
+    "id": "text_size",
+    "options": [
+      {
+        "value": "t6",
+        "label": "2XS"
+      },
+      {
+        "value": "t5",
+        "label": "XS"
+      },
+      {
+        "value": "t4",
+        "label": "S"
+      },
+      {
+        "value": "t3",
+        "label": "M"
+      },
+      {
+        "value": "t2",
+        "label": "L"
+      },
+      {
+        "value": "t1",
+        "label": "XL"
+      },
+      {
+        "value": "t0",
+        "label": "2XL"
+      }
+    ],
+    "default": "t3",
+    "label": "Text size"
+  }
+,
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Advanced"
+    },
+    {
+      "type": "select",
+      "id": "top_padding",
+      "options": [
+        {
+          "value": "pt-0",
+          "label": "0"
+        },
+        {
+          "value": "pt-s05",
+          "label": "0.5"
+        },
+        {
+          "value": "pt-s",
+          "label": "1"
+        },
+        {
+          "value": "pt-s15",
+          "label": "1.5"
+        },
+        {
+          "value": "pt-s2",
+          "label": "2"
+        }
+      ],
+      "default": "pt-s",
+      "label": "Top section spacing"
+    },
+    {
+      "type": "select",
+      "id": "bottom_padding",
+      "options": [
+        {
+          "value": "pb-0",
+          "label": "0"
+        },
+        {
+          "value": "pb-s05",
+          "label": "0.5"
+        },
+        {
+          "value": "pb-s",
+          "label": "1"
+        },
+        {
+          "value": "pb-s15",
+          "label": "1.5"
+        },
+        {
+          "value": "pb-s2",
+          "label": "2"
+        }
+      ],
+      "default": "pb-0",
+      "label": "Bottom section spacing"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "For SEO purposes, there should only be one H1 tag on the page.",
+      "label": "Heading tag"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section tabs"
+    }
+  ]
+}
+{% endschema %}

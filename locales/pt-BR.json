@@ -13,11 +13,13 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Compartilhar no Facebook",
-        "share_on_twitter": "Compartilhar no X",
-        "share_on_pinterest": "Incluir como pin no Pinterest"
+        "share_on_twitter": "Tuitar",
+        "share_on_pinterest": "Incluir como pin no Pinterest",
+        "share_on_whatsapp": "Compartilhar no WhatsApp",
+        "share_on_linkedin": "Compartilhar no LinkedIn"
       },
       "links": {
-        "twitter": "X (Twitter)",
+        "twitter": "Twitter",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -25,7 +27,10 @@
         "snapchat": "Snapchat",
         "youtube": "YouTube",
         "vimeo": "Vimeo",
-        "tiktok": "TikTok"
+        "tiktok": "TikTok",
+        "whatsapp": "WhatsApp",
+        "threads": "Threads",
+        "linkedin": "LinkedIn"
       }
     },
     "continue_shopping": "Voltar à loja",
@@ -33,11 +38,16 @@
       "label": "Paginação",
       "page": "Página {{ number }}",
       "next": "Próxima página",
-      "previous": "Página anterior"
+      "previous": "Página anterior",
+      "show_more": "Mostrar mais",
+      "loading_text": "Aguarde, por favor..."
     },
     "search": {
       "search": "Pesquisar",
-      "reset": "Limpar termo de pesquisa"
+      "reset": "Limpar termo de pesquisa",
+      "product_type": "Selecione o tipo de produto",
+      "all_product_types": "Todos",
+      "search_placeholder": "Buscar"
     },
     "cart": {
       "view": "Ver carrinho ({{ count }})",
@@ -55,6 +65,13 @@
       "next_slide": "Deslizar para a direita",
       "previous_slide": "Deslizar para a esquerda",
       "name": "Controle deslizante"
+    },
+    "discount_code": {
+      "close": "Fechar desconto",
+      "copy_to_clipboard": "Copiar desconto",
+      "discount_code": "Código de desconto",
+      "success_message": "Copiado",
+      "discount_gated": "Entrar"
     }
   },
   "newsletter": {
@@ -78,7 +95,14 @@
     "total_reviews": "total de avaliações",
     "star_reviews_info": "{{ rating_value }} de {{ rating_max }} estrelas",
     "collapsible_content_title": "Conteúdo recolhível",
-    "complementary_products": "Produtos complementares"
+    "complementary_products": "Produtos complementares",
+    "scroll_to_top": "Rolar para o topo da página",
+    "popup": "Notificação do site",
+    "search": "Pesquise em nossa loja",
+    "change_language": "Mudar idioma",
+    "change_country": "Alterar país",
+    "change_country_language": "Alterar país/idioma",
+    "view_hotspot": "Visualizar ponto de acesso"
   },
   "blogs": {
     "article": {
@@ -98,12 +122,20 @@
       "back_to_blog": "Voltar para o blog",
       "share": "Compartilhar este artigo",
       "success": "O comentário foi postado. Obrigado!",
-      "success_moderated": "O comentário foi postado. Nós o publicaremos em breve, pois o blog é moderado."
+      "success_moderated": "O comentário foi postado. Nós o publicaremos em breve, pois o blog é moderado.",
+      "author": "Por {{ author }}",
+      "read_estimate": "Leitura estimada de {{ minutes }} min",
+      "next_article": "Próximo",
+      "previous_article": "Anterior"
+    },
+    "filter": {
+      "all": "Todos"
     }
   },
   "onboarding": {
     "product_title": "Exemplo de título do produto",
-    "collection_title": "Nome da coleção"
+    "collection_title": "Nome da coleção",
+    "example_link": "Link de exemplo"
   },
   "products": {
     "product": {
@@ -121,7 +153,7 @@
         "in_cart_html": "<span class=\"quantity-cart\">{{ quantity }}</span> no carrinho",
         "note": "Ver regras de quantidade",
         "min_of": "Mínimo de {{ quantity }}",
-        "max_of": "Máximo de {{ quantity }}"
+        "max_of": "Máximo {{ quantity }}"
       },
       "price": {
         "from_price_html": "De {{ price }}",
@@ -156,7 +188,8 @@
         "image_available": "A imagem {{ index }} está disponível no visualizador da galeria"
       },
       "view_full_details": "Ver informações completas",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frete</a> calculado no checkout.",
+      "include_taxes": "Tributo incluído.",
+      "shipping_policy_html": " <a href=\"{{ link }}\" class=\"link underlined-link\">Frete</a> calculado no checkout.",
       "choose_options": "Escolher opções",
       "choose_product_options": "Escolha opções para {{ product_name }}",
       "value_unavailable": "{{ option_value }} – indisponível",
@@ -166,7 +199,6 @@
       "inventory_low_stock": "Estoque baixo",
       "inventory_low_stock_show_count": "Estoque baixo: {{ quantity }} restante(s)",
       "inventory_out_of_stock": "Fora de estoque",
-      "inventory_out_of_stock_continue_selling": "Em estoque",
       "sku": "SKU",
       "volume_pricing": {
         "title": "Preços por volume",
@@ -176,9 +208,28 @@
         "price_range": "{{ minimum }} – {{ maximum }}"
       },
       "product_variants": "Variantes do produto",
-      "taxes_included": "Tributos incluídos.",
-      "duties_included": "Tributos de importação incluídos.",
-      "duties_and_taxes_included": "Tributos de importação e outros tributos incluídos."
+      "preorder": "Pré-venda",
+      "add_to_cart_card": "Adicionar ao carrinho",
+      "on_sale_percent": "Até {{ discount }}% de desconto",
+      "on_sale_value": "Até {{ discount }} de desconto",
+      "new": "Novo",
+      "back_in_stock": {
+        "email": "Email",
+        "send": "Me avise quando estiver disponível",
+        "success": "Obrigado. Nós avisaremos quando estiver de volta ao estoque."
+      },
+      "product_enquiry": {
+        "email": "E-mail",
+        "enquiry": "Sua pergunta",
+        "send": "Enviar",
+        "success": "Obrigado. Entraremos em contato em breve."
+      },
+      "notify_me": "Me avise",
+      "inventory_out_of_stock_continue_selling": "Aguardando estoque, envio em breve",
+      "change_color": "Visualizar a cor:",
+      "inventory_low_stock_only_count": "Apenas {{ quantity }} restante(s)",
+      "bulk_order": "Pedido em massa",
+      "highlight_remainder": "+{{ count }} mais"
     },
     "modal": {
       "label": "Galeria de mídia"
@@ -215,10 +266,15 @@
       "filter_selected_accessibility": "{{ type }} ({{ count }} filtros selecionados)",
       "show_more": "Exibir mais",
       "show_less": "Exibir menos",
-      "filter_and_operator_subtitle": "Corresponder todos"
+      "filter_and_operator_subtitle": "Corresponder todos",
+      "reset_price": "Redefinir"
     }
   },
   "templates": {
+    "404": {
+      "title": "Página não encontrada",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "Não foram encontrados resultados para “{{ terms }}”. Verifique a ortografia ou use uma palavra ou frase diferente.",
       "results_with_count": {
@@ -251,7 +307,15 @@
         "many": "{{ count }} produtos"
       },
       "suggestions": "Sugestões",
-      "pages": "Páginas"
+      "pages": "Páginas",
+      "results_items_with_count": {
+        "one": "Mostrar {{ count }} item",
+        "other": "Mostrar {{ count }} itens"
+      },
+      "articles": "Artigos",
+      "collections": "Coleções",
+      "popular_searches": "Termos de busca populares",
+      "no_results_short": "Nenhum resultado encontrado."
     },
     "cart": {
       "cart": "Carrinho"
@@ -267,10 +331,6 @@
         "error_heading": "Ajuste o seguinte:",
         "title": "Formulário de contato"
       }
-    },
-    "404": {
-      "title": "Página não encontrada",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -281,7 +341,9 @@
         "one": "{{ count }} item",
         "other": "{{ count }} itens",
         "many": "{{ count }} itens"
-      }
+      },
+      "back": "Voltar",
+      "view_all": "Ver todos {{ page }}"
     },
     "cart": {
       "title": "Carrinho",
@@ -292,6 +354,10 @@
       "empty": "O carrinho está vazio",
       "cart_error": "Ocorreu um erro ao atualizar o carrinho. Tente de novo.",
       "cart_quantity_error_html": "É possível adicionar apenas {{ quantity }} unidade(s) desse item ao carrinho.",
+      "taxes_and_shipping_policy_at_checkout_html": "Tributos, descontos e  <a href=\"{{ link }}\" class=\"link underlined-link\">frete</a> calculados no checkout",
+      "taxes_included_but_shipping_at_checkout": "Tributos incluídos e frete e descontos calculados no checkout",
+      "taxes_included_and_shipping_policy_html": "Tributos incluídos.  <a href=\"{{ link }}\" class=\"link underlined-link\">Frete</a> e descontos calculados no checkout.",
+      "taxes_and_shipping_at_checkout": "Tributos, descontos e frete calculados no checkout",
       "headings": {
         "product": "Produto",
         "price": "Preço",
@@ -306,17 +372,26 @@
       },
       "estimated_total": "Total estimado",
       "new_estimated_total": "Novo total estimado",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Tributos de importação e outros tributos incluídos. Descontos e <a href=\"{{ link }}\">frete</a> calculados no checkout.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "Tributos de importação e outros tributos incluídos. Descontos e frete calculados no checkout.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "Tributos incluídos. Descontos e <a href=\"{{ link }}\">frete</a> calculados no checkout.",
-      "taxes_included_shipping_at_checkout_without_policy": "Tributos incluídos. Descontos e frete calculados no checkout.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Tributos de importação incluídos. Tributos, descontos e <a href=\"{{ link }}\">frete</a> calculados no checkout.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Tributos de importação incluídos. Tributos, descontos e frete calculados no checkout.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Tributos, descontos e <a href=\"{{ link }}\">frete</a> calculados no checkout.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Tributos, descontos e frete calculados no checkout."
+      "view_cart": "Ver carrinho",
+      "terms": {
+        "error": "Você precisa aceitar os termos e condições antes de prosseguir.",
+        "agreement_html": "Eu aceito os <a href=\"{{ terms }}\" target=\"_blank\" class=\"link underlined-link\">termos e condições</a>."
+      },
+      "shipping_calculator": {
+        "link_title": "Calculadora de envio",
+        "country": "País",
+        "zip": "CEP",
+        "province": "Estado",
+        "submit": "Obter taxas",
+        "no_rates": "Não realizamos entregas para este destino.",
+        "single_rate": "Há uma taxa de entrega:",
+        "multiple_rates": "Existem várias taxas de envio:",
+        "error": "Por favor, ajuste o seguinte:"
+      }
     },
     "footer": {
-      "payment": "Formas de pagamento"
+      "payment": "Formas de pagamento",
+      "copyright_html": "&copy; {{ date }}, <a href=\"{{ store_url }}\">{{ store_name }}</a>."
     },
     "featured_blog": {
       "view_all": "Ver tudo",
@@ -336,7 +411,8 @@
       "use_fewer_filters_html": "Usar menos filtros ou <a class=\"{{ class }}\" href=\"{{ link }}\">remover tudo</a>"
     },
     "video": {
-      "load_video": "Carregar vídeo: {{ description }}"
+      "load_video": "Carregar vídeo: {{ description }}",
+      "toggle": "Alternar estado de reprodução do vídeo"
     },
     "slideshow": {
       "load_slide": "Carregar slide",
@@ -361,6 +437,7 @@
       "product_total": "Subtotal do produto",
       "view_cart": "Ver carrinho",
       "each": "{{ money }}/cada",
+      "each_html": "{{ money }}/cada",
       "product": "Produto",
       "variant": "Variante",
       "variant_total": "Total das variantes",
@@ -380,9 +457,28 @@
       "remove_all": "Remover tudo",
       "cancel": "Cancelar",
       "remove_all_single_item_confirmation": "Remover 1 item do carrinho?",
-      "min_error": "Este item apresenta um mínimo de {{ min }}",
-      "max_error": "Este item apresenta um máximo de {{ max }}",
-      "step_error": "Só é possível adicionar este item em incrementos de {{ step }}"
+      "min_error": "Este item tem um mínimo de {{ min }}",
+      "max_error": "Este item tem um máximo de {{ max }}",
+      "step_error": "Você só pode adicionar este item em incrementos de {{ step }}."
+    },
+    "collapsible_rows": {
+      "no_results": "Nenhum resultado encontrado",
+      "search": "Digite o termo de pesquisa"
+    },
+    "countdown": {
+      "a11y_message": "Termina em {{ end_date }}",
+      "days": "Dias",
+      "hours": "Horas",
+      "minutes": "Minutos",
+      "seconds": "Segundos",
+      "days_short": "d",
+      "hours_short": "h",
+      "minutes_short": "m",
+      "seconds_short": "s"
+    },
+    "compare": {
+      "product_page_link": "Saber mais",
+      "buy": "Comprar"
     }
   },
   "localization": {
@@ -392,14 +488,16 @@
     "update_country": "Atualizar país/região",
     "search": "Pesquisar",
     "popular_countries_regions": "Países/regiões populares",
-    "country_results_count": "{{ count }} países/regiões encontrados"
+    "country_results_count": "{{ count }} países/regiões encontrados",
+    "no_countries": "Nenhum país encontrado"
   },
   "customer": {
     "account": {
       "title": "Conta",
       "details": "Informações da conta",
       "view_addresses": "Ver endereços",
-      "return": "Retornar às Informações da conta"
+      "return": "Retornar às Informações da conta",
+      "edit": "Editar"
     },
     "account_fallback": "Conta",
     "activate_account": {
@@ -536,5 +634,12 @@
       "expanded": "Formulário de destinatário do cartão-presente expandido",
       "collapsed": "Formulário de destinatário do cartão-presente recolhido"
     }
+  },
+  "breadcrumbs": {
+    "title": "Trilha de navegação",
+    "home": "Início",
+    "cart": "Carrinho",
+    "collections": "Coleções",
+    "search": "Buscar"
   }
 }

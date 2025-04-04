@@ -31,9 +31,14 @@
   <meta property="og:price:currency" content="{{ cart.currency.iso_code }}">
 {%- endif -%}
 
-{%- if settings.social_twitter_link != blank -%}
-  <meta name="twitter:site" content="{{ settings.social_twitter_link | split: 'twitter.com/' | last | prepend: '@' }}">
+{%- if settings.social_x_link != blank -%}
+  <meta name="twitter:site" content="{{ settings.social_x_link | split: 'twitter.com/' | last | prepend: '@' }}">
 {%- endif -%}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+<meta name="theme:name" content="Ignite">
+<meta name="theme:version" content="1.3.0">
+<meta name="theme:preset" content="{% if settings.color_overlay == '#010101' %}tech{% elsif settings.color_overlay == '#020202' %}fashion{% elsif settings.color_overlay == '#030303' %}toys{% elsif settings.color_overlay == '#040404' %}pets{% elsif settings.color_overlay == '#050505' %}automotive{% else %}unknown{% endif %}">
+{% if request.design_mode %}<meta name="theme:contact" content="{{ shop.email | escape }}">{% endif %}

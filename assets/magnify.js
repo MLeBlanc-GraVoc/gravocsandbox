@@ -50,9 +50,10 @@ function magnify(image, zoomRatio) {
   overlay.onmouseleave = () => overlay.remove();
 }
 
-function enableZoomOnHover(zoomRatio) {
+function enableZoomOnHover() {
   const images = document.querySelectorAll('.image-magnify-hover');
   images.forEach((image) => {
+    const zoomRatio = Number(image.closest('[data-zoom-level]')?.dataset.zoomLevel || 3);
     image.onclick = (event) => {
       magnify(image, zoomRatio);
       moveWithHover(image, event, zoomRatio);
@@ -60,4 +61,4 @@ function enableZoomOnHover(zoomRatio) {
   });
 }
 
-enableZoomOnHover(2);
+enableZoomOnHover();

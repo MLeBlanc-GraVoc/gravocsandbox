@@ -7,14 +7,15 @@ if (!customElements.get('localization-form')) {
         this.mql = window.matchMedia('(min-width: 750px)');
         this.header = document.querySelector('.header-wrapper');
         this.elements = {
-          input: this.querySelector('input[name="locale_code"], input[name="country_code"]'),
+          langInput: this.querySelector('input[name="locale_code"]'),
+          countryInput: this.querySelector('input[name="country_code"]'),
           button: this.querySelector('button.localization-form__select'),
           panel: this.querySelector('.disclosure__list-wrapper'),
           search: this.querySelector('input[name="country_filter"]'),
           closeButton: this.querySelector('.country-selector__close-button'),
           resetButton: this.querySelector('.country-filter__reset-button'),
           searchIcon: this.querySelector('.country-filter__search-icon'),
-          liveRegion: this.querySelector('#sr-country-search-results'),
+          liveRegion: this.querySelector('.js-country-search-results'),
         };
         this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
         this.addEventListener('keydown', this.onContainerKeyDown.bind(this));
@@ -105,7 +106,12 @@ if (!customElements.get('localization-form')) {
       onItemClick(event) {
         event.preventDefault();
         const form = this.querySelector('form');
-        this.elements.input.value = event.currentTarget.dataset.value;
+        if (event.currentTarget.lang) {
+          this.elements.langInput.value = event.currentTarget.dataset.value;
+        } else {
+          this.elements.countryInput.value = event.currentTarget.dataset.value;
+        }
+
         if (form) form.submit();
       }
 
@@ -147,8 +153,11 @@ if (!customElements.get('localization-form')) {
 
       filterCountries() {
         const searchValue = this.normalizeString(this.elements.search.value);
-        const popularCountries = this.querySelector('.popular-countries');
-        const allCountries = this.querySelectorAll('a');
+        const popularCountries = this.querySelector('.countries .popular-countries');
+        const allCountries = this.querySelectorAll('.countries a');
+
+        this.noCountryMessage = this.noCountryMessage || this.querySelector('.js-no-countries');
+
         let visibleCountries = allCountries.length;
 
         this.elements.resetButton.classList.toggle('hidden', !searchValue);
@@ -174,6 +183,8 @@ if (!customElements.get('localization-form')) {
             visibleCountries
           );
         }
+
+        if (this.noCountryMessage) this.noCountryMessage.hidden = (visibleCountries > 0);
 
         this.querySelector('.country-selector').scrollTop = 0;
         this.querySelector('.country-selector__list').scrollTop = 0;

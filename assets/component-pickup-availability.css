@@ -6,27 +6,28 @@ pickup-availability[available] {
   min-height: 8rem;
 }
 
-.pickup-availability-preview {
-  align-items: flex-start;
-  display: flex;
-  gap: 0.2rem;
-  padding: 1rem 2rem 0 0;
-}
-
 .pickup-availability-preview .icon {
   flex-shrink: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-top: 0.2rem;
+}
+
+.pickup-availability-list .pickup-availability-preview .icon {
   height: 1.8rem;
+  width: 1.8rem;
+  margin-top: 0;
 }
 
 .pickup-availability-preview .icon-unavailable {
-  height: 1.6rem;
+  height: 1.8rem;
   margin-top: 0.1rem;
 }
 
 .pickup-availability-button {
   background-color: transparent;
   color: rgba(var(--color-foreground), 0.75);
-  letter-spacing: 0.06rem;
+  letter-spacing: var(--font-body-letter-spacing);
   padding: 0 0 0.2rem;
   text-align: left;
   text-decoration: underline;
@@ -45,12 +46,11 @@ pickup-availability-drawer {
   height: 100%;
   opacity: 0;
   overflow-y: auto;
-  padding: 2rem;
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 4;
-  transition: opacity var(--duration-default) ease, transform var(--duration-default) ease;
+  z-index: 5;
+  transition: opacity var(--duration-medium) ease, transform var(--duration-medium) var(--cubic-bezier-wipe);
   transform: translateX(100%);
   width: 100%;
   border-width: 0 0 0 var(--drawer-border-width);
@@ -83,8 +83,8 @@ pickup-availability-drawer[open] {
 .pickup-availability-header {
   align-items: flex-start;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
+  justify-content: flex-end;
+  padding: 1rem;
 }
 
 .pickup-availability-drawer-title {
@@ -92,7 +92,7 @@ pickup-availability-drawer[open] {
 }
 
 .pickup-availability-header .icon {
-  width: 2rem;
+  width: 2.6rem;
 }
 
 .pickup-availability-drawer-button {
@@ -102,7 +102,6 @@ pickup-availability-drawer[open] {
   cursor: pointer;
   display: block;
   height: 4.4rem;
-  padding: 1.2rem;
   width: 4.4rem;
 }
 
@@ -121,26 +120,12 @@ pickup-availability-drawer[open] {
   margin-left: 1rem;
 }
 
-.pickup-availability-list__item {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  padding: 2rem 0;
-}
-
-.pickup-availability-list__item:first-child {
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-}
-
-.pickup-availability-list__item > * {
-  margin: 0;
-}
-
-.pickup-availability-list__item > * + * {
-  margin-top: 1rem;
+.pickup-availability-list {
+  padding: 0 2rem 2rem 2rem;
 }
 
 .pickup-availability-address {
   font-style: normal;
-  font-size: 1.2rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
 }
 

@@ -1,6 +1,8 @@
 .shopify-model-viewer-ui .shopify-model-viewer-ui__controls-area {
   background: rgb(var(--color-background));
   border-color: rgba(var(--color-foreground), 0.04);
+  bottom: auto;
+  top: 10px;
 }
 
 .shopify-model-viewer-ui .shopify-model-viewer-ui__button {

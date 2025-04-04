@@ -1,116 +1,326 @@
-{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+{%- comment -%}theme-check-disable SchemaJsonFormat{%- endcomment -%}
+{%- assign scheme1 = settings.color_schemes | first -%}
+{%- if request.design_mode or section.settings.hide_when_empty == false or section.settings.page.content != blank -%}
+  {{ 'section-main-page.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+  <div class=" section__inner flex justify-center {{ section.settings.line_separator }} {{ section.settings.visibility }}
+      {% if section.settings.color_scheme != scheme1 and section.settings.full_width %}color-{{ section.settings.color_scheme }} gradient{% endif %}
+      {% unless section.settings.full_width %}
+        {{ section.settings.top_padding }} {{ section.settings.bottom_padding }}
+      {% endunless %}"
+  >
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+    <div class="page-width{% if section.settings.page_width == "narrow" %} page-width--narrow{% endif %} w-full">
+      <div{% unless section.settings.color_scheme == scheme1 or section.settings.full_width %} class="section-content color-{{ section.settings.color_scheme }} gradient global-media-settings"{% endunless %}>
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
-    <h2 class="page-title {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      {%- if section.settings.page.title != blank -%}
-        {{ section.settings.page.title | escape }}
-      {%- else -%}
-        {{ 'sections.page.title' | t }}
-      {%- endif -%}
-    </h2>
-    <div class="rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      {%- if section.settings.page.content != blank -%}
-        {{ section.settings.page.content }}
-      {%- else -%}
-        <div class="page-placeholder-wrapper placeholder">
-          {{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
+        {% render 'standard-section-heading',
+            section_name: 'page',
+            section: section
+        %}
+
+        <div class="rte{% if settings.animations_reveal_on_scroll and section.index > 1 %} scroll-trigger animate--fade-in{% endif %}">
+          {%- if section.settings.page.content != blank -%}
+            {{ section.settings.page.content }}
+          {%- endif -%}
         </div>
-      {%- endif -%}
+      </div>
     </div>
   </div>
-</div>
+{%- endif -%}
 
 {% schema %}
 {
-  "name": "t:sections.page.name",
+  "name": "Page",
   "tag": "section",
-  "class": "section",
+  "class": "section section-page",
   "disabled_on": {
-    "groups": ["header", "footer"]
+    "groups": ["header", "footer", "aside"]
   },
   "settings": [
     {
       "type": "page",
       "id": "page",
-      "label": "t:sections.page.settings.page.label"
+      "label": "Page"
     },
     {
       "type": "select",
-      "id": "heading_size",
+      "id": "page_width",
       "options": [
         {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
+          "value": "normal",
+          "label": "Normal"
         },
         {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        },
-        {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
-        },
-        {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
+          "value": "narrow",
+          "label": "Central"
         }
       ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "default": "normal",
+      "label": "Content alignment"
+    },
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    
+  {
+    "type": "inline_richtext",
+    "id": "title",
+    "default": "Page",
+    "info": "Enter ++ for a line break.",
+    "label": "Heading"
+  },
+  {
+    "type": "select",
+    "id": "italic_convert",
+    "options": [
+      {
+        "value": "",
+        "label": "Off (keep as italics)"
+      },
+      {
+        "value": "light",
+        "label": "Lighter \"Text\" color"
+      },
+      {
+        "value": "accent",
+        "label": "\"Accent gradient\" color"
+      }
+    ],
+    "info": "The colors above can be set in the color schemes.",
+    "default": "",
+    "label": "Convert italic text to"
+  },
+  {
+    "type": "select",
+    "id": "heading_size",
+    "options": [
+      {
+        "value": "h4",
+        "label": "XS"
+      },
+      {
+        "value": "h3",
+        "label": "S"
+      },
+      {
+        "value": "h2",
+        "label": "M"
+      },
+      {
+        "value": "h1",
+        "label": "L"
+      },
+      {
+        "value": "h0",
+        "label": "XL"
+      }
+    ],
+    "default": "h2",
+    "label": "Heading size"
+  }
+,
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    
+  {
+    "type": "richtext",
+    "id": "text",
+    
+    "label": "Description"
+  },
+  {
+    "type": "select",
+    "id": "text_size",
+    "options": [
+      {
+        "value": "t6",
+        "label": "2XS"
+      },
+      {
+        "value": "t5",
+        "label": "XS"
+      },
+      {
+        "value": "t4",
+        "label": "S"
+      },
+      {
+        "value": "t3",
+        "label": "M"
+      },
+      {
+        "value": "t2",
+        "label": "L"
+      },
+      {
+        "value": "t1",
+        "label": "XL"
+      },
+      {
+        "value": "t0",
+        "label": "2XL"
+      }
+    ],
+    "default": "t3",
+    "label": "Text size"
+  }
+,
+    {
+      "type": "header",
+      "content": "Style"
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
+      "label": "Color scheme",
       "default": "scheme-1"
     },
     {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "Full width color scheme"
+    },
+    {
+      "type": "select",
+      "id": "line_separator",
+      "options": [
+        {
+          "value": "",
+          "label": "Off"
+        },
+        {
+          "value": "border-top",
+          "label": "Top"
+        },
+        {
+          "value": "border-bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "border-top border-bottom",
+          "label": "Both"
+        }
+      ],
+      "default": "",
+      "label": "Line separator"
+    },
+    {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "Advanced"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "type": "select",
+      "id": "top_padding",
+      "options": [
+        {
+          "value": "pt-0",
+          "label": "0"
+        },
+        {
+          "value": "pt-s05",
+          "label": "0.5"
+        },
+        {
+          "value": "pt-s",
+          "label": "1"
+        },
+        {
+          "value": "pt-s15",
+          "label": "1.5"
+        },
+        {
+          "value": "pt-s2",
+          "label": "2"
+        }
+      ],
+      "default": "pt-s",
+      "label": "Top section spacing"
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "type": "select",
+      "id": "bottom_padding",
+      "options": [
+        {
+          "value": "pb-0",
+          "label": "0"
+        },
+        {
+          "value": "pb-s05",
+          "label": "0.5"
+        },
+        {
+          "value": "pb-s",
+          "label": "1"
+        },
+        {
+          "value": "pb-s15",
+          "label": "1.5"
+        },
+        {
+          "value": "pb-s2",
+          "label": "2"
+        }
+      ],
+      "default": "pb-s",
+      "label": "Bottom section spacing"
+    },
+    {
+      "type": "select",
+      "id": "visibility",
+      "options": [
+        {
+          "value": "visible-xs",
+          "label": "Mobile"
+        },
+        {
+          "value": "hidden-xs",
+          "label": "Desktop"
+        },
+        {
+          "value": "",
+          "label": "Both"
+        }
+      ],
+      "default": "",
+      "info": "Lots of hidden content could be harmful for SEO.",
+      "label": "Show on"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_when_empty",
+      "default": false,
+      "label": "Hide this section when there's no page content to show",
+      "info": "This allows metafields to selectively show this section. Always shows in the Theme Editor."
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        }
+      ],
+      "default": "h2",
+      "info": "For SEO purposes, there should only be one H1 tag on the page.",
+      "label": "Heading tag"
     }
   ],
   "presets": [
     {
-      "name": "t:sections.page.presets.name"
+      "name": "Page"
     }
   ]
 }

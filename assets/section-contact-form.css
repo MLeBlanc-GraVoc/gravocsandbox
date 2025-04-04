@@ -10,30 +10,15 @@
   margin-top: 0.2rem;
 }
 
-.contact .field {
-  margin-bottom: 1.5rem;
+.contact-form__heading,
+.contact-form__text {
+  margin: 0;
 }
 
-@media screen and (min-width: 750px) {
-  .contact .field {
-    margin-bottom: 2rem;
-  }
+.contact .image-with-text__content {
+  overflow: visible !important; /* Necessary to not cut off long dropdown contents */
 }
 
-.contact__button {
-  margin-top: 3rem;
-}
-
-@media screen and (min-width: 750px) {
-  .contact__button {
-    margin-top: 4rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
-  }
+.contact-form__heading {
+  text-align: start;
 }

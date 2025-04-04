@@ -20,12 +20,11 @@
     <input
       id="Recipient-checkbox-{{ section.id }}"
       type="checkbox"
+      class="field__checkbox"
       name="{{ gift_card_recipient_control_flag }}"
       disabled
     >
-    <label class="recipient-checkbox" for="Recipient-checkbox-{{ section.id }}">
-      {{ 'square.svg' | inline_asset_content }}
-      {{- 'icon-checkmark.svg' | inline_asset_content -}}
+    <label class="no-js-hidden" for="Recipient-checkbox-{{ section.id }}">
       <span>{{ 'recipient.form.checkbox' | t }}</span>
     </label>
     <div
@@ -35,24 +34,18 @@
         hidden
       {% endunless %}
     >
-      <h2 class="form__message" tabindex="-1" autofocus>
-        {{- 'icon-error.svg' | inline_asset_content -}}
+      <p class="form__message t4 mb-0 mt-3" tabindex="-1" autofocus>
+        {% render 'icon-error' %}
         <span class="error-message">{{ 'templates.contact.form.error_heading' | t }}</span>
-      </h2>
+      </p>
 
-      <ul>
-        {%- if form.errors -%}
-          {%- for field in form.errors -%}
-            <li>
-              {%- if field == 'form' -%}
-                {{ form.errors.messages[field] }}
-              {%- else -%}
-                <a href="#Recipient-{{ field }}-{{ section.id }}">
-                  {{ form.errors.messages[field] }}
-                </a>
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
+      <ul class="t4 mt-0">
+        {%- if field == 'form' -%}
+          {{ form.errors.messages[field] }}
+        {%- else -%}
+          <a href="#Recipient-{{ field }}-{{ section.id }}" class="no-scroll">
+            {{ form.errors.messages[field] }}
+          </a>
         {%- endif -%}
       </ul>
     </div>
@@ -87,9 +80,9 @@
 
         <div
           id="RecipientForm-email-error-{{ section.id }}"
-          class="form__message{% unless form.errors contains 'email' %} hidden{% endunless %}"
+          class="form__message mt-1 mb-0{% unless form.errors contains 'email' %} hidden{% endunless %}"
         >
-          {{- 'icon-error.svg' | inline_asset_content -}}
+          {% render 'icon-error' %}
           <span class="error-message">
             {%- if form.errors contains 'email' -%}
               {{ form.errors.messages.email }}.
@@ -120,9 +113,9 @@
 
         <div
           id="RecipientForm-name-error-{{ section.id }}"
-          class="form__message{% unless form.errors contains 'name' %} hidden{% endunless %}"
+          class="form__message mt-1 mb-0{% unless form.errors contains 'name' %} hidden{% endunless %}"
         >
-          {{- 'icon-error.svg' | inline_asset_content -}}
+          {% render 'icon-error' %}
           <span class="error-message">
             {%- if form.errors contains 'name' -%}
               {{ form.errors.messages.name }}.
@@ -160,9 +153,9 @@
 
         <div
           id="RecipientForm-message-error-{{ section.id }}"
-          class="form__message{% unless form.errors contains 'message' %} hidden{% endunless %}"
+          class="form__message mt-1 mb-0{% unless form.errors contains 'message' %} hidden{% endunless %}"
         >
-          {{- 'icon-error.svg' | inline_asset_content -}}
+          {% render 'icon-error' %}
           <span class="error-message">
             {%- if form.errors contains 'message' -%}
               {{ form.errors.messages.message }}.
@@ -194,9 +187,9 @@
 
         <div
           id="RecipientForm-send_on-error-{{ section.id }}"
-          class="form__message{% unless form.errors contains 'send_on' %} hidden{% endunless %}"
+          class="form__message mt-1 mb-0{% unless form.errors contains 'send_on' %} hidden{% endunless %}"
         >
-          {{- 'icon-error.svg' | inline_asset_content -}}
+          {% render 'icon-error' %}
           <span class="error-message">
             {%- if form.errors contains 'send_on' -%}
               {{ form.errors.messages.send_on }}.

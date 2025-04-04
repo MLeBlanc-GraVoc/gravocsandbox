@@ -4,9 +4,12 @@ class CartNotification extends HTMLElement {
 
     this.notification = document.getElementById('cart-notification');
     this.header = document.querySelector('sticky-header');
+    this.cartDrawer = document.querySelector('cart-drawer');
+    this.viewCartButton = this.querySelector('.js-view-cart');
     this.onBodyClick = this.handleBodyClick.bind(this);
 
     this.notification.addEventListener('keyup', (evt) => evt.code === 'Escape' && this.close());
+    this.viewCartButton.addEventListener('click', this.handleViewCartClick.bind(this));
     this.querySelectorAll('button[type="button"]').forEach((closeButton) =>
       closeButton.addEventListener('click', this.close.bind(this))
     );
@@ -43,8 +46,10 @@ class CartNotification extends HTMLElement {
       );
     });
 
-    if (this.header) this.header.reveal();
-    this.open();
+    if (theme.settings.cartDrawer.atcAction === 'notification' && !(this.cartDrawer && this.cartDrawer.classList.contains('active'))) {
+      if (this.header) this.header.reveal();
+      this.open();
+    }
   }
 
   getSectionsToRender() {
@@ -64,6 +69,14 @@ class CartNotification extends HTMLElement {
 
   getSectionInnerHTML(html, selector = '.shopify-section') {
     return new DOMParser().parseFromString(html, 'text/html').querySelector(selector).innerHTML;
+  }
+
+  handleViewCartClick(evt) {
+    if (this.cartDrawer) {
+      evt.preventDefault();
+      this.close();
+      this.cartDrawer.open();
+    }
   }
 
   handleBodyClick(evt) {

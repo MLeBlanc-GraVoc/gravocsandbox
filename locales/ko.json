@@ -13,11 +13,13 @@
     "social": {
       "alt_text": {
         "share_on_facebook": "Facebook에서 공유",
-        "share_on_twitter": "X에 공유",
-        "share_on_pinterest": "Pinterest에 고정하기"
+        "share_on_twitter": "Twitter에서 트윗 작성",
+        "share_on_pinterest": "Pinterest에 고정하기",
+        "share_on_whatsapp": "WhatsApp으로 공유하기",
+        "share_on_linkedin": "LinkedIn에서 공유하기"
       },
       "links": {
-        "twitter": "X(Twitter)",
+        "twitter": "Twitter",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -25,7 +27,10 @@
         "snapchat": "Snapchat",
         "youtube": "YouTube",
         "vimeo": "Vimeo",
-        "tiktok": "TikTok"
+        "tiktok": "TikTok",
+        "whatsapp": "WhatsApp",
+        "threads": "Threads",
+        "linkedin": "LinkedIn"
       }
     },
     "continue_shopping": "쇼핑 계속하기",
@@ -33,11 +38,16 @@
       "label": "페이지 매김",
       "page": "{{ number }}페이지",
       "next": "다음 페이지",
-      "previous": "이전 페이지"
+      "previous": "이전 페이지",
+      "show_more": "더 보기",
+      "loading_text": "잠시만 기다려주세요..."
     },
     "search": {
       "search": "검색",
-      "reset": "검색어 지우기"
+      "reset": "검색어 지우기",
+      "product_type": "제품 유형 선택",
+      "all_product_types": "모두",
+      "search_placeholder": "검색"
     },
     "cart": {
       "view": "카트 보기({{ count }})",
@@ -55,6 +65,13 @@
       "next_slide": "오른쪽으로 슬라이드",
       "previous_slide": "왼쪽으로 슬라이드",
       "name": "슬라이더"
+    },
+    "discount_code": {
+      "close": "할인 종료",
+      "copy_to_clipboard": "할인 코드 복사",
+      "discount_code": "할인 코드",
+      "success_message": "복사되었습니다",
+      "discount_gated": "할인 받으려면 로그인하세요"
     }
   },
   "newsletter": {
@@ -78,7 +95,14 @@
     "total_reviews": "총 리뷰",
     "star_reviews_info": "별점: {{ rating_value }}/{{ rating_max }}",
     "collapsible_content_title": "축소 가능한 콘텐츠",
-    "complementary_products": "보완 제품"
+    "complementary_products": "보완 제품",
+    "scroll_to_top": "페이지 맨 위로 스크롤하기",
+    "popup": "사이트 알림",
+    "search": "저희 상점 검색",
+    "change_language": "언어 변경",
+    "change_country": "국가 변경",
+    "change_country_language": "국가/언어 변경",
+    "view_hotspot": "핫스팟 보기"
   },
   "blogs": {
     "article": {
@@ -97,12 +121,20 @@
       "back_to_blog": "블로그로 돌아가기",
       "share": "이 문서 공유하기",
       "success": "댓글이 성공적으로 게시되었습니다. 감사합니다!",
-      "success_moderated": "댓글이 성공적으로 게시되었습니다. 블로그를 조정 중이므로 잠시 후에 게시됩니다."
+      "success_moderated": "댓글이 성공적으로 게시되었습니다. 블로그를 조정 중이므로 잠시 후에 게시됩니다.",
+      "author": "{{ author }}님이 작성",
+      "read_estimate": "{{ minutes }}분 독서",
+      "next_article": "다음",
+      "previous_article": "이전"
+    },
+    "filter": {
+      "all": "모두"
     }
   },
   "onboarding": {
     "product_title": "제품명 예",
-    "collection_title": "컬렉션 이름"
+    "collection_title": "컬렉션 이름",
+    "example_link": "온보딩 예시 링크"
   },
   "products": {
     "product": {
@@ -120,8 +152,8 @@
         "multiples_of": "{{ quantity }}개씩 증가",
         "in_cart_html": "카트 내 <span class=\"quantity-cart\">{{ quantity }}</span>개",
         "note": "수량 규칙 보기",
-        "min_of": "최소 {{ quantity }}개",
-        "max_of": "최대 {{ quantity }}개"
+        "min_of": "최소 {{ quantity }}",
+        "max_of": "최대 {{ quantity }}"
       },
       "price": {
         "from_price_html": "{{ price }}에서",
@@ -156,7 +188,8 @@
         "image_available": "이제 갤러리 뷰에서 이미지 {{ index }} 사용 가능"
       },
       "view_full_details": "전체 세부 정보 보기",
-      "shipping_policy_html": "<a href=\"{{ link }}\">배송료</a>는 결제 시 계산됩니다.",
+      "include_taxes": "세금이 포함됩니다.",
+      "shipping_policy_html": " <a href=\"{{ link }}\" class=\"link underlined-link\">배송료</a>는 결제 시 계산됩니다.",
       "choose_options": "옵션 선택하기",
       "choose_product_options": "{{ product_name }}의 옵션 선택",
       "value_unavailable": "{{ option_value }} - 사용할 수 없음",
@@ -166,7 +199,6 @@
       "inventory_low_stock": "재고 부족",
       "inventory_low_stock_show_count": "재고 부족: {{ quantity }}개 남음",
       "inventory_out_of_stock": "품절",
-      "inventory_out_of_stock_continue_selling": "재고 있음",
       "sku": "SKU(재고 관리 코드)",
       "volume_pricing": {
         "title": "수량별 가격 책정",
@@ -175,9 +207,28 @@
         "price_at_each": "개당 {{ price }}",
         "price_range": "{{ minimum }} ~ {{ maximum }}"
       },
-      "taxes_included": "세금이 포함된 가격입니다.",
-      "duties_included": "관세가 포함된 가격입니다.",
-      "duties_and_taxes_included": "관세 및 세금이 포함된 가격입니다."
+      "preorder": "사전 주문",
+      "add_to_cart_card": "카트",
+      "on_sale_percent": "최대 {{ discount }}% 할인",
+      "on_sale_value": "{{ discount }} 할인 최대",
+      "new": "신규",
+      "back_in_stock": {
+        "email": "이메일",
+        "send": "알림 받기",
+        "success": "감사합니다. 재고가 다시 입고되면 알려드리겠습니다."
+      },
+      "product_enquiry": {
+        "email": "이메일",
+        "enquiry": "당신의 문의",
+        "send": "보내기",
+        "success": "감사합니다. 곧 연락 드리겠습니다."
+      },
+      "notify_me": "알림 받기",
+      "inventory_out_of_stock_continue_selling": "재고 대기 중, 곧 배송 예정",
+      "change_color": "색상 미리보기:",
+      "inventory_low_stock_only_count": "{{ quantity }}개만 남음",
+      "bulk_order": "대량 주문",
+      "highlight_remainder": "+{{ count }}개 더"
     },
     "modal": {
       "label": "미디어 갤러리"
@@ -211,10 +262,15 @@
       "filter_selected_accessibility": "{{ type }}({{ count }}개 필터 선택됨)",
       "show_more": "자세히 표시",
       "show_less": "간단히 표시",
-      "filter_and_operator_subtitle": "모두 일치"
+      "filter_and_operator_subtitle": "모두 일치",
+      "reset_price": "초기화"
     }
   },
   "templates": {
+    "404": {
+      "title": "페이지를 찾을 수 없음",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "\"{{ terms }}\"에 대한 검색 결과가 없습니다. 철자를 확인하거나 다른 단어/문구를 사용해 보십시오.",
       "results_with_count": {
@@ -242,7 +298,15 @@
         "other": "제품 {{ count }}개"
       },
       "suggestions": "제안 사항",
-      "pages": "페이지"
+      "pages": "페이지",
+      "results_items_with_count": {
+        "one": "{{ count }}개의 항목 보기",
+        "other": "{{ count }}개의 항목 보기"
+      },
+      "articles": "기사",
+      "collections": "컬렉션",
+      "popular_searches": "인기 검색어",
+      "no_results_short": "결과를 찾을 수 없습니다."
     },
     "cart": {
       "cart": "카트"
@@ -258,10 +322,6 @@
         "error_heading": "다음을 조정하십시오.",
         "title": "연락처 양식"
       }
-    },
-    "404": {
-      "title": "페이지를 찾을 수 없음",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -271,7 +331,9 @@
       "cart_count": {
         "one": "{{ count }}개 품목",
         "other": "{{ count }}개 품목"
-      }
+      },
+      "back": "뒤로",
+      "view_all": "모두 보기 {{ page }}"
     },
     "cart": {
       "title": "카트",
@@ -282,6 +344,10 @@
       "empty": "카트가 비어 있습니다",
       "cart_error": "카트를 업데이트하는 중 오류가 발생했습니다. 다시 시도하십시오.",
       "cart_quantity_error_html": "카트에는 이 품목을 {{ quantity }}개만 추가할 수 있습니다.",
+      "taxes_and_shipping_policy_at_checkout_html": "결제 시 세금, 할인 및  <a href=\"{{ link }}\" class=\"link underlined-link\">배송료</a> 계산됨",
+      "taxes_included_but_shipping_at_checkout": "세금 포함 및 결제 시 배송료 계산됨",
+      "taxes_included_and_shipping_policy_html": "세금이 포함된 가격입니다.  <a href=\"{{ link }}\" class=\"link underlined-link\">배송료</a> 및 할인은 결제 시 계산됩니다.",
+      "taxes_and_shipping_at_checkout": "결제 시 세금, 할인 및 배송료 계산됨",
       "headings": {
         "product": "제품",
         "price": "가격",
@@ -296,17 +362,26 @@
       },
       "estimated_total": "예상 총액",
       "new_estimated_total": "새로운 예상 총액",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "관세 및 세금이 포함된 가격입니다. 결제 시 할인 및 <a href=\"{{ link }}\">배송료</a>가 계산됩니다.",
-      "duties_and_taxes_included_shipping_at_checkout_without_policy": "관세 및 세금이 포함된 가격입니다. 결제 시 할인 및 배송료가 계산됩니다.",
-      "taxes_included_shipping_at_checkout_with_policy_html": "세금이 포함된 가격입니다. 결제 시 할인 및 <a href=\"{{ link }}\">배송료</a>가 계산됩니다.",
-      "taxes_included_shipping_at_checkout_without_policy": "세금이 포함된 가격입니다. 결제 시 할인 및 배송료가 계산됩니다.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "관세가 포함된 가격입니다. 결제 시 세금, 할인 및 <a href=\"{{ link }}\">배송료</a>가 계산됩니다.",
-      "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "관세가 포함된 가격입니다. 결제 시 세금, 할인 및 배송료가 계산됩니다.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "결제 시 세금, 할인 및 <a href=\"{{ link }}\">배송료</a>가 계산됩니다.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "결제 시 세금, 할인 및 배송료가 계산됩니다."
+      "view_cart": "장바구니 보기",
+      "terms": {
+        "error": "계속하기 전에 약관에 동의해야 합니다.",
+        "agreement_html": "나는 <a href=\"{{ terms }}\" target=\"_blank\" class=\"link underlined-link\">약관</a>에 동의합니다."
+      },
+      "shipping_calculator": {
+        "link_title": "배송 계산기",
+        "country": "국가",
+        "zip": "우편번호/우편번호",
+        "province": "도",
+        "submit": "요금 확인",
+        "no_rates": "우리는 이 목적지로 배송하지 않습니다.",
+        "single_rate": "배송 비용은 하나입니다.",
+        "multiple_rates": "배송 비율이 여러 개 있습니다:",
+        "error": "다음을 조정해주세요:"
+      }
     },
     "footer": {
-      "payment": "결제 방법"
+      "payment": "결제 방법",
+      "copyright_html": "&copy; {{ date }}, <a href=\"{{ store_url }}\">{{ store_name }}</a>."
     },
     "featured_blog": {
       "view_all": "모두 보기",
@@ -326,7 +401,8 @@
       "use_fewer_filters_html": "더 적은 수의 필터를 사용하거나 <a class=\"{{ class }}\" href=\"{{ link }}\">모두 제거하기</a>"
     },
     "video": {
-      "load_video": "동영상 로드: {{ description }}"
+      "load_video": "동영상 로드: {{ description }}",
+      "toggle": "비디오 재생 상태 전환"
     },
     "slideshow": {
       "load_slide": "슬라이드 로드",
@@ -351,6 +427,7 @@
       "product_total": "제품 소계",
       "view_cart": "카트 보기",
       "each": "개당 {{ money }}",
+      "each_html": "개당 {{ money }}",
       "product": "제품",
       "variant": "이형 상품",
       "variant_total": "이형 상품 합계",
@@ -368,9 +445,28 @@
       "remove_all": "모두 제거",
       "cancel": "취소",
       "remove_all_single_item_confirmation": "카트에서 1개의 품목을 제거하시겠습니까?",
-      "min_error": "이 품목의 최소 개수는 {{ min }}개입니다.",
-      "max_error": "이 품목은 최대 개수는 {{ max }}개입니다.",
-      "step_error": "이 품목은 {{ step }}개 단위로만 추가할 수 있습니다."
+      "min_error": "이 항목은 최소 {{ min }}이 필요합니다.",
+      "max_error": "이 항목은 최대 {{ max }}개까지 가능합니다.",
+      "step_error": "이 항목은 {{ step }} 단위로만 추가할 수 있습니다."
+    },
+    "collapsible_rows": {
+      "no_results": "일치하는 항목을 찾을 수 없습니다",
+      "search": "검색어를 입력하세요"
+    },
+    "countdown": {
+      "a11y_message": "{{ end_date }}에 종료됩니다.",
+      "days": "일",
+      "hours": "시간",
+      "minutes": "분",
+      "seconds": "초",
+      "days_short": "일",
+      "hours_short": "시",
+      "minutes_short": "분",
+      "seconds_short": "초"
+    },
+    "compare": {
+      "product_page_link": "더 알아보기",
+      "buy": "구매하기"
     }
   },
   "localization": {
@@ -380,14 +476,16 @@
     "update_country": "국가/지역 업데이트",
     "search": "검색",
     "popular_countries_regions": "인기 국가/지역",
-    "country_results_count": "{{ count }}개의 국가/지역 찾음"
+    "country_results_count": "{{ count }}개의 국가/지역 찾음",
+    "no_countries": "국가를 찾을 수 없습니다"
   },
   "customer": {
     "account": {
       "title": "계정",
       "details": "계정 세부 정보",
       "view_addresses": "주소 보기",
-      "return": "계정 세부 정보로 돌아가기"
+      "return": "계정 세부 정보로 돌아가기",
+      "edit": "편집"
     },
     "account_fallback": "계정",
     "activate_account": {
@@ -524,5 +622,12 @@
       "expanded": "기프트 카드 수신자 양식 펼치기",
       "collapsed": "기프트 카드 수신자 양식 접기"
     }
+  },
+  "breadcrumbs": {
+    "title": "빵 부스러기",
+    "home": "홈",
+    "cart": "장바구니",
+    "collections": "컬렉션",
+    "search": "검색"
   }
 }

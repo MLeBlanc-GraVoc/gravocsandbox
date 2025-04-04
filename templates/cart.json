@@ -1,40 +1,52 @@
 {
   "sections": {
-    "cart-items": {
-      "type": "main-cart-items",
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
       "settings": {
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "color_scheme": "",
+        "line_separator": ""
       }
     },
-    "cart-footer": {
-      "type": "main-cart-footer",
+    "cart": {
+      "type": "main-cart",
       "settings": {
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "all",
+        "products_to_show": 4,
+        "desktop_layout": "carousel",
+        "mobile_layout": "carousel",
+        "columns_desktop": "4",
+        "columns_mobile": "2",
+        "full_width": false,
+        "content_max_width": "m",
+        "desktop_heading_alignment": "left",
+        "mobile_heading_alignment": "left",
+        "title": "Featured collection",
+        "italic_convert": "",
+        "heading_size": "h2",
+        "text": "",
+        "text_size": "t3",
+        "show_view_all_link": false,
+        "view_all_text": "View more",
+        "view_all_text_size": "t3",
+        "view_all_card_visibility": "off",
+        "view_all_card_text": "There's plenty more",
         "color_scheme": "scheme-1",
-        "padding_top": 20,
-        "padding_bottom": 40
-      },
-      "blocks": {
-        "subtotal": {
-          "type": "subtotal",
-          "settings": {
-          }
-        },
-        "buttons": {
-          "type": "buttons",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "subtotal",
-        "buttons"
-      ]
+        "view_all_color_scheme": "",
+        "line_separator": "border-top",
+        "hide_when_empty": false,
+        "heading_tag": "h2"
+      }
     }
   },
   "order": [
-    "cart-items",
-    "cart-footer"
+    "breadcrumbs",
+    "cart",
+    "featured-collection"
   ]
 }

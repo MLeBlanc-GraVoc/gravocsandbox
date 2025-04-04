@@ -2,53 +2,59 @@
   Renders cart notification
 
   Accepts:
-  - color_scheme: {String} sets the color scheme of the notification (optional)
-  - desktop_menu_type: {String} passes the desktop menu type which allows us to use the right css class (optional)
+  - drawer_on_desktop: {String} 'on' if the menu is a drawer on desktop
 
   Usage:
   {% render 'cart-notification' %}
 {% endcomment %}
 
 <cart-notification>
-  <div class="cart-notification-wrapper{% if desktop_menu_type != 'drawer' %} page-width{% endif %}">
+  <div class="cart-notification-wrapper{% unless drawer_on_desktop == 'on' %} page-width{% endunless %}">
     <div
       id="cart-notification"
-      class="cart-notification focus-inset{% if color_scheme %} color-{{ color_scheme }} gradient{% endif %}"
+      class="cart-notification focus-inset color-{{ settings.cart_drawer_background_color_scheme }} gradient"
       aria-modal="true"
       aria-label="{{ 'general.cart.item_added' | t }}"
       role="dialog"
       tabindex="-1"
     >
-      <div class="cart-notification__header">
-        <h2 class="cart-notification__heading caption-large text-body">
-          {{- 'icon-checkmark.svg' | inline_asset_content -}}
-          {{ 'general.cart.item_added' | t }}
-        </h2>
-        <button
-          type="button"
-          class="cart-notification__close modal__close-button link link--text focus-inset"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
-          </span>
-        </button>
-      </div>
-      <div id="cart-notification-product" class="cart-notification-product"></div>
-      <div class="cart-notification__links">
-        <a
-          href="{{ routes.cart_url }}"
-          id="cart-notification-button"
-          class="button button--secondary button--full-width"
-        >
-          {{- 'general.cart.view_empty_cart' | t -}}
-        </a>
-        <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
-          <button class="button button--primary button--full-width" name="checkout">
-            {{ 'sections.cart.checkout' | t }}
+      <div class="cart-notification__body">
+        <div class="cart-notification__header flex items-center">
+          <h2 class="cart-notification__heading t2 text-body font-bold">
+            {%- render 'icon-checkmark' -%}
+            {{ 'general.cart.item_added' | t }}
+          </h2>
+          <button
+            type="button"
+            class="cart-notification__close modal__close-button link link--text focus-inset"
+            aria-label="{{ 'accessibility.close' | t }}"
+          >
+            <svg class="icon icon-close" aria-hidden="true" focusable="false">
+              <use href="#icon-close"/>
+            </svg>
           </button>
-        </form>
-        <button type="button" class="link button-label">{{ 'general.continue_shopping' | t }}</button>
+        </div>
+        <div id="cart-notification-product"></div>
+      </div>
+
+      <div class="cart-notification__links border-top flex w-full gap-1 color-{{ settings.cart_drawer_color_scheme }} gradient">
+        <div>
+          <a
+            href="{{ routes.cart_url }}"
+            id="cart-notification-button"
+            class="button button--secondary button--full-width js-view-cart"
+            data-no-instant
+          >
+            {{- 'general.cart.view_empty_cart' | t -}}
+          </a>
+        </div>
+        <div>
+          <form class="w-full" action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+            <button class="button button--primary button--full-width" name="checkout">
+              {{ 'sections.cart.checkout' | t }}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

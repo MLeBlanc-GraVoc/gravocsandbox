@@ -13,22 +13,14 @@ volume-pricing ul {
 
 volume-pricing li {
   font-size: 1.4rem;
-  letter-spacing: 0.06rem;
+  letter-spacing: var(--font-body-letter-spacing);
   padding: 0.6rem 0.8rem;
   display: flex;
   justify-content: space-between;
 }
 
-div.volume-pricing-note {
+.volume-pricing-note {
   margin-top: -2.6rem;
-}
-
-.product--no-media .volume-pricing-note {
-  text-align: center;
-}
-
-.product--no-media volume-pricing {
-  width: 30rem;
 }
 
 .volume-pricing-note span,
@@ -51,7 +43,7 @@ volume-pricing show-more-button {
 .product-form__input .price-per-item {
   color: rgba(var(--color-foreground));
   font-size: 1.4rem;
-  letter-spacing: 0.06rem;
+  letter-spacing: var(--font-body-letter-spacing);
 }
 
 .price-per-item dl {

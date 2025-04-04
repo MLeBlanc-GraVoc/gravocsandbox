@@ -1,0 +1,403 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "spacing": 0,
+        "color_scheme": "scheme-2",
+        "line_separator": ""
+      }
+    },
+    "ribbon_banner_zkP4Bb": {
+      "type": "ribbon-banner",
+      "blocks": {
+        "text_ijxRBG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our biggest sale starts soon</p>",
+            "text_size": "t1",
+            "content_max_width": "m"
+          }
+        },
+        "countdown_Q94nTA": {
+          "type": "countdown",
+          "settings": {
+            "end_date": "",
+            "end_time": "",
+            "end_action": "hide",
+            "end_message": "You just missed it!",
+            "abbreviate_units": true,
+            "countdown_size": 20,
+            "separator": ":",
+            "countdown_font_weight": "normal",
+            "text_alignment": "center",
+            "countdown_container": "rounded",
+            "countdown_color": "#243935",
+            "countdown_background_color": "#f2e8dd",
+            "countdown_background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_ijxRBG",
+        "countdown_Q94nTA"
+      ],
+      "settings": {
+        "full_width": true,
+        "closable": true,
+        "content_alignment": "justify-center",
+        "vertical_padding": 1.3,
+        "horizontal_padding": 3.5,
+        "spacing_grid": 4.2,
+        "visibility": "both",
+        "image_overlay_opacity": 0,
+        "color_scheme": "scheme-1",
+        "line_separator": "border-top",
+        "top_padding": "pt-s",
+        "bottom_padding": "pb-s",
+        "hide_when_empty": false
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "collection_heading_PrBhyC": {
+          "type": "collection_heading",
+          "settings": {
+            "show_collection_title_count": true,
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "collection_description_NzG3Qj": {
+          "type": "collection_description",
+          "settings": {
+            "max_height": 100,
+            "text_size": "t1"
+          }
+        }
+      },
+      "block_order": [
+        "collection_heading_PrBhyC",
+        "collection_description_NzG3Qj"
+      ],
+      "settings": {
+        "show_collection_image": true,
+        "show_product_image": false,
+        "image_overlay_opacity": 50,
+        "fix_image": false,
+        "image_ratio": "custom",
+        "desktop_section_height": 530,
+        "mobile_section_height": 380,
+        "full_width": true,
+        "full_width_animate": false,
+        "desktop_content_position": "md:justify-center md:items-center",
+        "mobile_content_position": "justify-start items-center",
+        "content_max_width": "s",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "show_text_box": "off",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-6",
+        "line_separator": "",
+        "top_padding": "pt-s",
+        "bottom_padding": "pb-s"
+      }
+    },
+    "banner-split": {
+      "type": "main-collection-split-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_title": true,
+        "heading_size": "h2",
+        "show_collection_title_count": true,
+        "show_collection_description": true,
+        "text_size": "t2",
+        "show_collection_image": true,
+        "show_product_image": false,
+        "collection_image_ratio": "landscape",
+        "stick_collection_info": true,
+        "image_position_desktop": "right",
+        "content_max_width": "s",
+        "desktop_heading_alignment": "left",
+        "mobile_heading_alignment": "left",
+        "color_scheme": "scheme-2",
+        "top_padding": "pt-0",
+        "bottom_padding": "pb-s",
+        "heading_tag": "h1"
+      }
+    },
+    "spacer_aUVxeq": {
+      "type": "spacer",
+      "settings": {
+        "full_width": false,
+        "show_line_separator": true,
+        "visibility": "",
+        "line_width": 100,
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "color_scheme": "scheme-2",
+        "line_color": ""
+      }
+    },
+    "collection_list_N9gRpb": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_8Bc4my": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_HnLXjH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_dmjUYH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_8Bc4my",
+        "featured_collection_HnLXjH",
+        "featured_collection_dmjUYH"
+      ],
+      "settings": {
+        "collections": [
+
+        ],
+        "collection_text_size": "t3",
+        "content_alignment": "md:justify-center",
+        "card_image_ratio": "square",
+        "use_product_image": false,
+        "desktop_layout": "grid",
+        "mobile_layout": "carousel",
+        "columns_desktop": "6",
+        "columns_desktop_scale": false,
+        "columns_mobile": "2",
+        "full_width": false,
+        "content_max_width": "m",
+        "desktop_heading_alignment": "center",
+        "mobile_heading_alignment": "left",
+        "title": "Sub-collections",
+        "italic_convert": "",
+        "heading_size": "h3",
+        "text": "<p>To set up sub-collections, remove the blocks from this section and instead create a Collection metafield of type 'List of collections'. Once you've done that, assign that metafield to the 'Collections' setting within this section.</p>",
+        "text_size": "t3",
+        "show_view_all_link": false,
+        "view_all_link": "",
+        "view_all_text": "View more",
+        "view_all_text_size": "t3",
+        "view_all_card_visibility": "off",
+        "view_all_card_text": "More collections",
+        "color_scheme": "scheme-2",
+        "view_all_color_scheme": "",
+        "line_separator": "border-top border-bottom",
+        "top_padding": "pt-s",
+        "bottom_padding": "pb-s05",
+        "hide_when_empty": true,
+        "heading_tag": "h2"
+      }
+    },
+    "spacer_wTwytw": {
+      "type": "spacer",
+      "settings": {
+        "full_width": true,
+        "show_line_separator": true,
+        "visibility": "",
+        "line_width": 100,
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "color_scheme": "",
+        "line_color": "#f1e9e2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "inline_promo_AtRrpT": {
+          "type": "inline_promo",
+          "settings": {
+            "position": 6,
+            "visibility": "",
+            "promo_image_overlay_opacity": 0,
+            "promo_text": "<h3>Superior Satchels</h3><p>While stocks last.</p>",
+            "promo_url": "",
+            "promo_text_size": "h6-size",
+            "promo_text_position": "justify-start items-end",
+            "promo_text_alignment": "left",
+            "promo_text_padding": 1.1,
+            "promo_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "inline_promo_AtRrpT"
+      ],
+      "settings": {
+        "full_width": false,
+        "products_per_page": 15,
+        "columns_desktop": "5",
+        "columns_mobile": "2",
+        "filter_type": "vertical",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_filter_count": true,
+        "show_more_number": 12,
+        "box_filters": "Size\nColor",
+        "box_filter_active": "fill",
+        "show_image_box_filter_border": true,
+        "show_image_box_filter_labels": true,
+        "image_box_filter_cols": 2,
+        "image_box_filter_active": "color",
+        "swatch_size": 1.5,
+        "show_swatch_filter_labels": false,
+        "color_scheme": "scheme-2",
+        "color_scheme_drawer": "scheme-2",
+        "color_scheme_filter": "scheme-1",
+        "color_scheme_filter_bar": "scheme-2",
+        "card_shadow": true,
+        "top_padding": "pt-s",
+        "bottom_padding": "pb-s"
+      }
+    },
+    "spacer_KDamdW": {
+      "type": "spacer",
+      "settings": {
+        "full_width": false,
+        "show_line_separator": true,
+        "visibility": "",
+        "line_width": 80,
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "color_scheme": "",
+        "line_color": ""
+      }
+    },
+    "gallery_gx8rmi": {
+      "type": "gallery",
+      "blocks": {
+        "gallery_item_Vzih9W": {
+          "type": "gallery_item",
+          "settings": {
+            "tall": false,
+            "wide": true,
+            "column_alignment": "center",
+            "text_vertical_alignment": "justify-center",
+            "content_max_width": "l",
+            "image_overlay_opacity": 18,
+            "icon": "",
+            "icon_container": "circle",
+            "icon_size": 3.2,
+            "icon_color": "",
+            "icon_background_color": "#333333",
+            "background_gradient": "linear-gradient(228deg, rgba(123, 123, 123, 1) 14%, rgba(107, 107, 107, 1) 83%)",
+            "title": "Explore Coats & Jackets",
+            "heading_size": "h4",
+            "heading_size_custom": 2.4,
+            "text": "",
+            "text_size": "t3",
+            "button_text_size": "t4",
+            "button_label": "Shop now",
+            "button_link": "/",
+            "button_style": "secondary",
+            "button_style_show_arrow": true,
+            "card_link": "",
+            "card_color_scheme": "scheme-3"
+          }
+        },
+        "gallery_item_8LgWPC": {
+          "type": "gallery_item",
+          "settings": {
+            "tall": false,
+            "wide": true,
+            "column_alignment": "center",
+            "text_vertical_alignment": "justify-center",
+            "content_max_width": "l",
+            "image_overlay_opacity": 34,
+            "icon": "",
+            "icon_container": "circle",
+            "icon_size": 3.2,
+            "icon_color": "",
+            "icon_background_color": "#333333",
+            "background_gradient": "linear-gradient(228deg, rgba(123, 123, 123, 1) 14%, rgba(107, 107, 107, 1) 83%)",
+            "title": "Explore Bags & Satchels",
+            "heading_size": "h4",
+            "heading_size_custom": 2.4,
+            "text": "",
+            "text_size": "t3",
+            "button_text_size": "t4",
+            "button_label": "Shop now",
+            "button_link": "/",
+            "button_style": "secondary",
+            "button_style_show_arrow": true,
+            "card_link": "",
+            "card_color_scheme": "scheme-3"
+          }
+        }
+      },
+      "block_order": [
+        "gallery_item_Vzih9W",
+        "gallery_item_8LgWPC"
+      ],
+      "settings": {
+        "columns_desktop": 4,
+        "spacing_grid": 56,
+        "spacing_grid_mobile": 16,
+        "corner_rounding": "inner",
+        "content_padding": 4,
+        "desktop_section_height": 370,
+        "mobile_section_height": 220,
+        "mobile_layout": "grid",
+        "full_width": false,
+        "content_max_width": "m",
+        "desktop_heading_alignment": "left",
+        "mobile_heading_alignment": "left",
+        "title": "",
+        "italic_convert": "",
+        "heading_size": "h2",
+        "text": "",
+        "text_size": "t3",
+        "view_all_link": "",
+        "view_all_text": "",
+        "view_all_text_size": "t3",
+        "section_color_scheme": "scheme-2",
+        "line_separator": "border-top",
+        "top_padding": "pt-s",
+        "bottom_padding": "pb-s",
+        "hide_when_empty": false
+      }
+    },
+    "spacer_imhhye": {
+      "type": "spacer",
+      "settings": {
+        "full_width": true,
+        "show_line_separator": true,
+        "visibility": "",
+        "line_width": 100,
+        "spacing_top": 0,
+        "spacing_bottom": 0,
+        "color_scheme": "",
+        "line_color": "#2d2d2d"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "ribbon_banner_zkP4Bb",
+    "banner",
+    "banner-split",
+    "spacer_aUVxeq",
+    "collection_list_N9gRpb",
+    "spacer_wTwytw",
+    "product-grid",
+    "spacer_KDamdW",
+    "gallery_gx8rmi",
+    "spacer_imhhye"
+  ]
+}

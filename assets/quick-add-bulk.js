@@ -24,11 +24,7 @@ if (!customElements.get('quick-add-bulk')) {
 
       connectedCallback() {
         this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, (event) => {
-          if (
-            event.source === 'quick-add' ||
-            (event.cartData.items && !event.cartData.items.some((item) => item.id === parseInt(this.dataset.index))) ||
-            (event.cartData.variant_id && !(event.cartData.variant_id === parseInt(this.dataset.index)))
-          ) {
+          if (event.source === 'quick-add') {
             return;
           }
           // If its another section that made the update
@@ -47,10 +43,6 @@ if (!customElements.get('quick-add-bulk')) {
 
       getInput() {
         return this.querySelector('quantity-input input');
-      }
-
-      selectProgressBar() {
-        return this.querySelector('.progress-bar-container');
       }
 
       listenForActiveInput() {
@@ -100,8 +92,8 @@ if (!customElements.get('quick-add-bulk')) {
         });
       }
 
-      updateMultipleQty(items) {
-        this.selectProgressBar().classList.remove('hidden');
+      updateMultipleQty(items, element) {
+        this.querySelector('.loading__spinner')?.classList.remove('hidden');
 
         const ids = Object.keys(items);
         const body = JSON.stringify({
@@ -129,8 +121,9 @@ if (!customElements.get('quick-add-bulk')) {
             // this.cleanErrorMessageOnType(e);
           })
           .finally(() => {
-            this.selectProgressBar().classList.add('hidden');
+            this.querySelector('.loading__spinner')?.classList.add('hidden');
             this.requestStarted = false;
+            publish('quick-buy-action-complete');
           });
       }
 

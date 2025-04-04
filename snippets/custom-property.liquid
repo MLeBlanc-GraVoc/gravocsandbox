@@ -1,0 +1,107 @@
+{%- if block.settings.label != blank -%}
+  <div class="product__custom-property">
+    {%- assign field_label = block.settings.label | escape -%}
+    <div class="{% unless block.type == 'custom_property_checkbox' %}field{% endunless %}{% if block.type == 'custom_property_dropdown' %} select relative{% endif %}" {{ block.shopify_attributes }}>
+      {% case block.type %}
+
+        {%- when'custom_property_text' -%}
+          {%- assign include_label = true -%}
+          <input type="text"
+             id="{{ block.id }}"
+             class="field__input js-prevent-enter-submit"
+             form="{{ product_form_id }}"
+             aria-label="{{ field_label | escape }}"
+             name="properties[{{ field_label }}]"
+             {%- if block.settings.required %}
+               aria-required="true"
+               required
+             {%- endif %}
+             placeholder="{{ field_label }}"
+          >
+
+        {%- when'custom_property_textarea' -%}
+          {%- assign include_label = true -%}
+          <textarea id="{{ block.id }}"
+             class="text-area field__input"
+             name="properties[{{ field_label }}]"
+             form="{{ product_form_id }}"
+             rows="10"
+             {%- if block.settings.required %}
+               aria-required="true"
+               required
+             {%- endif %}
+             placeholder="{{ field_label }}"
+          ></textarea>
+
+        {%- when'custom_property_date' -%}
+          {%- assign include_label = true -%}
+          <input type="date"
+             id="{{ block.id }}"
+             class="field__input"
+             form="{{ product_form_id }}"
+             aria-label="{{ field_label }}"
+             name="properties[{{ field_label }}]"
+             {%- if block.settings.required %}
+               aria-required="true"
+               required
+             {%- endif %}
+             placeholder="{{ field_label }}"
+          >
+
+        {%- when'custom_property_dropdown' -%}
+          {%- assign options = block.settings.options | newline_to_br | strip_newlines | split: '<br />' -%}
+          <select class="styled-select select__select"
+              name="properties[{{ field_label }}]"
+              id="{{ block.id }}"
+              form="{{ product_form_id }}"
+              {%- if block.settings.required %}
+                aria-required="true"
+                required
+              {%- endif %}
+              placeholder="{{ field_label }}{% if block.settings.required %} *{% endif %}"
+          >
+            <option value="" selected>
+              {{ field_label }}{% if block.settings.required %} *{% endif %}
+            </option>
+
+            {% for option in options %}
+              <option value="{{ option | escape }}">
+                {{ option }}
+              </option>
+            {% endfor %}
+          </select>
+          {% render 'icon-caret' %}
+
+          <label class="visually-hidden" for="{{ block.id }}">
+            {{- field_label -}}
+          </label>
+
+        {%- when'custom_property_checkbox' -%}
+          {% if block.settings.required == false %}
+            <input type="hidden" form="{{ product_form_id }}" name="properties[{{ field_label }}]" value="{{ block.settings.false_value | escape }}">
+          {% endif %}
+          <input type="checkbox" id="{{ block.id }}" class="field__checkbox" form="{{ product_form_id }}" name="properties[{{ field_label }}]" value="{{ block.settings.true_value | escape }}"
+            {% if block.settings.required %} required {% if block.settings.error_message != blank %}oninvalid='this.setCustomValidity("{{ block.settings.error_message }}")' onchange="this.setCustomValidity('')"{% endif %}{% endif %}>
+          <label for="{{ block.id }}" class="flex items-center">
+            {{- field_label -}}
+          </label>
+
+      {%- endcase -%}
+
+      {%- if include_label -%}
+        <label class="form__label field__label" for="{{ block.id }}">
+          {{- field_label -}}
+          {%- if block.settings.required -%}
+            <span aria-hidden="true">*</span>
+          {%- endif -%}
+        </label>
+      {%- endif -%}
+    </div>
+
+    {%- if block.settings.tip != blank -%}
+      <div class="flex items-center gap-05 t6 mt-05">
+        <p class="m-0 opacity-60 rte">{{ block.settings.tip }}</p>
+      </div>
+    {%- endif -%}
+  </div>
+{%- endif -%}

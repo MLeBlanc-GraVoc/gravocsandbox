@@ -6,8 +6,15 @@ if (!customElements.get('quick-order-list-remove-button')) {
         super();
         this.addEventListener('click', (event) => {
           event.preventDefault();
+          this.toggleLoading(this.dataset.index);
           this.startQueue(this.dataset.index, 0);
         });
+      }
+
+      toggleLoading(id) {
+        const quickOrder = this.closest('.js-contents');
+        const loadingSpinner = quickOrder.querySelector(`#Variant-${id} .quantity .loading__spinner`);
+        loadingSpinner?.classList.remove('hidden');
       }
     }
   );
@@ -71,8 +78,7 @@ if (!customElements.get('quick-order-list')) {
     class QuickOrderList extends BulkAdd {
       constructor() {
         super();
-        this.cart = document.querySelector('cart-drawer');
-        this.quickOrderListId = `${this.dataset.section}-${this.dataset.productId}`;
+        this.quickOrderListId = `quick-order-list-${this.dataset.productId}`;
         this.defineInputsAndQuickOrderTable();
 
         this.variantItemStatusElement = document.getElementById('shopping-cart-variant-item-status');
@@ -113,14 +119,7 @@ if (!customElements.get('quick-order-list')) {
 
       connectedCallback() {
         this.cartUpdateUnsubscriber = subscribe(PUB_SUB_EVENTS.cartUpdate, (event) => {
-          const variantIds = [];
-          this.querySelectorAll('.variant-item').forEach((item) => {
-            variantIds.push(parseInt(item.dataset.variantId));
-          });
-          if (
-            event.source === this.quickOrderListId ||
-            !event.cartData.items?.some((element) => variantIds.includes(element.variant_id))
-          ) {
+          if (event.source === this.quickOrderListId) {
             return;
           }
           // If its another section that made the update
@@ -129,7 +128,7 @@ if (!customElements.get('quick-order-list')) {
             this.addMultipleDebounce();
           });
         });
-        this.sectionId = this.dataset.section;
+        this.sectionId = this.dataset.id;
       }
 
       disconnectedCallback() {
@@ -176,15 +175,24 @@ if (!customElements.get('quick-order-list')) {
         }
       }
 
-      refresh() {
+      refresh(customUrl) {
+        let url = customUrl;
+        if (!url) {
+          const baseUrl = this.getSectionsUrl();
+          const separator = baseUrl.includes('?') ? '&' : '?';
+          url = `${baseUrl}${separator}section_id=${this.sectionId}`;
+        }
+
         return new Promise((resolve, reject) => {
-          fetch(`${this.getSectionsUrl()}?section_id=${this.sectionId}`)
+          fetch(url)
             .then((response) => response.text())
             .then((responseText) => {
               const html = new DOMParser().parseFromString(responseText, 'text/html');
               const sourceQty = html.querySelector(`#${this.quickOrderListId}`);
               if (sourceQty) {
                 this.innerHTML = sourceQty.innerHTML;
+              } else {
+                console.warn('The quick order list section has not been enabled on the product page.');
               }
               resolve();
             })
@@ -199,7 +207,7 @@ if (!customElements.get('quick-order-list')) {
         return [
           {
             id: this.quickOrderListId,
-            section: document.getElementById(this.quickOrderListId).dataset.section,
+            section: document.getElementById(this.quickOrderListId).dataset.id,
             selector: `#${this.quickOrderListId} .js-contents`,
           },
           {
@@ -213,8 +221,8 @@ if (!customElements.get('quick-order-list')) {
             selector: '.shopify-section',
           },
           {
-            id: `quick-order-list-total-${this.dataset.productId}-${this.dataset.section}`,
-            section: document.getElementById(this.quickOrderListId).dataset.section,
+            id: `quick-order-list-total-${this.dataset.productId}`,
+            section: document.getElementById(this.quickOrderListId).dataset.id,
             selector: `#${this.quickOrderListId} .quick-order-list__total`,
           },
           {
@@ -235,6 +243,8 @@ if (!customElements.get('quick-order-list')) {
       }
 
       renderSections(parsedState, ids) {
+        let errorEncountered = false;
+        let updatedQuickOrderList = false;
         this.ids.push(ids);
         const intersection = this.queue.filter((element) => ids.includes(element.id));
         if (intersection.length !== 0) return;
@@ -257,25 +267,62 @@ if (!customElements.get('quick-order-list')) {
             sectionElement && sectionElement.querySelector(section.selector)
               ? sectionElement.querySelector(section.selector)
               : sectionElement;
-          if (elementToReplace) {
-            if (section.selector === `#${this.quickOrderListId} .js-contents` && this.ids.length > 0) {
-              this.ids.flat().forEach((i) => {
-                elementToReplace.querySelector(`#Variant-${i}`).innerHTML = this.getSectionInnerHTML(
+
+          let elementsToReplace;
+          if (section.id.includes('quick-order-list')) {
+            elementsToReplace = document.querySelectorAll(section.selector);
+          }
+
+          try {
+            if (elementToReplace) {
+              if (section.selector === `#${this.quickOrderListId} .js-contents` && this.ids.length > 0) {
+                this.ids.flat().forEach((i) => {
+                  const newHtml = this.getSectionInnerHTML(
+                    parsedState.sections[section.section],
+                    `#Variant-${i}`
+                  );
+
+                  elementToReplace.querySelector(`#Variant-${i}`).innerHTML = newHtml;
+
+                  // Iterate all elements on the page to account for more than once instance of the same quick order list being present
+                  if (elementsToReplace.length >= 2) {
+                    for (let j = 1; j < elementsToReplace.length; j++) {
+                      const element = elementsToReplace[j];
+                      const variantElement = element.querySelector(`#Variant-${i}`);
+                      if (variantElement) {
+                        variantElement.innerHTML = newHtml;
+                      }
+                    }
+                  }
+                });
+              } else {
+                const newHtml = this.getSectionInnerHTML(
                   parsedState.sections[section.section],
-                  `#Variant-${i}`
+                  section.selector
                 );
-              });
-            } else {
-              elementToReplace.innerHTML = this.getSectionInnerHTML(
-                parsedState.sections[section.section],
-                section.selector
-              );
+
+                elementToReplace.innerHTML = newHtml;
+              }
             }
+          } catch (err) {
+            // console.log(err);
+            errorEncountered = true;
           }
         });
-        this.defineInputsAndQuickOrderTable();
-        this.addMultipleDebounce();
-        this.ids = [];
+
+        if (errorEncountered) {
+          this.isRefreshing = true;
+          this.refresh(this.dataset.productUrl).then(() => {
+            this.defineInputsAndQuickOrderTable();
+            this.addMultipleDebounce();
+            this.ids = [];
+            this.isRefreshing = false;
+          });
+        } else {
+          this.defineInputsAndQuickOrderTable();
+          this.addMultipleDebounce();
+          this.ids = [];
+        }
       }
 
       getTableHead() {
@@ -368,14 +415,26 @@ if (!customElements.get('quick-order-list')) {
         }
       }
 
-      updateMultipleQty(items) {
+      updateMultipleQty(items, element) {
+
         this.querySelector('.variant-remove-total .loading__spinner')?.classList.remove('hidden');
+
+        if (element) {
+          const qtyElement = element.closest('quantity-input');
+          if (qtyElement) {
+            const loadingSpinner = qtyElement.querySelector('.loading__spinner');
+            if (loadingSpinner) {
+              loadingSpinner.classList.remove('hidden');
+            }
+          }
+        }
+        
         const ids = Object.keys(items);
 
         const body = JSON.stringify({
           updates: items,
           sections: this.getSectionsToRender().map((section) => section.section),
-          sections_url: this.dataset.url,
+          sections_url: this.getSectionsUrl(),
         });
 
         this.updateMessage();
@@ -388,14 +447,32 @@ if (!customElements.get('quick-order-list')) {
           .then((state) => {
             const parsedState = JSON.parse(state);
             this.renderSections(parsedState, ids);
-            publish(PUB_SUB_EVENTS.cartUpdate, { source: this.quickOrderListId, cartData: parsedState });
           })
           .catch(() => {
             this.setErrorMessage(window.cartStrings.error);
           })
           .finally(() => {
-            this.querySelector('.variant-remove-total .loading__spinner')?.classList.add('hidden');
-            this.requestStarted = false;
+            console.log('hi', this.isRefreshing);
+            const removeLoading = () => {
+              this.querySelector('.variant-remove-total .loading__spinner')?.classList.add('hidden');
+              this.requestStarted = false;
+
+              if (element) {
+                const qtyElement = element.closest('quantity-input');
+                if (qtyElement) {
+                  const loadingSpinner = qtyElement.querySelector('.loading__spinner');
+                  if (loadingSpinner) {
+                    loadingSpinner.classList.add('hidden');
+                  }
+                }
+              }
+            }
+
+            if (this.isRefreshing) {
+              setTimeout(removeLoading, 800);
+            } else {
+              removeLoading();
+            }
           });
       }
 
@@ -432,8 +509,8 @@ if (!customElements.get('quick-order-list')) {
             ? window.quickOrderListStrings.itemRemoved
             : window.quickOrderListStrings.itemsRemoved
           : quantity === 1
-          ? window.quickOrderListStrings.itemAdded
-          : window.quickOrderListStrings.itemsAdded;
+            ? window.quickOrderListStrings.itemAdded
+            : window.quickOrderListStrings.itemsAdded;
 
         messages.forEach((msg) => (msg.innerHTML = textTemplate.replace('[quantity]', absQuantity)));
 

@@ -14,13 +14,14 @@
   position: absolute;
   right: 0;
   top: 100%;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0,.15);
 }
 
-.shopify-section-header-sticky .mega-menu__content {
+.mega-menu__content {
   max-height: calc(100vh - var(--header-bottom-position-desktop, 20rem) - 4rem);
 }
 
-.header-wrapper--border-bottom .mega-menu__content {
+.border-bottom .mega-menu__content {
   border-top: 0;
 }
 
@@ -34,11 +35,62 @@
   transform: translateY(0);
 }
 
+.mega-menu__grid {
+  display: grid;
+  gap: 1.8rem 4rem;
+}
+
 .mega-menu__list {
   display: grid;
   gap: 1.8rem 4rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--mega-menu-columns), minmax(0, 1fr));
   list-style: none;
+}
+
+.mega-promos {
+  row-gap: 1.8rem;
+}
+
+.mega-promos--text_promo,
+.promo-card--grid {
+  row-gap: 2.8rem;
+  column-gap: 2rem;
+}
+
+.mega-promo-header {
+  color: rgba(var(--color-foreground),.85);
+}
+
+.mega-promo-header.text-heading {
+  color: rgb(var(--color-heading));
+}
+
+.mega_promos--separator-left {
+  padding-right: 4rem;
+  border-right: .1rem solid rgba(var(--color-foreground),.08);
+}
+
+.mega_promos--separator-right {
+  padding-left: 4rem;
+  border-left: .1rem solid rgba(var(--color-foreground),.08);
+}
+
+.mega_promos--separator-above {
+  padding-bottom: 4rem;
+  border-bottom: .1rem solid rgba(var(--color-foreground),.08);
+}
+
+.mega_promos--separator-below {
+  padding-top: 4rem;
+  border-top: .1rem solid rgba(var(--color-foreground),.08);
+}
+
+.mega-menu__grid--below {
+  margin-top: 4rem;
+}
+
+.mega-menu__grid--above {
+  margin-bottom: 4rem;
 }
 
 .mega-menu__link {
@@ -53,7 +105,12 @@
 }
 
 .mega-menu__link--level-2 {
-  font-weight: bold;
+  font-weight: 600;
+  color: rgb(var(--color-foreground));
+}
+
+.mega-menu__link:not(.mega-menu__link--level-2) {
+  font-size: 0.9em;
 }
 
 .header--top-center .mega-menu__list {
@@ -68,17 +125,11 @@
   padding-right: 2.4rem;
 }
 
-.mega-menu__link:hover,
-.mega-menu__link--active {
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
+.mega-menu__link:hover {
+  color: rgb(var(--color-link));
 }
 
-.mega-menu__link--active:hover {
-  text-decoration-thickness: 0.2rem;
-}
-
-.mega-menu .mega-menu__list--condensed {
+.mega-menu__list--condensed {
   display: block;
 }
 

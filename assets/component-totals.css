@@ -1,6 +1,5 @@
 .totals {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
 }
 
@@ -9,32 +8,15 @@
   margin: 0;
 }
 
-.totals > h2 {
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
-}
-
 .totals * {
   line-height: 1;
-}
-
-.totals > * + * {
-  margin-left: 2rem;
 }
 
 .totals__total {
   margin-top: .5rem;
 }
 
-.totals__total-value {
-  font-size: 1.8rem;
-}
-
-.cart__ctas + .totals {
+.cart__ctas + .totals,
+.cart__ctas-container + .totals {
   margin-top: 2rem;
-}
-
-@media all and (min-width: 750px) {
-  .totals {
-    justify-content: flex-end;
-  }
 }

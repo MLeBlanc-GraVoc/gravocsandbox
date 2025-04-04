@@ -1,0 +1,34 @@
+{% comment %}
+  Renders standard section heading
+
+  Accepts:
+  - section_name: {String} The name of the section
+  - section: {Object} The section object
+  - custom_class: {Stirng} Replaces the standard CSS clases for the title wrapper
+  - view_all: {String} The HTML to render for the 'View more' link (Optional)
+
+  Usage:
+  {% render 'standard-section-heading', section_name: 'collection', section: section %}
+{% endcomment %}
+
+{%- if section.settings.title != blank or section.settings.text != blank or view_all != blank -%}
+  <div class="{{ section_name }}__title{% if custom_class %} {{ custom_class }}{% else %} title-wrapper page-width{% endif %} title-wrapper--no-top-margin text-{{ section.settings.mobile_heading_alignment }} md:text-{{ section.settings.desktop_heading_alignment }}">
+    <div class="inline-block max-w-{{ section.settings.content_max_width }}">
+      {%- if section.settings.title != blank -%}
+        <{{ section.settings.heading_tag | default: 'h2' }} class="section-title title inline-richtext{% if section.settings.italic_convert != blank %} italics-{{ section.settings.italic_convert }}{% endif %}  {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}{% if section.settings.text == blank and view_all == blank %} mb-0{% endif %}">
+          {{ section.settings.title | replace: '++', '<br>' }}
+        </{{ section.settings.heading_tag | default: 'h2' }}>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="section-text {{ section_name }}__description rte {{ section.settings.text_style }} {{ section.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+          {{ section.settings.text -}}
+        </div>
+      {%- endif -%}
+
+      {%- if view_all -%}
+        {{ view_all }}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

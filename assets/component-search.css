@@ -1,67 +1,12 @@
 .search__input.field__input {
-  padding-right: 9.8rem;
+  padding-right: 6.8rem;
+  height: 5.2rem;
+  background: transparent;
 }
 
-.search__button {
-  right: var(--inputs-border-width);
-  top: var(--inputs-border-width);
-}
-
-.reset__button {
-  right: calc(var(--inputs-border-width) + 4.4rem);
-  top: var(--inputs-border-width);
-}
-
-.reset__button:not(:focus-visible)::after {
-  border-right: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  display: block;
-  height: calc(100% - 1.6rem);
-  content: '';
-  position: absolute;
-  right: 0;
-}
-
-.reset__button:not(:focus)::after {
-  border-right: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  display: block;
-  height: calc(100% - 1.8rem);
-  content: '';
-  position: absolute;
-  right: 0;
-}
-
-.search__button:focus-visible,
-.reset__button:focus-visible {
-  background-color: rgb(var(--color-background));
-  z-index: 4;
-}
-
-.search__button:focus,
-.reset__button:focus {
-  background-color: rgb(var(--color-background));
-  z-index: 4;
-}
-
-.search__button:not(:focus-visible):not(.focused),
-.reset__button:not(:focus-visible):not(.focused) {
-  box-shadow: inherit;
-  background-color: inherit;
-}
-
-.search__button:hover .icon,
-.reset__button:hover .icon {
-  transform: scale(1.07);
-}
-
-.search__button .icon {
-  height: 1.8rem;
-  width: 1.8rem;
-}
-
-.reset__button .icon.icon-close {
-  height: 1.8rem;
-  width: 1.8rem;
-  stroke-width: 0.1rem;
+.header__search .search-modal__close-button {
+  height: 5rem;
+  z-index: 1;
 }
 
 /* Remove extra spacing for search inputs in Safari */
@@ -71,4 +16,44 @@ input::-webkit-search-decoration {
 
 .template-search__results {
   position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .header__search .search .field__label {
+    top: calc(2rem + var(--inputs-border-width));
+  }
+
+  .header__search .search__input.field__input {
+    height: 6.5rem;
+    border: 1px solid rgba(var(--color-foreground), 0.03);
+    padding-left: 2.5rem;
+    font-size: 1.9rem;
+  }
+
+  .search-modal .select + .search__input.field__input {
+    padding-left: 1em;
+    border-left: 0;
+  }
+
+  .search-modal .select {
+    flex-basis: 150px;
+  }
+
+  .search-modal select,
+  .search-modal .select .current,
+  .search-modal .select .option {
+    font-size: 1.6rem;
+  }
+
+  .header__search .search .search__button .icon {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  .header__search .search__button {
+    top: 0.8rem;
+    bottom: 0.8rem;
+    right: 0.8rem;
+    width: 5.1rem;
+  }
 }

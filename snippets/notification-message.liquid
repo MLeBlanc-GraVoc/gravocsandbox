@@ -1,0 +1,47 @@
+{% comment %}
+  Renders a message with an optional icon.
+
+  Usage:
+  {% render 'notification-message',
+    icon: settings.cart_drawer_custom_message_icon,
+    message: settings.cart_drawer_custom_message_message,
+    is_closable: settings.cart_drawer_custom_message_closable,
+    visibility: settings.cart_drawer_custom_message_visibility,
+    color_scheme: settings.cart_drawer_custom_message_color_scheme,
+    class: class
+  %}
+
+  Accepts:
+  - id: {String} - Unique ID for this message, optional. If passed the closed state of this element will be persisted in localStorage.
+  - icon: {String} - Optional icon to show
+  - message: {String} - Message to show
+  - is_closable: {Boolean} - Whether to show an X or not
+  - visibility: {String} CSS class for the Device visibility (e.g. 'hidden-xs')
+  - color_scheme: {String} The id of the color scheme for the notification
+  - class: {String} Additional CSS clases to apply to the .notification-message element
+{% endcomment %}
+
+{% if is_closable %}
+  <script src="{{ 'closable-element.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+{% if is_closable %}<closable-element {% if id %}id="{{ id }}" data-persist-close="true" {% endif %}class="block hidden-during-load">{% endif %}
+
+<div class="notification-message relative flex items-center {{ visibility }} gap-1 color-{{ color_scheme }} gradient t5 lh-15 pl-1 pr-1 mt-1{% if color_scheme.settings.background_gradient != blank %} border-0{% endif %} {{ class }}">
+  {%- if icon != 'none' -%}
+    {% render 'icon', class: 'self-start', size: 22, icon: icon %}
+  {%- endif -%}
+  <div class="rte">{{ message }}</div>
+
+  {% if is_closable %}
+    <button
+        type="button"
+        class="closable-element__close button-close button button--tertiary focus-inset absolute z-2 p-0 tap-target text-current no-js-hidden js-close-button"
+        aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close' %}
+    </button>
+  {% endif %}
+</div>
+
+{% if is_closable %}</closable-element>{% endif %}

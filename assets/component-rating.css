@@ -1,10 +1,7 @@
-.product--no-media .rating-wrapper {
-  text-align: center;
-}
-
 .rating {
   display: inline-block;
   margin: 0;
+  font-size: 0;
 }
 
 .product .rating-star {
@@ -13,19 +10,19 @@
 }
 
 .card-wrapper .rating-star {
-  --letter-spacing: 0.7;
-  --font-size: 1.4;
+  --letter-spacing: 0.1;
+  --font-size: 1.7;
 }
 
 .rating-star {
-  --color-rating-star: rgb(var(--color-foreground));
+  --color-rating-star: rgb(var(--product-card-star-color));
   --percent: calc(
     (
         var(--rating) / var(--rating-max) + var(--rating-decimal) * var(--font-size) /
-          (var(--rating-max) * (var(--letter-spacing) + var(--font-size)))
+          (var(--rating-max) * (var(--letter-spacing, 0.8) + var(--font-size)))
       ) * 100%
   );
-  letter-spacing: calc(var(--letter-spacing) * 1rem);
+  letter-spacing: -0.08em;
   font-size: calc(var(--font-size) * 1rem);
   line-height: 1;
   display: inline-block;
@@ -51,6 +48,10 @@
 .rating-count {
   display: inline-block;
   margin: 0;
+}
+
+.rating-count.t4 {
+  margin: 1px 0 0 0;
 }
 
 @media (forced-colors: active) {

@@ -1,3 +1,4 @@
+{%- comment -%}theme-check-disable SchemaJsonFormat{%- endcomment -%}
 {% comment %}
   Renders icon with text block
 
@@ -37,72 +38,71 @@
   endif
 -%}
 <ul
-  class="icon-with-text icon-with-text--{{ block.settings.layout }} list-unstyled{% if text_only_all_items %} icon-with-text--text-only{% endif %}"
+  class="icon-with-text icon-with-text--{{ block.settings.layout }}{% if block.settings.show_line_separator %} icon-with-text--bordered{% endif %} list-unstyled{% if text_only_all_items %} icon-with-text--text-only{% endif %}"
   {{ block.shopify_attributes }}
 >
   {%- unless heading_1_empty -%}
-    <li class="icon-with-text__item">
+    <li class="icon-with-text__item text-balance {{ block.settings.text_size }} items-center last-child:mb-0"
+        {% if block.settings.icon_1_color != blank and block.settings.icon_1_color.alpha != 0 %}style="--color-icon: {{ block.settings.icon_1_color.rgb }};"{% endif %}
+    >
       {%- if block.settings.image_1 == null -%}
-        {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
+        {%- render 'icon', class: 'icon-accordion', icon: block.settings.icon_1 -%}
       {%- else -%}
         <img
           src="{{ block.settings.image_1 | image_url }}"
-          {% if block.settings.image_1.alt != blank %}
-            alt="{{ block.settings.image_1.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
+          alt="{{ block.settings.image_1.alt | escape }}"
           height="auto"
           width="auto"
           loading="lazy"
+          fetchpriority="low"
         >
       {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_1 -}}
+      <span class="lh-15 inline-richtext{% if block.settings.layout == 'horizontal' %} text-center{% endif %}">
+        {{- block.settings.heading_1 | replace: '++', '<br>' -}}
       </span>
     </li>
   {%- endunless -%}
+
   {%- unless heading_2_empty -%}
-    <li class="icon-with-text__item">
+    <li class="icon-with-text__item text-balance {{ block.settings.text_size }} items-center last-child:mb-0"
+        {% if block.settings.icon_2_color != blank and block.settings.icon_2_color.alpha != 0 %}style="--color-icon: {{ block.settings.icon_2_color.rgb }};"{% endif %}
+    >
       {%- if block.settings.image_2 == null -%}
-        {% render 'icon-accordion', icon: block.settings.icon_2 -%}
+        {% render 'icon', class: 'icon-accordion', icon: block.settings.icon_2 -%}
       {%- else -%}
         <img
           src="{{ block.settings.image_2 | image_url }}"
-          {% if block.settings.image_2.alt != blank %}
-            alt="{{ block.settings.image_2.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
+          alt="{{ block.settings.image_2.alt | escape }}"
           height="auto"
           width="auto"
           loading="lazy"
+          fetchpriority="low"
         >
       {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_2 -}}
+      <span class="lh-15 inline-richtext{% if block.settings.layout == 'horizontal' %} text-center{% endif %}">
+        {{- block.settings.heading_2 | replace: '++', '<br>' -}}
       </span>
     </li>
   {%- endunless -%}
+
   {%- unless heading_3_empty -%}
-    <li class="icon-with-text__item">
+    <li class="icon-with-text__item text-balance {{ block.settings.text_size }} items-center last-child:mb-0"
+        {% if block.settings.icon_3_color != blank and block.settings.icon_3_color.alpha != 0 %}style="--color-icon: {{ block.settings.icon_3_color.rgb }};"{% endif %}
+    >
       {%- if block.settings.image_3 == null -%}
-        {% render 'icon-accordion', icon: block.settings.icon_3 -%}
+        {% render 'icon', class: 'icon-accordion', icon: block.settings.icon_3 -%}
       {%- else -%}
         <img
           src="{{ block.settings.image_3 | image_url }}"
-          {% if block.settings.image_3.alt != blank %}
-            alt="{{ block.settings.image_3.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
+          alt="{{ block.settings.image_3.alt | escape }}"
           height="auto"
           width="auto"
           loading="lazy"
+          fetchpriority="low"
         >
       {%- endif -%}
-      <span class="h4 inline-richtext">
-        {{- block.settings.heading_3 -}}
+      <span class="lh-15 inline-richtext{% if block.settings.layout == 'horizontal' %} text-center{% endif %}">
+        {{- block.settings.heading_3 | replace: '++', '<br>' -}}
       </span>
     </li>
   {%- endunless -%}

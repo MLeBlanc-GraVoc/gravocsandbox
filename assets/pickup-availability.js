@@ -13,8 +13,6 @@ if (!customElements.get('pickup-availability')) {
       }
 
       fetchAvailability(variantId) {
-        if (!variantId) return;
-
         let rootUrl = this.dataset.rootUrl;
         if (!rootUrl.endsWith('/')) {
           rootUrl = rootUrl + '/';
@@ -36,17 +34,8 @@ if (!customElements.get('pickup-availability')) {
           });
       }
 
-      onClickRefreshList() {
+      onClickRefreshList(evt) {
         this.fetchAvailability(this.dataset.variantId);
-      }
-
-      update(variant) {
-        if (variant?.available) {
-          this.fetchAvailability(variant.id);
-        } else {
-          this.removeAttribute('available');
-          this.innerHTML = '';
-        }
       }
 
       renderError() {
@@ -116,7 +105,7 @@ if (!customElements.get('pickup-availability-drawer')) {
       hide() {
         this.removeAttribute('open');
         document.body.removeEventListener('click', this.onBodyClick);
-        document.body.classList.remove('overflow-hidden');
+        document.body.classList.remove('overflow-hidden', 'drawer--open');
         removeTrapFocus(this.focusElement);
       }
 
@@ -124,7 +113,7 @@ if (!customElements.get('pickup-availability-drawer')) {
         this.focusElement = focusElement;
         this.setAttribute('open', '');
         document.body.addEventListener('click', this.onBodyClick);
-        document.body.classList.add('overflow-hidden');
+        document.body.classList.add('overflow-hidden', 'drawer--open');
         trapFocus(this);
       }
     }

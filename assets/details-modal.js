@@ -3,10 +3,12 @@ class DetailsModal extends HTMLElement {
     super();
     this.detailsContainer = this.querySelector('details');
     this.summaryToggle = this.querySelector('summary');
+    this.overlay = this.querySelector('.drawer__header-overlay');
 
     this.detailsContainer.addEventListener('keyup', (event) => event.code.toUpperCase() === 'ESCAPE' && this.close());
     this.summaryToggle.addEventListener('click', this.onSummaryClick.bind(this));
     this.querySelector('button[type="button"]').addEventListener('click', this.close.bind(this));
+    this.overlay.addEventListener('click', this.close.bind(this));
 
     this.summaryToggle.setAttribute('role', 'button');
   }
@@ -28,7 +30,7 @@ class DetailsModal extends HTMLElement {
     this.onBodyClickEvent = this.onBodyClickEvent || this.onBodyClick.bind(this);
     event.target.closest('details').setAttribute('open', true);
     document.body.addEventListener('click', this.onBodyClickEvent);
-    document.body.classList.add('overflow-hidden');
+    document.body.classList.add('overflow-hidden', 'drawer--open', 'drawer--open-header');
 
     trapFocus(
       this.detailsContainer.querySelector('[tabindex="-1"]'),
@@ -40,7 +42,7 @@ class DetailsModal extends HTMLElement {
     removeTrapFocus(focusToggle ? this.summaryToggle : null);
     this.detailsContainer.removeAttribute('open');
     document.body.removeEventListener('click', this.onBodyClickEvent);
-    document.body.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden', 'drawer--open', 'drawer--open-header');
   }
 }
 

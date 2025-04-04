@@ -11,7 +11,7 @@ function onIntersection(elements, observer) {
       if (elementTarget.classList.contains(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME)) {
         elementTarget.classList.remove(SCROLL_ANIMATION_OFFSCREEN_CLASSNAME);
         if (elementTarget.hasAttribute('data-cascade'))
-          elementTarget.setAttribute('style', `--animation-order: ${index};`);
+          elementTarget.style.setProperty('--animation-order', index);
       }
       observer.unobserve(elementTarget);
     } else {
@@ -33,43 +33,43 @@ function initializeScrollAnimationTrigger(rootEl = document, isDesignModeEvent =
   }
 
   const observer = new IntersectionObserver(onIntersection, {
-    rootMargin: '0px 0px -50px 0px',
+    rootMargin: '0px 0px -70px 0px',
   });
   animationTriggerElements.forEach((element) => observer.observe(element));
 }
 
 // Zoom in animation logic
-function initializeScrollZoomAnimationTrigger() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const animationTriggerElements = Array.from(document.getElementsByClassName(SCROLL_ZOOM_IN_TRIGGER_CLASSNAME));
-
-  if (animationTriggerElements.length === 0) return;
-
-  const scaleAmount = 0.2 / 100;
-
-  animationTriggerElements.forEach((element) => {
-    let elementIsVisible = false;
-    const observer = new IntersectionObserver((elements) => {
-      elements.forEach((entry) => {
-        elementIsVisible = entry.isIntersecting;
-      });
-    });
-    observer.observe(element);
-
-    element.style.setProperty('--zoom-in-ratio', 1 + scaleAmount * percentageSeen(element));
-
-    window.addEventListener(
-      'scroll',
-      throttle(() => {
-        if (!elementIsVisible) return;
-
-        element.style.setProperty('--zoom-in-ratio', 1 + scaleAmount * percentageSeen(element));
-      }),
-      { passive: true }
-    );
-  });
-}
+// function initializeScrollZoomAnimationTrigger() {
+//   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+//
+//   const animationTriggerElements = Array.from(document.getElementsByClassName(SCROLL_ZOOM_IN_TRIGGER_CLASSNAME));
+//
+//   if (animationTriggerElements.length === 0) return;
+//
+//   const scaleAmount = 0.2 / 100;
+//
+//   animationTriggerElements.forEach((element) => {
+//     let elementIsVisible = false;
+//     const observer = new IntersectionObserver((elements) => {
+//       elements.forEach((entry) => {
+//         elementIsVisible = entry.isIntersecting;
+//       });
+//     });
+//     observer.observe(element);
+//
+//     element.style.setProperty('--zoom-in-ratio', 1 + scaleAmount * percentageSeen(element));
+//
+//     window.addEventListener(
+//       'scroll',
+//       throttle(() => {
+//         if (!elementIsVisible) return;
+//
+//         element.style.setProperty('--zoom-in-ratio', 1 + scaleAmount * percentageSeen(element));
+//       }),
+//       { passive: true }
+//     );
+//   });
+// }
 
 function percentageSeen(element) {
   const viewportHeight = window.innerHeight;
@@ -93,7 +93,7 @@ function percentageSeen(element) {
 
 window.addEventListener('DOMContentLoaded', () => {
   initializeScrollAnimationTrigger();
-  initializeScrollZoomAnimationTrigger();
+  // initializeScrollZoomAnimationTrigger();
 });
 
 if (Shopify.designMode) {

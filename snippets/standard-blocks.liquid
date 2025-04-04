@@ -1,0 +1,651 @@
+{%- comment -%}
+  Renders standard section blocks: heading, caption, text, button, custom_liquid, and image.
+
+  Accepts:
+  - block: {Object} passes in the block information.
+  - class: {String} CSS class to add (Optional)
+  - type: {String} The type of the block to render (Optional, if not passed it's infered from block.type).
+  - section_name: {String} the section, used in class naming.
+  - form: {Object} Form object. Only needed if the block.type is "email_form".
+  - animate: {Boolean} Optional, defaults to settings.animations_reveal_on_scroll.
+
+  Usage:
+  {% render 'standard-blocks', section_name: 'rich-text', block: block, type: "" %}
+{%- endcomment -%}
+
+{%- capture block_content -%}
+
+{%- liquid
+  unless type
+    assign type = block.type
+  endunless
+
+  if animate == nil
+    if section.index < 3 or request.design_mode
+      assign animate = false
+    else
+      assign animate = settings.animations_reveal_on_scroll
+    endif
+  endif
+%}
+
+{%- case type -%}
+  {%- when 'heading' -%}
+    {%- if block.settings.heading != blank -%}
+      <{{ block.settings.heading_tag }}
+        class="{{ section_name }}__heading inline-richtext section-content__heading color-heading{% if block.settings.heading_italic_convert != blank %} italics-{{ block.settings.heading_italic_convert }}{% endif %}{% if block.settings.heading_size == "custom" %} text-size-custom{% else %} {{ block.settings.heading_size }}{% endif %}{% unless heading_ignores_alignment %} self-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} text-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:self-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }} md:text-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}{% endunless %}{% if animate %} scroll-trigger animate--fade-in{% endif %}{% if class %} {{ class }}{% endif %}"
+        {% if block.settings.heading_size == "custom" %}style="--custom-font-size:{{ block.settings.heading_size_custom }}em;{% if block.settings.heading_line_height_custom != blank %}line-height: {{ block.settings.heading_line_height_custom }}em;{% endif %}"{% endif %}
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >
+        {{ block.settings.heading | replace: '++', '<br>' }}
+      </{{ block.settings.heading_tag }}>
+    {%- endif -%}
+
+  {%- when 'caption' -%}
+    {%- if block.settings.caption != blank -%}
+      <p
+        class="{{ section_name }}__text section-content__caption {{ section_name }}__text--caption {{ block.settings.caption_text_style }} {{ block.settings.caption_text_size }}{% if animate %} scroll-trigger animate--fade-in{% endif %} {{ block.settings.caption_text_style }} self-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} text-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:self-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }} md:text-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}{% if class %} {{ class }}{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >
+        {{ block.settings.caption | escape }}
+      </p>
+    {%- endif -%}
+
+  {%- when 'text' -%}
+    {%- if block.settings.text != blank -%}
+      <div
+        class="{{ section_name }}__text section-content__text rte max-w-{{ block.settings.content_max_width }} {{ block.settings.text_size | default: section.settings.text_size }}{% if animate %} scroll-trigger animate--fade-in{% endif %}{% if class %} {{ class }}{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >
+        {{ block.settings.text }}
+      </div>
+    {%- endif -%}
+
+  {%- when 'buttons' -%}
+    {%- if block.settings.button_label_1 != blank or block.settings.button_label_2 != blank -%}
+      {%- liquid
+        assign button_link_1 = block.settings.button_link_1 | default: default_url
+        assign button_link_2 = block.settings.button_link_2 | default: default_url
+      -%}
+      <div
+        class="{{ section_name }}__buttons section-content__buttons justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% if block.settings.button_style_1 == 'link' or block.settings.button_style_2 == 'link' %} section-content__buttons-with-link{% endif %}{% endif %}{% if animate %} scroll-trigger animate--fade-in{% endif %}{% if class %} {{ class }}{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >
+        {%- if block.settings.button_label_1 != blank -%}
+          <a
+            {% if button_link_1 == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ button_link_1 }}"
+            {% endif %}
+            class="{{ block.settings.button_text_size }}{% if settings.button_text_font_weight == 'bold' and block.settings.button_style_1 != 'link' %} font-bold{% endif %} {% if block.settings.button_style_1 == 'link' %}link un-underlined-link{% else %}button button--{{ block.settings.button_style_1 }}{% endif %}{% if block.settings.button_style_1_show_arrow %} button-with-icon button-with-icon--right{% endif %}"
+          >
+            {{- block.settings.button_label_1 | escape -}}
+            {% if block.settings.button_style_1_show_arrow %}
+              {% render 'icon-arrow' %}
+            {% endif %}
+          </a>
+        {%- endif -%}
+        {%- if block.settings.button_label_2 != blank -%}
+          <a
+            {% if button_link_2 == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ button_link_2 }}"
+            {% endif %}
+            class="{{ block.settings.button_text_size }}{% if settings.button_text_font_weight == 'bold' and block.settings.button_style_2 != 'link' %} font-bold{% endif %} {% if block.settings.button_style_2 == 'link' %}link un-underlined-link{% else %}button button--{{ block.settings.button_style_2 }}{% endif %}{% if block.settings.button_style_2_show_arrow %} button-with-icon button-with-icon--right{% endif %}"
+          >
+            {{- block.settings.button_label_2 | escape -}}
+            {% if block.settings.button_style_2_show_arrow %}
+              {% render 'icon-arrow' %}
+            {% endif %}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+  {%- when 'custom_liquid' -%}
+    {% if block.settings.custom_liquid != blank %}
+      <div{% if class %} class="{{ class }}{% if animate %} scroll-trigger animate--fade-in{% endif %}"{% endif %}
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >{{ block.settings.custom_liquid }}</div>
+    {% endif %}
+
+  {%- when 'image' -%}
+    {% if block.settings.image_1 != blank or block.settings.image_2 != blank or block.settings.image_3 != blank or block.settings.image_4 != blank %}
+
+      {%- liquid
+        assign media_aspect_ratio = block.settings.image_ratio
+        if media_aspect_ratio == 'portrait'
+          assign ratio = 0.8
+        elsif media_aspect_ratio == 'portrait_tall'
+          assign ratio = 0.66
+        elsif media_aspect_ratio == 'landscape_wide'
+          assign ratio = 1.77
+        elsif media_aspect_ratio == 'landscape_wider'
+          assign ratio = 2.33
+        elsif media_aspect_ratio == 'landscape_widest'
+          assign ratio = 3.55
+        elsif media_aspect_ratio == 'landscape'
+          assign ratio = 1.33
+        elsif media_aspect_ratio == 'square' or media_aspect_ratio == 'circle'
+          assign ratio = 1
+        endif
+
+        assign desktop_image_width = block.settings.desktop_image_width | default: image_width
+        assign mobile_image_width = block.settings.mobile_image_width | default: image_width
+
+        assign desktop_image_width_double = desktop_image_width | times: 2
+        assign mobile_image_width_double = mobile_image_width | times: 2
+
+        assign request_width = desktop_image_width_double
+        if mobile_image_width_double > desktop_image_width_double
+          assign request_width = mobile_image_width_double
+        endif
+
+        assign widths = mobile_image_width_double | append: ',' | append: desktop_image_width_double
+        assign sizes = '(min-width: 750px) ' | append: desktop_image_width_double | append: 'px, ' | append: mobile_image_width_double | append: 'px'
+
+        assign img_class = ''
+        if media_aspect_ratio != 'adapt'
+          assign img_class = 'img-cover'
+        else
+          assign img_class = 'max-w-100 h-auto'
+        endif
+
+        if media_aspect_ratio == 'circle'
+          assign img_class = img_class | append: ' border-radius-circle'
+        endif
+
+        assign style = nil
+        if media_aspect_ratio != 'circle' and block.settings.image_corner_radius > 0
+          assign style = 'border-radius:' | append: block.settings.image_corner_radius | append: '%'
+        endif
+      -%}
+
+      <div class="section-content__images flex flex-wrap w-full justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment | default: section.settings.compare_text_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment | default: section.settings.compare_text_alignment }}{% if animate %} scroll-trigger animate--fade-in{% endif %}{% if class %} {{ class }}{% endif %}"
+        style="{% if animate %}--animation-order: {{ forloop.index | default: 1 }};{% endif %}--image-mobile-width: {{ mobile_image_width }}px;--image-desktop-width: {{ desktop_image_width }}px;{% if ratio and ratio > 0 %}--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if animate %}
+            data-cascade
+          {% endif %}
+      >
+        {%- if block.settings.image_1 != blank -%}
+          <div class="section-content__images-image">
+            <div class="overflow-hidden w-full relative{% if media_aspect_ratio != 'adapt' %} ratio{% endif %}">
+              {{ block.settings.image_1
+                  | image_url: width: request_width
+                  | image_tag: widths: widths, sizes: sizes, loading: 'lazy', class: img_class, style: style
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.image_2 != blank -%}
+          <div class="section-content__images-image">
+            <div class="overflow-hidden w-full relative{% if media_aspect_ratio != 'adapt' %} ratio{% endif %}">
+              {{ block.settings.image_2
+                | image_url: width: request_width
+                | image_tag: widths: widths, sizes: sizes, loading: 'lazy', class: img_class, style: style
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.image_3 != blank -%}
+          <div class="section-content__images-image">
+            <div class="overflow-hidden w-full relative{% if media_aspect_ratio != 'adapt' %} ratio{% endif %}">
+              {{ block.settings.image_3
+                | image_url: width: request_width
+                | image_tag: widths: widths, sizes: sizes, loading: 'lazy', class: img_class, style: style
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if block.settings.image_4 != blank -%}
+          <div class="section-content__images-image">
+            <div class="overflow-hidden w-full relative{% if media_aspect_ratio != 'adapt' %} ratio{% endif %}">
+              {{ block.settings.image_4
+                | image_url: width: request_width
+                | image_tag: widths: widths, sizes: sizes, loading: 'lazy', class: img_class, style: style
+              }}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    {% endif %}
+
+  {%- when 'email_form' -%}
+    <div class="section-content__email-form customer-form{% if animate %} scroll-trigger animate--fade-in{% endif %}{% if class %} {{ class }}{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+    >
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="form__field-wrapper inline-flex">
+        <div class="field">
+          <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              placeholder="{{ 'newsletter.label' | t }}"
+              required
+          >
+
+          <div class="form-icon flex items-center justify-end self-center">
+            {% render 'icon-email' %}
+          </div>
+
+          <label class="field__label" for="NewsletterForm--{{ section.id }}">
+            {{ 'newsletter.label' | t }}
+          </label>
+
+          <button
+              type="submit"
+              class="newsletter-form__button field__button{% if settings.button_text_font_weight == 'bold' %} font-bold{% endif %}"
+              name="commit"
+              id="Subscribe"
+              aria-label="{{ 'newsletter.button_label' | t }}"
+          >
+            {% render 'icon-arrow' %}
+          </button>
+        </div>
+        {%- if form.errors -%}
+          <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+            {%- render 'icon-error' -%}
+            {{- form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email -}}
+          </small>
+        {%- endif -%}
+      </div>
+      {%- if form.posted_successfully? or preview_success -%}
+        <div class="w-full justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}">
+          <h3
+              class="newsletter-form__message newsletter-form__message--success items-center form__message text-body"
+              id="Newsletter-success--{{ section.id }}"
+              tabindex="-1"
+              autofocus
+          >
+            {% render 'icon-success' -%}
+            {{- 'newsletter.success' | t }}
+          </h3>
+        </div>
+      {%- endif -%}
+    </div>
+
+  {%- when 'spacer' -%}
+    <hr class="{{ section_name }}__spacer{% if animate %} scroll-trigger animate--fade-in{% endif %}{% unless block.settings.show_line_separator %} visibility-hidden{% endunless %}{% if block.settings.spacer_visibility == "mobile" %} visible-xs{% elsif block.settings.spacer_visibility == "desktop" %} hidden-xs{% endif %}{% if class %} {{ class }}{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+        {% endif %}
+        style="{% if animate %}--animation-order: {{ forloop.index | default: 1 }};{% endif %}{% if block.settings.line_color != blank and block.settings.line_color.alpha != 0 %}background-color: {{ block.settings.line_color }};{% endif %}margin-top: {{ block.settings.spacing_top }}rem; margin-bottom:{{ block.settings.spacing_bottom }}rem;"/>
+
+  {%- when 'icon' -%}
+    {%- if block.settings.icon != blank -%}
+      <div class="last-child-inner:mb-0{% if animate %} scroll-trigger animate--fade-in{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+      >
+        <div class="{{ section_name }}__icon icon-container icon-container--{{ block.settings.icon_container }}{% if block.settings.icon_container != 'none' %} icon--has-container{% endif %}{% if class %} {{ class }}{% endif %}"
+             style="--icon-size: {{ block.settings.icon_size | default: section.settings.icon_size }}rem;--icon-background-color: {{ block.settings.icon_background_color.rgb }};{% if block.settings.icon_color != blank and block.settings.icon_color.alpha != 0 %} --color-icon: {{ block.settings.icon_color.rgb }};{% endif %}{% if block.settings.background_gradient != empty -%}--icon-gradient-background: {{ block.settings.background_gradient }};{% endif %}"
+        >
+          {%- liquid
+            assign class = section_name | plus: '__icon'
+            render 'icon', class: class, icon: block.settings.icon
+          -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+  {%- when 'stat' -%}
+    {%- if block.settings.stat_number != blank -%}
+      {%- assign caption_style = block.settings.stat_caption_style | default: section.settings.stat_caption_style -%}
+      <div class="{{ section_name }}__stat{% if animate %} scroll-trigger animate--fade-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if animate %}
+            data-cascade
+            style="--animation-order: {{ forloop.index | default: 1 }};"
+          {% endif %}
+      >
+        {%- if section.index < 3 or request.design_mode -%}
+          {{ 'component-stats.css' | asset_url | stylesheet_tag }}
+        {%- else -%}
+          <link rel="stylesheet" href="{{ 'component-stats.css' | asset_url }}" media="print" onload="this.media='all'">
+        {%- endif -%}
+
+        {% if block.settings.stat_caption != blank or section.settings.stat_caption_style != blank %}
+          <p class="{{ caption_style }} mt-0 mb-015 {% if caption_style == 'caption-with-letter-spacing' %}t6{% else %}t5{% endif %}">
+            {{ block.settings.stat_caption | default: section.settings.stat_caption }}
+          </p>
+        {% endif %}
+
+        <div class="stat lh-1
+          {{ block.settings.stat_style | default: section.settings.stat_style }}
+          {% if is_stat_section %}
+            mt-1 mb-1 last-child:mb-0 justify-{{ section.settings.column_alignment }}
+          {% else %}
+            justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }}
+            md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}
+          {% endif %}
+          {% if block.settings.stat_size == "custom" or section.settings.stat_size == "custom" %}
+            text-size-custom
+          {% else %}
+            {{ block.settings.stat_size | default: section.settings.stat_size }}
+          {% endif %}"
+
+         style="
+          {% if block.settings.stat_color != blank and block.settings.stat_color.alpha != 0 %}--color-stat: {{ block.settings.stat_color.rgb }};{% endif %}
+          {% if block.settings.stat_size == "custom" or section.settings.stat_size == "custom" %}--custom-font-size:{{ block.settings.stat_size_custom | default: section.settings.stat_size_custom }}em;{% endif %}
+
+          {% if block.settings.stat_text_gradient == blank %}
+             --color-heading-gradient-background: none;
+             --color-heading-gradient-background-clip: border-box;
+             --color-heading-gradient-fill: currentColor;
+          {% else %}
+             --color-heading-gradient-background: -webkit-{{ block.settings.stat_text_gradient }};
+             --color-heading-gradient-background-clip: text;
+             --color-heading-gradient-fill: transparent;
+
+             }
+          {% endif %}"
+        >
+          <stat-counter class="flex js-number-counter" data-stat-animate="{{ block.settings.stat_animate | default: section.settings.stat_animate }}">
+            {{- block.settings.stat_number -}}
+          </stat-counter>
+        </div>
+
+        {% if block.settings.stat_subheading != blank %}
+          <div class="mt-0 mb-0 rte t5">
+            {{ block.settings.stat_subheading }}
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+
+  {%- when 'discount' -%}
+    {%- liquid
+      if block.settings.discount_gated and customer == null
+        assign is_gated = true
+        assign last_few_characters = block.settings.discount_code | slice: -3, 3
+      endif
+
+      if is_gated
+        assign discount_code = 'general.discount_code.discount_gated' | t
+        assign light_peel = block.settings.color_peel_background | color_mix: block.settings.color_peel_foreground, 80
+        assign lighter_peel = block.settings.color_peel_background | color_mix: block.settings.color_peel_foreground, 60
+      else
+        assign discount_code = block.settings.discount_code
+      endif
+
+      assign discount_uppercase = discount_code | upcase
+      assign discount_downcase = discount_code | downcase
+      if discount_code == discount_uppercase
+        assign discount_is_uppercase = true
+      elsif discount_code == discount_downcase
+        assign discount_is_downcase = true
+      endif
+    -%}
+
+    {%- if discount_code != blank -%}
+      <script src="{{ 'component-discount-code.js' | asset_url }}" defer="defer"></script>
+
+      {%- if section.location == 'header' or section.index < 3 or request.design_mode -%}
+        {{ 'component-share-button.css' | asset_url | stylesheet_tag }}
+        {{ 'component-discount-code.css' | asset_url | stylesheet_tag }}
+      {%- else -%}
+        <link rel="stylesheet" href="{{ 'component-share-button.css' | asset_url }}" media="print" onload="this.media='all'">
+        <link rel="stylesheet" href="{{ 'component-discount-code.css' | asset_url }}" media="print" onload="this.media='all'">
+      {%- endif -%}
+
+      <div class="flex {{ section_name }}__discount-code{% if animate %} scroll-trigger animate--fade-in{% endif %} justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}"
+          {{ block.shopify_attributes }}
+          {% if animate %}
+            data-cascade
+            style="--animation-order: {{ forloop.index | default: 1 }};"
+          {% endif %}
+      >
+        <discount-code id="Share-{{ section.id }}" class="relative share-button share-button--discount whitespace-nowrap overflow-hidden{% if is_gated %} discount-gated{% endif %}"
+          {% if is_gated %}style="--color-peel-foreground: {{ block.settings.color_peel_foreground.rgb }};--color-peel-background: {{ block.settings.color_peel_background.rgb }};--color-peel-background-light: {{ light_peel.rgb }};--color-peel-background-lighter: {{ lighter_peel.rgb }};"{% endif %}>
+          {% if is_gated %}
+            <a href="{{ routes.account_login_url }}" class="discount-gated__message full-unstyled-link z-1 flex items-center justify-center {{ block.settings.text_size }}">
+              {%- render 'icon-discount' -%}
+              <span class="z-2">{{ discount_code }}</span>
+            </a>
+            <a href="{{ routes.account_login_url }}" class="discount-gated__reveal absolute z-1" tabindex="-1" aria-hidden="true">
+              <span class="visually-hidden">{{ 'customer.log_in' | t }}</span>
+            </a>
+          {% endif %}
+
+          <div class="share-button__fallback share-button__discount motion-reduce">
+            <div class="field">
+              {% if is_gated %}
+                <span class="discount-snippet flex items-center {{ block.settings.text_size }}">{{ last_few_characters }}</span>
+              {% else %}
+                <span id="DiscountCode-{{ section.id }}" class="share-button__message share-button__message--discount absolute inset hidden motion-reduce" role="status">
+                  {%- render 'icon-checkmark' -%}
+                  {{ 'general.discount_code.success_message' | t }}
+                </span>
+                <input
+                    type="text"
+                    class="field__input focus-inset motion-reduce {{ block.settings.text_size }}"
+                    id="DiscountCodeCode-{{ section.id }}"
+                    value="{{ discount_code }}"
+                    placeholder="{{ 'general.discount_code.discount_code' | t }}"
+                    onclick="this.select();"
+                    style="--character-count: {{ discount_code.size }};--character-scale: {% if discount_is_uppercase %}1.35{% elsif discount_is_downcase %}1{% else %}1.2{% endif %}ch;"
+                    readonly
+                >
+                <label class="field__label visually-hidden" for="DiscountCodeCode-{{ section.id }}">{{ 'general.discount_code.discount_code' | t }}</label>
+              {% endif %}
+            </div>
+            <button class="share-button__close focus-inset hidden no-js-hidden {{ block.settings.text_size }}">
+              {% render 'icon-close' %}
+              <span class="visually-hidden">{{ 'general.discount_code.close' | t }}</span>
+            </button>
+            <button class="share-button__copy focus-inset no-js-hidden {{ block.settings.text_size }}">
+              {% render 'icon-clipboard' %}
+              <span class="visually-hidden">{{ 'general.discount_code.copy_to_clipboard' | t }}</span>
+            </button>
+          </div>
+        </discount-code>
+      </div>
+    {%- endif -%}
+
+  {%- when 'countdown' -%}
+    <div class="{% if animate %} scroll-trigger animate--fade-in{% endif %}"
+        {{ block.shopify_attributes }}
+        {% if animate %}
+          data-cascade
+          style="--animation-order: {{ forloop.index | default: 1 }};"
+        {% endif %}
+    >
+      {%- capture countdown_class -%}
+        justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}
+      {%- endcapture -%}
+
+      <div class="{{ section_name }}__countdown{% if class %} {{ class }}{% endif %}">
+        {%- render 'countdown',
+            class: countdown_class,
+            end_date: block.settings.end_date,
+            end_time: block.settings.end_time,
+            end_action: block.settings.end_action,
+            end_message: block.settings.end_message,
+            countdown_size: block.settings.countdown_size,
+            abbreviate_units: block.settings.abbreviate_units,
+            separator: block.settings.separator,
+            text_alignment: block.settings.text_alignment,
+            font_weight: block.settings.countdown_font_weight,
+            container: block.settings.countdown_container,
+            color: block.settings.countdown_color,
+            background_color: block.settings.countdown_background_color,
+            background_gradient: block.settings.countdown_background_gradient
+        -%}
+      </div>
+    </div>
+
+  {%- when 'quick_filter' -%}
+    {%- if block.settings.filter_menu != blank -%}
+      {%# Level 1 %}
+      {%- capture level_1_options -%}
+        {%- for level_1_link in block.settings.filter_menu.links -%}
+          <option data-url="{{ level_1_link.url }}" id="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}" value="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}">
+            {{ level_1_link.title | escape }}
+          </option>
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      {%# Level 2 %}
+      {%- capture level_2_options -%}
+        {%- for level_1_link in block.settings.filter_menu.links -%}
+          {%- for level_2_link in level_1_link.links -%}
+            <option data-url="{{ level_2_link.url }}" id="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}_{{ level_2_link.handle }}" value="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}_{{ level_2_link.handle }}" data-parent-id="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}">
+              {{ level_2_link.title | escape }}
+            </option>
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      {%# Level 3 %}
+      {%- capture level_3_options -%}
+        {%- for level_1_link in block.settings.filter_menu.links -%}
+          {%- for level_2_link in level_1_link.links -%}
+            {%- for level_3_link in level_2_link.links -%}
+              <option data-url="{{ level_3_link.url }}" id="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}_{{ level_2_link.handle }}_{{ level_3_link.handle }}" value="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}_{{ level_2_link.handle }}_{{ level_3_link.handle }}" data-parent-id="{{ section.id }}_{{ block.id }}_{{ level_1_link.handle }}_{{ level_2_link.handle }}">
+                {{ level_3_link.title | escape }}
+              </option>
+            {%- endfor -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      <quick-filter class="hidden-during-load inline-block mt-0 md:w-full justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}"
+          data-search-min-items="{{ block.settings.min_items_for_search }}"
+          {% if block.settings.auto_open_next_dropdown %} data-auto-open-next-dropdown="true"{% endif %}
+          {% if block.settings.preselect %} data-preselect="{{ request.path }}"{% endif %}
+          {{ block.shopify_attributes }}>
+        <div class="quick-filter__inner {{ block.settings.text_size }} inline-flex w-full gap-1 justify-{{ section.settings.mobile_content_alignment | default: block.settings.mobile_content_alignment }} md:justify-{{ section.settings.desktop_content_alignment | default: block.settings.desktop_content_alignment }}">
+          {%- if level_1_options != blank -%}
+            <div class="quick-filter__select-container {% if animate %} scroll-trigger animate--fade-in{% endif %}"
+              {% if animate %}
+                data-cascade
+                style="--animation-order: {{ forloop.index | default: 1 }};"
+              {% endif %}
+            >
+              <div class="select text-left">
+                <select class="js-filter-select-1 select__select" placeholder="{{ block.settings.select1_label }}">
+                  <option>{{ block.settings.select1_label }}</option>
+                  {{ level_1_options }}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if level_2_options != blank -%}
+            <div class="quick-filter__select-container {% if animate %} scroll-trigger animate--fade-in{% endif %}"
+              {% if animate %}
+                data-cascade
+                style="--animation-order: {{ forloop.index | default: 1 }};"
+              {% endif %}
+            >
+              <div class="select text-left">
+                <select class="js-filter-select-2 select__select" disabled placeholder="{{ block.settings.select2_label }}">
+                  <option>{{ block.settings.select2_label }}</option>
+                  {{ level_2_options }}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if level_3_options != blank -%}
+            <div class="quick-filter__select-container {% if animate %} scroll-trigger animate--fade-in{% endif %}"
+              {% if animate %}
+                data-cascade
+                style="--animation-order: {{ forloop.index | default: 1 }};"
+              {% endif %}
+            >
+              <div class="select text-left">
+                <select class="js-filter-select-3 select__select" disabled placeholder="{{ block.settings.select3_label }}">
+                  <option>{{ block.settings.select3_label }}</option>
+                  {{ level_3_options }}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+            </div>
+          {%- endif -%}
+
+          <div
+              class="{% if animate %} scroll-trigger animate--fade-in{% endif %}"
+              {% if animate %}
+                data-cascade
+                style="--animation-order: {{ forloop.index | default: 1 }};"
+              {% endif %}
+          >
+            <button
+                type="submit" disabled="disabled"
+                class="js-filter-submit button button--primary whitespace-nowrap h-full {{ block.settings.text_size }}
+                  {% if block.settings.button_icon != blank %} button-with-icon{% if block.settings.button_label != blank %} button-with-icon--{{ block.settings.icon_alignment }}{% if block.settings.hide_label %} button-with-icon--label-hidden-stacked{% endif %}{% else %} quick-filter--icon-only{% endif %}{% endif %}"
+            >
+              {% if block.settings.button_label != blank %}<span>{{- block.settings.button_label | escape -}}</span>{% endif %}
+              {%- if block.settings.button_icon != blank -%}
+                {%- render 'icon', icon: block.settings.button_icon -%}
+              {%- endif -%}
+            </button>
+          </div>
+        </div>
+
+        <script src="{{ 'quick-filter.js' | asset_url }}" defer="defer"></script>
+
+        {%- if section.index < 3 or request.design_mode -%}
+          {{ 'component-quick-filter.css' | asset_url | stylesheet_tag }}
+        {%- else -%}
+          <link rel="stylesheet" href="{{ 'component-quick-filter.css' | asset_url }}" media="print" onload="this.media='all'">
+        {%- endif -%}
+      </quick-filter>
+    {%- endif -%}
+
+{%- endcase -%}
+{%- endcapture -%}
+
+{{- block_content | strip -}}

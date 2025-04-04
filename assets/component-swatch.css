@@ -4,6 +4,7 @@
   --swatch--border-radius: var(--swatch-input--border-radius, 50%);
 
   display: block;
+  padding: 0;
   width: var(--swatch--size);
   max-width: 100%;
   aspect-ratio: 1 / 1;
@@ -15,8 +16,8 @@
   border-radius: var(--swatch--border-radius);
 }
 
-.swatch--square {
-  --swatch--border-radius: var(--swatch-input--border-radius, 0.2rem);
+.swatch--inline {
+  display: inline-block;
 }
 
 .swatch--unavailable {
