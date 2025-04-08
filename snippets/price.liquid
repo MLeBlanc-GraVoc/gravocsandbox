@@ -62,20 +62,18 @@
           <span class="price-item price-item--regular">
             List Price: {{ money_price }}
           </span>
-          {%- unless product.price_varies == false and product.compare_at_price_varies %}
-            <span class="visually-hidden visually-hidden--inline">
-              {{- 'products.product.price.regular_price' | t -}}
-            </span>
-            <br>
-            <span>
-              Retail Price: 
-                {% if settings.currency_code_enabled %}
-                  {{ compare_at_price | money_with_currency }}
-                {% else %}
-                  {{ compare_at_price | money }}
-                {% endif %}
-            </span>
-          {%- endunless -%}
+          <span class="visually-hidden visually-hidden--inline">
+            {{- 'products.product.price.regular_price' | t -}}
+          </span>
+          <br>
+          <span>
+            Retail Price: 
+              {% if settings.currency_code_enabled %}
+                {{ compare_at_price | money_with_currency }}
+              {% else %}
+                {{ compare_at_price | money }}
+              {% endif %}
+          </span>
         {%- endif -%}
         
     </div>
