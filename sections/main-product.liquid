@@ -260,6 +260,8 @@
           <div class="product__info-container {% if info_color_scheme %}gradient color-{{ info_color_scheme }} product__info-padded product__info-padded-main border-radius-text-box{% if section.settings.card_shadow %} card--shadow{% endif %}{% if section.settings.info_fullwidth_mob %} info-fullwidth-mob{% endif %}{% endif %}">
             {%- assign is_in_panel_below_media = false -%}
             {%- for block in section.blocks -%}
+              <p><strong>Retail Price:</strong>
+              <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
               {%- liquid
                 assign is_hidden = false
                 if block.settings.stock_visibility == 'in_stock' and product.available != true
@@ -268,8 +270,7 @@
                   assign is_hidden = true
                 endif
               -%}
-              <p><strong>Retail Price:</strong>
-              <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
+              
               {%- if is_in_panel_below_media == false or block.type == 'panel' -%}
                 {%- if block.type == 'panel' -%}
                   {%- liquid
