@@ -268,7 +268,8 @@
                   assign is_hidden = true
                 endif
               -%}
-
+              <p><strong>Retail Price:</strong>
+              <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
               {%- if is_in_panel_below_media == false or block.type == 'panel' -%}
                 {%- if block.type == 'panel' -%}
                   {%- liquid
@@ -300,8 +301,6 @@
                           {%- endif -%}
                           {{ block.settings.panel_heading }}
                         </h2>
-                        <p><strong>Retail Price:</strong>
-                        <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
                       {%- endif -%}
                   {%- endif -%}
 
