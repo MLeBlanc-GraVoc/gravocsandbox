@@ -125,8 +125,7 @@
             </div>
           </div>
         {%- endif -%}
-        <p><strong>Retail Price:</strong>
-        <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
+
         {%- if section.settings.page_title_price and product.price > 0 -%}
           {%- liquid
             assign money_price = product.price | money
@@ -151,6 +150,8 @@
             endif
           -%}
           <p class="{{ price_size }} {% unless section.settings.page_title_review_stars and product.metafields.reviews.rating.value != blank %}mt-1{% else %}mt-05{% endunless %} mb-0">{{ money_price }}</p>
+          <p><strong>Retail Price:</strong>
+          <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
         {%- endif -%}
       </div>
     {%- endif -%}
