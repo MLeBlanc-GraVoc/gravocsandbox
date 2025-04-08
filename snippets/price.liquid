@@ -66,14 +66,7 @@
             {{- 'products.product.price.regular_price' | t -}}
           </span>
           <br>
-          <span>
-            Retail Price: 
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-          </span>
+
         {%- endif -%}
         
     </div>
