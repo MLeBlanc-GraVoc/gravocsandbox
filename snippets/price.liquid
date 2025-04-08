@@ -63,7 +63,7 @@
         <span class="price-item price-item--regular">
           {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
         </span>
-        {%- if show_compare_at_price and compare_at_price -%}
+        {%- if compare_at_price -%}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">
               {{- 'products.product.price.regular_price' | t -}}
