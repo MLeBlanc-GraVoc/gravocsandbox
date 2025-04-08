@@ -62,6 +62,10 @@
           {{- 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max -}}
         </span>
         {%- if compare_at_price -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span class="price-item price-item--regular">
+            List Price: {{ money_price }}
+          </span>
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">
               {{- 'products.product.price.regular_price' | t -}}
@@ -77,6 +81,7 @@
             </span>
           {%- endunless -%}
         {%- endif -%}
+        
     </div>
 
 
