@@ -125,7 +125,7 @@
             </div>
           </div>
         {%- endif -%}
-
+        
         {%- if section.settings.page_title_price and product.price > 0 -%}
           {%- liquid
             assign money_price = product.price | money
@@ -150,8 +150,6 @@
             endif
           -%}
           <p class="{{ price_size }} {% unless section.settings.page_title_review_stars and product.metafields.reviews.rating.value != blank %}mt-1{% else %}mt-05{% endunless %} mb-0">{{ money_price }}</p>
-          <p><strong>Retail Price:</strong>
-          <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
         {%- endif -%}
       </div>
     {%- endif -%}
@@ -258,8 +256,6 @@
           class="product__info-container block{% if enable_sticky_info %} product__column-sticky{% endif %}"
         >
           <div class="product__info-container {% if info_color_scheme %}gradient color-{{ info_color_scheme }} product__info-padded product__info-padded-main border-radius-text-box{% if section.settings.card_shadow %} card--shadow{% endif %}{% if section.settings.info_fullwidth_mob %} info-fullwidth-mob{% endif %}{% endif %}">
-            <p><strong>Retail Price:</strong>
-            <span class="compare-at-price">{{ product.compare_at_price | money }}</span></p>
             {%- assign is_in_panel_below_media = false -%}
             {%- for block in section.blocks -%}
               {%- liquid
@@ -270,7 +266,7 @@
                   assign is_hidden = true
                 endif
               -%}
-              
+
               {%- if is_in_panel_below_media == false or block.type == 'panel' -%}
                 {%- if block.type == 'panel' -%}
                   {%- liquid
