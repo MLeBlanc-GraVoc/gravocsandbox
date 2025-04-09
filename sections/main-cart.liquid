@@ -81,9 +81,6 @@
                       {% assign product_inventory = item.variant.inventory_quantity %}
                       {% assign quantity_ordered = item.quantity %}
                       <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                        <td class="cart-item__media {% unless item.image %}flex justify-center{% endunless %}">
-                   
-                        </td>
 
                         <td class="cart-item__details">
                           {%- if settings.cart_show_vendor -%}
