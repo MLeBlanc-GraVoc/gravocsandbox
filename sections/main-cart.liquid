@@ -435,12 +435,13 @@
                 role="status"
             >
               {{ 'accessibility.loading' | t }}
-            </p>          
+            </p>
+            <div class="cart-attribute" style="margin-top: 1em;">
+              <input type="checkbox" id="partial_ship" name="attributes[Allow partial shipping]" value="Yes">
+              <label for="partial_ship">Allow partial shipping if possible</label>
+            </div>            
           </form>
         </cart-items>
-        {% if cart.attributes["Allow partial shipping"] %}
-          <p><strong>Note:</strong> Partial shipping allowed</p>
-        {% endif %}
       </div>
 
       <div class="cart__footer isolate" id="cart-summary">
