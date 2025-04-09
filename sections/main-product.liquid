@@ -85,9 +85,7 @@
           </p>
         {%- endif -%}
 
-        <h1 class="b-main-title {{ section.settings.page_title_size }} text-balance m-0" data-product-title-id="{{ product.id }}">
-          {{ product.title | escape }}
-        </h1>
+
 
         {%- if section.settings.page_title_review_stars and product.metafields.reviews.rating.value != blank -%}
           {% liquid
