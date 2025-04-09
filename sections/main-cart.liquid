@@ -67,6 +67,9 @@
 
                         
                       </th>
+                      <th>
+                        Backordered
+                      </th>
                       <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
                         {{ 'sections.cart.headings.total' | t }}
                       </th>
@@ -385,11 +388,13 @@
                               {% render 'icon-error' %}
                             </div>
                           </quantity-popover>
+                        </td>
+                        <td>
                           {% if product_inventory < quantity_ordered %}
                             {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
                             {% if backordered_qty > 0 %}
                               <p class="backorder-note text-yellow-600">
-                                {{ backordered_qty }} Backordered
+                                {{ backordered_qty }}
                               </p>
                             {% endif %}
                           {% endif %}
