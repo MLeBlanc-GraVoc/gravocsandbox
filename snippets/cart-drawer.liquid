@@ -184,7 +184,7 @@
                               {{- 'products.product.preorder' | t -}}
                             </span>
                           {%- endif -%}
-
+                          <p>Test</p>
                           {% if product_inventory < quantity_ordered %}
                             {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
                             {% if backordered_qty > 0 %}
