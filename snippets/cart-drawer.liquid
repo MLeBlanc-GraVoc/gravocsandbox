@@ -155,7 +155,7 @@
                       {% assign product_inventory = item.variant.inventory_quantity %}
                       {% assign quantity_ordered = item.quantity %}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item border mt-1 pl-15 pr-15 border-radius-panel gradient color-{{ settings.cart_drawer_color_scheme }}">
-                        <td class="cart-item__details" headers="CartDrawer-ColumnProduct">
+                        <td class="cart-item__details" headers="CartDrawer-ColumnProduct" colspan="2">
                           {%- if settings.cart_show_vendor -%}
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                           {%- endif -%}
