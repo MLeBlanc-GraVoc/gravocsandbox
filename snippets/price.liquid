@@ -57,7 +57,7 @@
     {%- endcomment -%}
 
     <div class="price__regular">
-        {%- if compare_at_price -%}
+        
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span class="price-item price-item--regular">
             List Price: {{ money_price }}
@@ -66,6 +66,7 @@
             {{- 'products.product.price.regular_price' | t -}}
           </span>
           <br>
+          {%- if compare_at_price -%}
           <span>
             Retail Price: 
               {% if settings.currency_code_enabled %}
@@ -74,7 +75,7 @@
                 {{ compare_at_price | money }}
               {% endif %}
           </span>
-        {%- endif -%}
+          {%- endif -%}
         
     </div>
 
