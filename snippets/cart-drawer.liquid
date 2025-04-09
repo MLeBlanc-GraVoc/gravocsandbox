@@ -149,6 +149,8 @@
 
                   <tbody>
                     {%- for item in cart.items -%}
+                      {% assign product_inventory = item.variant.inventory_quantity %}
+                      {% assign quantity_ordered = item.quantity %}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item border mt-1 pl-15 pr-15 border-radius-panel gradient color-{{ settings.cart_drawer_color_scheme }}">
                         <td class="cart-item__media {% unless item.image %}flex justify-center{% endunless %}" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
@@ -184,15 +186,6 @@
                               {{- 'products.product.preorder' | t -}}
                             </span>
                           {%- endif -%}
-                          <p>Test</p>
-                          {% if product_inventory < quantity_ordered %}
-                            {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
-                            {% if backordered_qty > 0 %}
-                              <p class="backorder-note text-yellow-600">
-                                {{ backordered_qty }} item{% if backordered_qty > 1 %}s{% endif %} on backorder
-                              </p>
-                            {% endif %}
-                          {% endif %}
 
                           {% comment %}
                           {%- if item.product.template_suffix contains 'bulk-order' -%}
@@ -456,6 +449,14 @@
                                     </ul>
                                   </volume-pricing>
                                 {%- endif -%}
+                                {% if product_inventory < quantity_ordered %}
+                                  {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
+                                  {% if backordered_qty > 0 %}
+                                    <p class="backorder-note text-yellow-600">
+                                      {{ backordered_qty }} item{% if backordered_qty > 1 %}s{% endif %} on backorder
+                                    </p>
+                                  {% endif %}
+                                {% endif %}
                               </div>
                             {%- endif -%}
                             <div
