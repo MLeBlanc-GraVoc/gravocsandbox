@@ -255,6 +255,17 @@
                           </ul>
                         </td>
 
+                        <td>
+                          {% if product_inventory < quantity_ordered %}
+                            {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
+                            {% if backordered_qty > 0 %}
+                              <p class="backorder-note text-yellow-600">
+                                {{ backordered_qty }}
+                              </p>
+                            {% endif %}
+                          {% endif %}
+                        </td>
+
                         <td class="cart-item__totals right" headers="CartDrawer-ColumnTotal">
                           {%- render 'loading-spinner' -%}
                           <div class="cart-item__price-wrapper">
@@ -463,16 +474,6 @@
                               {% render 'icon-error' %}
                             </div>
                           </quantity-popover>
-                        </td>
-                        <td>
-                          {% if product_inventory < quantity_ordered %}
-                            {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
-                            {% if backordered_qty > 0 %}
-                              <p class="backorder-note text-yellow-600">
-                                {{ backordered_qty }}
-                              </p>
-                            {% endif %}
-                          {% endif %}
                         </td>
                       </tr>
                     {%- endfor -%}
