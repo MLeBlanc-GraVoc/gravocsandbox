@@ -144,6 +144,9 @@
                       <th id="CartDrawer-ColumnQuantity">
                         <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
                       </th>
+                      <th>
+                        Backordered
+                      </th>
                     </tr>
                   </thead>
 
@@ -451,14 +454,6 @@
                                 {%- endif -%}
                               </div>
                             {%- endif -%}
-                            {% if product_inventory < quantity_ordered %}
-                              {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
-                              {% if backordered_qty > 0 %}
-                                <p class="backorder-note text-yellow-600">
-                                  {{ backordered_qty }} Backordered
-                                </p>
-                              {% endif %}
-                            {% endif %}
                             <div
                               id="CartDrawer-LineItemError-{{ item.index | plus: 1 }}"
                               class="cart-item__error"
@@ -468,6 +463,16 @@
                               {% render 'icon-error' %}
                             </div>
                           </quantity-popover>
+                        </td>
+                        <td>
+                          {% if product_inventory < quantity_ordered %}
+                            {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
+                            {% if backordered_qty > 0 %}
+                              <p class="backorder-note text-yellow-600">
+                                {{ backordered_qty }}
+                              </p>
+                            {% endif %}
+                          {% endif %}
                         </td>
                       </tr>
                     {%- endfor -%}
