@@ -380,19 +380,19 @@
                                 {%- endif -%}
                               </div>
                             {%- endif -%}
-                            {% if product_inventory < quantity_ordered %}
-                              {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
-                              {% if backordered_qty > 0 %}
-                                <p class="backorder-note text-yellow-600">
-                                  {{ backordered_qty }} item{% if backordered_qty > 1 %}s{% endif %} on backorder
-                                </p>
-                              {% endif %}
-                            {% endif %}
                             <div class="cart-item__error" id="Line-item-error-{{ item.index | plus: 1 }}" role="alert">
                               <small class="cart-item__error-text"></small>
                               {% render 'icon-error' %}
                             </div>
                           </quantity-popover>
+                          {% if product_inventory < quantity_ordered %}
+                            {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
+                            {% if backordered_qty > 0 %}
+                              <p class="backorder-note text-yellow-600">
+                                {{ backordered_qty }} item{% if backordered_qty > 1 %}s{% endif %} on backorder
+                              </p>
+                            {% endif %}
+                          {% endif %}
                         </td>
 
                         <td class="cart-item__totals right small-hide">
