@@ -155,26 +155,6 @@
                       {% assign product_inventory = item.variant.inventory_quantity %}
                       {% assign quantity_ordered = item.quantity %}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item border mt-1 pl-15 pr-15 border-radius-panel gradient color-{{ settings.cart_drawer_color_scheme }}">
-                        <td class="cart-item__media {% unless item.image %}flex justify-center{% endunless %}" headers="CartDrawer-ColumnProductImage">
-                          {% if item.image %}
-                            {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                            <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
-                            <div class="cart-item__image-container gradient{% if settings.card_image_replace_background %} mix-blend-multiply{% endif %}">
-                              <img
-                                class="cart-item__image"
-                                src="{{ item.image | image_url: width: 200 }}"
-                                alt="{{ item.image.alt | escape }}"
-                                loading="lazy"
-                                fetchpriority="low"
-                                width="100"
-                                height="{{ 100 | divided_by: item.image.aspect_ratio | ceil }}"
-                              >
-                            </div>
-                          {% else %}
-                            {% render 'icon-no-photo' %}
-                          {% endif %}
-                        </td>
-
                         <td class="cart-item__details" headers="CartDrawer-ColumnProduct">
                           {%- if settings.cart_show_vendor -%}
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
@@ -260,7 +240,7 @@
                             {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
                             {% if backordered_qty > 0 %}
                               <p class="backorder-note text-yellow-600">
-                                {{ backordered_qty }}
+                                {{ backordered_qty }} on backorder
                               </p>
                             {% endif %}
                           {% endif %}
