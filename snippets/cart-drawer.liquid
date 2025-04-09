@@ -122,7 +122,7 @@
                 {%- endif -%}
 
                 <table class="cart-items">
-                  <thead class="hidden">
+                  <thead class="">
                     <tr>
                       <th id="CartDrawer-ColumnProductImage">
                         <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
@@ -233,9 +233,6 @@
                               </li>
                             {%- endfor -%}
                           </ul>
-                        </td>
-
-                        <td>
                           {% if product_inventory < quantity_ordered %}
                             {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
                             {% if backordered_qty > 0 %}
