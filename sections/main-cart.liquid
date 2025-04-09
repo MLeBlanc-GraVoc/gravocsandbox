@@ -102,6 +102,7 @@
                           {%- endif -%}
 
                           <a href="{{ item.url }}" class="cart-item__name font-medium text-current break">{{ item.product.title | escape }}</a>
+                          <h3>Test</h3>
                           {% if product_inventory < quantity_ordered %}
                             {% assign backordered_qty = quantity_ordered | minus: product_inventory %}
                             {% if backordered_qty > 0 %}
