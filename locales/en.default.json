@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -159,7 +168,7 @@
       "inventory_low_stock_only_count": "Only {{ quantity }} left",
       "inventory_low_stock_show_count": "Low stock! Only {{ quantity }} left",
       "inventory_out_of_stock": "Out of stock",
-      "inventory_out_of_stock_continue_selling": "Awaiting stock, shipping soon",
+      "inventory_out_of_stock_continue_selling": "Awaiting stock. Estimate 3 weeks.",
       "sku": "SKU:",
       "on_sale": "Sale",
       "on_sale_percent": "Up to {{ discount }}% off",
@@ -235,7 +244,6 @@
       "shipping_policy_html": " <a href=\"{{ link }}\" class=\"link underlined-link\">Shipping</a> calculated at checkout.",
       "new": "New",
       "change_color": "Preview the color:",
-      "bulk_order": "Bulk order",
       "highlight_remainder": "+{{ count }} more"
     },
     "modal": {
