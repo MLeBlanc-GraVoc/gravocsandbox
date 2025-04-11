@@ -95,53 +95,53 @@
         {% if gallery_layout == 'slider' %} slider--desktop slider__controls-{{ section.settings.slider_controls }}{% endif %}"
       role="list"
     >
-      {%- for media in product.media -%}
-        {%- liquid
-          if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1
-            assign is_active = true
-          else
-            assign is_active = false
-          endif
-          assign mod_index = forloop.index0 | modulo: 3
-        -%}
-        <li
-          id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"
-          class="product__media-item grid__item slider__slide
-            {% if use_media_color_scheme %} color-{{ section.settings.media_color_scheme }} gradient{% if section.settings.media_fit and media.media_type == 'image' %} color-background-transparent{% endif %}{% endif %}
-            {% if media.media_type != 'image' %} product__media-item--full{% endif %}
-            {% if is_active %} is-active{% endif %}
-            {% if gallery_layout == 'stacked' and mod_index == 0 %} product__media-item-wide{% elsif gallery_layout == 'stacked' and forloop.index == 2 and forloop.last %} product__media-item-wide{% endif %}
-            {% if section.settings.show_media_shadow and gallery_layout == 'stacked' %}card--shadow{% endif %}
-            "
-          data-media-id="{{ section.id }}-{{ media.id }}"
-        >
+          
+      {%- if product.media.size > 0 -%}
+        {%- for media in product.media -%}
           {%- liquid
-            assign media_position = media_position | default: 0 | plus: 1
-            assign lazy_load = false
-
-            if is_featured_product
-              if section.index > 2
-                assign lazy_load = true
-              endif
-            elsif media_position > 1
-              assign lazy_load = true
+            if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1
+              assign is_active = true
+            else
+              assign is_active = false
             endif
+            assign mod_index = forloop.index0 | modulo: 3
           -%}
-          {% render 'product-thumbnail',
-            media: media,
-            media_count: media_count,
-            position: media_position,
-            desktop_layout: gallery_layout,
-            loop: section.settings.enable_video_looping,
-            modal_id: section.id,
-            xr_button: true,
-            media_width: media_width,
-            media_fit: section.settings.media_fit,
-            media_aspect_ratio: section.settings.main_image_ratio,
-            lazy_load: lazy_load
-          %}
+          <li
+            id="Slide-{{ section.id }}-{{ media.id }}{{ id_append }}"
+            class="product__media-item grid__item slider__slide{% if is_active %} is-active{% endif %}"
+            data-media-id="{{ section.id }}-{{ media.id }}"
+          >
+            {% render 'product-thumbnail',
+              media: media,
+              media_count: media_count,
+              position: forloop.index,
+              desktop_layout: gallery_layout,
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              media_aspect_ratio: section.settings.main_image_ratio,
+              lazy_load: lazy_load
+            %}
+          </li>
+        {%- endfor -%}
+      {%- else -%}
+        <li
+          class="product__media-item grid__item slider__slide is-active fallback-ratio"
+        >
+          <div class="product-media-container media-type-image media-fit-contain global-media-settings gradient" style="--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0727/3676/8254/files/Clarke-Product-Photo-Not-Available-Light.jpg?v=1744404205"
+              class="object-contain"
+              loading="lazy"
+              width="600"
+              alt="Product image not available"
+            >
+          </div>
         </li>
-      {%- endfor -%}
+      {%- endif -%}
+
     </ul>
 
     {% # L/R slider arrows %}
