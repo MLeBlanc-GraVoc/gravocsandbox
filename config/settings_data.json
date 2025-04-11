@@ -1439,7 +1439,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".product-card .card__media img {transform: none !important;}"
+      ".product-card .card__media img {transform: none !important;}",
+      ".fallback-ratio {--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;}"
     ]
   }
 }
