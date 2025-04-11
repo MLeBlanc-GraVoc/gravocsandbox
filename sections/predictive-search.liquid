@@ -66,6 +66,12 @@
                     </div>
                   {%- endif -%}
                   <p class="predictive-search__item-heading t3">{{ product.title | escape }}</p>
+                  <!-- GRAVOC MODIFICATION -->
+                  <div class="predictive-search__item-subtext">
+                    <small>SKU: {{ product.variants.first.sku }}</small>
+                    <small>{{ product.description | strip_html | truncatewords: 12 }}</small>
+                  </div>
+                  <!-- END OF GRAVOC MODIFICATION -->
                   {%- if predictive_search_show_price -%}
                     {% render 'price', product: product, use_variant: true %}
                   {%- endif -%}
