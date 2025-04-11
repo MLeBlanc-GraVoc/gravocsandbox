@@ -176,9 +176,18 @@ class PredictiveSearch extends SearchForm {
       return;
     }
 
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&section_id=predictive-search`, {
+    // GRAVOC MODIFICATION
+    // Append additional searchable fields to the request
+    params.append('resources[options][fields]', 'title,product_type,variants.title,vendor,variants.sku,body');
+
+    fetch(`${routes.predictive_search_url}?${params.toString()}`, {
       signal: this.abortController.signal,
     })
+    // END OF GRAVOC MODIFICATION
+
+    // fetch(`${routes.predictive_search_url}?${urlParams}`, {
+    //   signal: this.abortController.signal,
+    // })
       .then((response) => {
         if (!response.ok) {
           var error = new Error(response.status);
