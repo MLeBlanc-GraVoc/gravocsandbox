@@ -182,9 +182,16 @@ customElements.whenDefined('search-form').then(() => {
         return;
       }
 
-      fetch(`${routes.predictive_search_url}?${urlParams}`, {
+      // Append additional searchable fields to the request
+      params.append('resources[options][fields]', 'title,product_type,variants.title,vendor,variants.sku,body');
+
+      fetch(`${routes.predictive_search_url}?${params.toString()}`, {
         signal: this.abortController.signal,
       })
+
+      // fetch(`${routes.predictive_search_url}?${urlParams}`, {
+      //   signal: this.abortController.signal,
+      // })
           .then((response) => {
             if (!response.ok) {
               var error = new Error(response.status);
