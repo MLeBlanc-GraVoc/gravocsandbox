@@ -138,10 +138,11 @@
       }}
     </div>
     {% endcomment %}
+    <!-- GRAVOC MODIFY -->
     <div
-      class="product__media media ratio media--transparent{% if section.settings.image_replace_background %} mix-blend-multiply{% endif %}{% unless media.preview_image %} fallback-ratio{% endunless %}"
+      class="product__media media ratio media--transparent{% if section.settings.image_replace_background %} mix-blend-multiply{% endif %}{% if media.preview_image == blank %} fallback-ratio{% endif %}"
     >
-      {% if media.preview_image %}
+      {% if media.preview_image != blank %}
         {{ media.preview_image | image_url: width: 1946 | image_tag:
           class: image_class,
           loading: lazy,
@@ -162,6 +163,7 @@
         >
       {% endif %}
     </div>
+    <!-- END OF GRAVOC MODIFY -->
     <button class="product__media-toggle{% unless media.media_type == 'image' %} product__media-toggle-play{% endunless %} product__media-zoom-{{ zoom_mode }}" type="button" aria-haspopup="dialog" data-media-section-id="{{ section.id }}-{{ media.id }}" data-media-id="{{ media.id }}" tabindex="-1">
       <span class="visually-hidden">
         {{ 'products.product.media.open_media' | t: index: position }}
