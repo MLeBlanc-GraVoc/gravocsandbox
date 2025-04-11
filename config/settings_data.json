@@ -1,1 +1,1445 @@
-{"current":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the second message in the announcement bar.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used on the deals collection<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","color_overlay":"#010101","type_header_font":"jost_n5","heading_scale":100,"type_body_font":"sans-serif","body_scale":100,"spacing_sections":"60","text_boxes_radius":16,"popup_corner_radius":6,"promo_corner_radius":6,"panel_corner_radius":6,"spacing_grid":16,"buttons_border_thickness":1,"buttons_radius":6,"card_style":"card","card_text_alignment":"left","card_image_ratio":"adapt","card_image_position":"center","card_image_padding":8,"card_show_vendor":true,"card_image_show_rating":true,"card_enable_quick_add":true,"quick_add_out_of_stock":"notify","card_color_scheme":"scheme-2","collection_card_text_alignment":"center","collection_card_corner_radius":0,"collection_card_image_ratio":"circle","blog_card_style":"card","blog_card_corner_radius":8,"blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","badge_position":"top left","badge_shape":"rounded","badge_text_weight":"normal","predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_suggested_searches":"Most searched for product\nPromoted products\nYour highest margin goods","currency_code_enabled":true,"cart_drawer_enabled":true,"cart_drawer_ctas":"both","cart_show_cart_note":true,"cart_show_vendor":false,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#f5f5f2","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"linear-gradient(139deg, rgba(197, 141, 123, 1) 18%, rgba(157, 79, 39, 1) 81%)","heading":"#121212","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#121212"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#c58d7b","caption":"#121212","accent_gradient":"radial-gradient(rgba(197, 141, 123, 1), rgba(157, 79, 39, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#c58d7b","button_background_gradient":"linear-gradient(46deg, rgba(157, 79, 39, 1) 13%, rgba(197, 141, 123, 1) 86%)","secondary_button_label":"#9b4124"}},"scheme-3":{"settings":{"background":"#121212","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#8c73ec","background_gradient":"linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#242833","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#2277c7","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#da1414","background_gradient":"linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#9b4124","caption":"#121212","accent_gradient":"radial-gradient(rgba(197, 141, 123, 1), rgba(155, 65, 36, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#9b4124","button_background_gradient":"linear-gradient(46deg, rgba(197, 141, 123, 1) 13%, rgba(155, 65, 36, 1) 84%)","secondary_button_label":"#9b4124"}},"scheme-9":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#676869","caption":"#121212","accent_gradient":"radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#1c70be","button_background_gradient":"linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)","secondary_button_label":"#1c70be"}}}},"presets":{"Tech":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the second message in the announcement bar.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used on the deals collection<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","type_header_font":"jost_n5","color_overlay":"#010101","heading_scale":100,"type_body_font":"sans-serif","body_scale":100,"spacing_sections":"60","text_boxes_radius":16,"popup_corner_radius":6,"promo_corner_radius":6,"panel_corner_radius":6,"spacing_grid":16,"buttons_border_thickness":1,"buttons_radius":6,"card_style":"card","card_text_alignment":"left","card_image_ratio":"adapt","card_image_position":"center","card_image_padding":8,"card_show_vendor":true,"card_image_show_rating":true,"card_enable_quick_add":true,"quick_add_out_of_stock":"notify","card_color_scheme":"scheme-2","collection_card_text_alignment":"center","collection_card_corner_radius":0,"collection_card_image_ratio":"circle","blog_card_style":"card","blog_card_corner_radius":8,"blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","badge_position":"top left","badge_shape":"rounded","badge_text_weight":"normal","predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_suggested_searches":"Most searched for product\nPromoted products\nYour highest margin goods","currency_code_enabled":true,"cart_drawer_enabled":true,"cart_drawer_ctas":"both","cart_show_cart_note":true,"cart_show_vendor":false,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"linear-gradient(139deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)","heading":"#121212","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#121212"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#1c70be","button_background_gradient":"linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)","secondary_button_label":"#1c70be"}},"scheme-3":{"settings":{"background":"#121212","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#8c73ec","background_gradient":"linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#242833","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#2277c7","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#da1414","background_gradient":"linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)","text":"#FFFFFF","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#1c70be","button_background_gradient":"linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)","secondary_button_label":"#1c70be"}},"scheme-9":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#1c70be","button_background_gradient":"linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)","secondary_button_label":"#1c70be"}}}},"Fashion":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the second message in the announcement bar.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used for the deals collection page.<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","type_header_font":"playfair_display_n4","color_overlay":"#020202","heading_scale":100,"heading_letter_spacing":-20,"heading_text_transform":"none","type_body_font":"roboto_n4","body_scale":100,"type_article_header_font":"playfair_display_n4","animations_reveal_on_scroll":true,"page_width":1440,"spacing_sections":"50","text_boxes_radius":4,"popup_corner_radius":2,"promo_corner_radius":2,"panel_corner_radius":2,"controls_corner_radius":4,"swatch_corner_radius":50,"spacing_grid":16,"drawer_inset":false,"buttons_border_thickness":1,"buttons_radius":2,"button_letter_spacing":-2,"button_text_transform":"uppercase","button_text_font_weight":"normal","animations_hover_buttons":"lift","pagination_style":"show_more","pagination_text_size":"t6","breadcrumb_home_icon":false,"breadcrumb_truncate":"7","breadcrumb_text_weight":"normal","breadcrumb_text_transform":"none","card_style":"card","card_text_alignment":"center","card_corner_radius":4,"card_image_ratio":"adapt","card_image_cover":false,"card_image_position":"center","card_image_secondary_image":true,"card_image_padding":6,"card_image_dont_scale_hover":false,"card_show_vendor":false,"card_image_show_rating":true,"card_include_collection_url":true,"swatch_placement":"top","swatch_alignment":"center","swatch_size":1.4,"swatch_limit":5,"swatch_hide_singles":true,"card_enable_quick_add":true,"quick_add_out_of_stock":"notify","quick_add_icon_over_image":"desktop","card_shadow":false,"card_title_size":"t1","card_title_weight":"medium","card_color_scheme":"scheme-2","card_price_color":"#c61313","collection_card_text_alignment":"center","collection_card_corner_radius":2,"collection_card_show_count":false,"collection_card_image_ratio":"portrait_tall","collection_card_image_cover":true,"collection_card_image_position":"top","blog_card_style":"card","blog_card_corner_radius":2,"blog_card_image_ratio":"square","blog_card_image_position":"center","blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","blog_card_shadow":false,"blog_card_image_background":"#FFFFFF","badge_position":"top left","badge_shape":"sharp","badge_text_size":"xs","badge_text_weight":"500","badge_sale_type":"value","badge_sale_border_color":"#b72635","badge_sale_background_gradient":"linear-gradient(229deg, rgba(183, 38, 53, 0.75) 4%, rgba(199, 41, 57, 1) 100%)","badge_new_border_color":"#2b4641","badge_new_bg_color":"#3c5c56","badge_new_background_gradient":"linear-gradient(299deg, rgba(53, 80, 75, 0.8) 13%, rgba(30, 64, 58, 1) 86%)","badge_preorder_text_color":"#ffffff","badge_preorder_border_color":"#6b6b7c","badge_preorder_background_gradient":"linear-gradient(299deg, rgba(53, 53, 80, 0.8) 13%, rgba(34, 30, 64, 1) 86%)","show_search_types":false,"predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_suggested_searches":"Shirts\nJackets\nChinos","currency_code_enabled":false,"cart_icon":"bag","cart_drawer_enabled":true,"cart_drawer_ctas":"checkout","cart_drawer_scroll_entire":"off","cart_show_cart_note":true,"cart_show_tax_message":false,"cart_show_vendor":true,"cart_drawer_background_color_scheme":"scheme-2","cart_drawer_color_scheme":"scheme-2","cart_related_layout":"carousel","cart_related_heading":"Pairs well with...","cart_related_color_scheme":"","cart_shipping_bar_background_color":"#35504b","cart_shipping_bar_background":"linear-gradient(86deg, rgba(162, 246, 231, 1), rgba(59, 112, 102, 1) 100%)","cart_drawer_promo_text_size":"h6-size","cart_drawer_promo_text_position":"justify-end items-start","cart_drawer_promo_text_alignment":"right","cart_drawer_custom_message_show":false,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#ffffff","background_gradient":"linear-gradient(180deg, rgba(252, 245, 238, 1), rgba(252, 245, 238, 1) 100%)","text":"#35504b","link":"#35504b","caption":"#35504b","accent_gradient":"linear-gradient(284deg, rgba(165, 223, 168, 1) 15%, rgba(53, 80, 75, 1) 92%)","heading":"#28462f","heading_background_gradient":"","button_label":"#ffffff","button":"#35504b","button_background_gradient":"linear-gradient(232deg, rgba(53, 80, 75, 1) 13%, rgba(30, 64, 58, 1) 86%)","secondary_button_label":"#35504b"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#28462f","link":"#28462f","caption":"#121212","accent_gradient":"linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)","heading":"#1f4127","heading_background_gradient":"","button_label":"#f3f3f3","button":"#3c5c56","button_background_gradient":"linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)","secondary_button_label":"#5c7671"}},"scheme-3":{"settings":{"background":"#253734","background_gradient":"linear-gradient(232deg, rgba(53, 80, 75, 1) 13%, rgba(30, 64, 58, 1) 86%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(164, 207, 199, 1), rgba(122, 174, 164, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#976e36","background_gradient":"linear-gradient(54deg, rgba(138, 97, 37, 1), rgba(218, 171, 83, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#242833","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#692f18","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#a61221","background_gradient":"linear-gradient(229deg, rgba(183, 38, 53, 1) 4%, rgba(199, 41, 57, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#121212","caption":"#121212","accent_gradient":"linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#253734","button_background_gradient":"linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)","secondary_button_label":"#5c7671"}},"scheme-9":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#121212","caption":"#121212","accent_gradient":"linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#253734","button_background_gradient":"linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)","secondary_button_label":"#5c7671"}}}},"Toys":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the announcement bar and various sections.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used in various sections.<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","type_header_font":"jost_n5","color_overlay":"#030303","heading_scale":100,"type_body_font":"sans-serif","body_scale":100,"animations_reveal_on_scroll":true,"page_width":1440,"spacing_sections":"60","text_boxes_radius":16,"popup_corner_radius":6,"promo_corner_radius":6,"panel_corner_radius":6,"spacing_grid":16,"buttons_border_thickness":2,"buttons_radius":26,"button_text_font_weight":"bold","animations_hover_buttons":"grow","card_style":"card","card_text_alignment":"left","card_image_ratio":"square","card_image_position":"center","card_image_padding":7,"card_image_dont_scale_hover":true,"card_image_replace_background":false,"card_image_background":"rgba(0,0,0,0)","card_show_vendor":false,"card_image_show_rating":true,"card_include_collection_url":true,"card_enable_quick_add":true,"quick_add_out_of_stock":"notify","card_title_size":"t2","card_price_size":"t4","card_title_weight":"bold","card_color_scheme":"scheme-2","collection_card_text_alignment":"center","collection_card_corner_radius":0,"collection_card_show_count":false,"collection_card_image_ratio":"circle","collection_card_image_cover":true,"collection_card_image_position":"top","blog_card_style":"card","blog_card_corner_radius":8,"blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","badge_position":"top left","badge_shape":"pill","badge_text_size":"s","badge_text_weight":"bold","badge_sale_background_gradient":"linear-gradient(144deg, rgba(244, 43, 65, 1), rgba(218, 50, 67, 1) 97%)","badge_sold_out_background_gradient":"linear-gradient(127deg, rgba(13, 13, 13, 1) 11%, rgba(49, 49, 49, 1) 75%)","predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_suggested_searches":"Jigsaws\nGames\nColouring Books","currency_code_enabled":true,"atc_action":"notification","cart_drawer_enabled":true,"cart_drawer_ctas":"checkout","cart_show_cart_note":true,"cart_show_tax_message":false,"cart_show_vendor":false,"cart_drawer_background_color_scheme":"","cart_drawer_color_scheme":"","cart_shipping_bar_background_color":"#105E94","cart_shipping_bar_background":"linear-gradient(251deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)","cart_drawer_promo_image_overlay_opacity":0,"cart_drawer_promo_image_ratio":"adapt","cart_drawer_promo_text":"","cart_drawer_custom_message_show":true,"cart_drawer_custom_message_icon":"snowflake","cart_drawer_custom_message_message":"<p><strong>Your custom message here.<\/strong><\/p>","cart_drawer_custom_message_color_scheme":"scheme-4","cart_show_shipping_calculator":true,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#fdf9f9","background_gradient":"","text":"#121212","link":"#0454a5","caption":"#121212","accent_gradient":"linear-gradient(139deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)","heading":"#121212","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#121212"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#0454a5","caption":"#121212","accent_gradient":"linear-gradient(101deg, rgba(252, 47, 47, 0.72) 4%, rgba(207, 36, 36, 1) 88%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#0454a5","button_background_gradient":"linear-gradient(46deg, rgba(15, 85, 157, 1) 12%, rgba(39, 126, 214, 1) 86%)","secondary_button_label":"#0454a5"}},"scheme-3":{"settings":{"background":"#121212","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#E11732","background_gradient":"linear-gradient(180deg, rgba(225, 23, 50, 1) 3%, rgba(181, 0, 24, 1) 98%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#0454a5","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#0454a5","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#c70f0f","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#E11732","background_gradient":"linear-gradient(180deg, rgba(225, 23, 50, 1) 3%, rgba(181, 0, 24, 1) 98%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#0454a5","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-9":{"settings":{"background":"#c70f0f","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}}}},"Pets":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the second message in the announcement bar.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used on the deals collection.<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","type_header_font":"source_sans_pro_n6","color_overlay":"#040404","heading_scale":102,"heading_letter_spacing":-26,"type_body_font":"sans-serif","body_scale":100,"animations_reveal_on_scroll":true,"spacing_sections":"50","text_boxes_radius":28,"popup_corner_radius":6,"promo_corner_radius":6,"panel_corner_radius":20,"controls_corner_radius":20,"spacing_grid":16,"buttons_border_thickness":2,"buttons_radius":28,"button_letter_spacing":-0.5,"button_text_transform":"none","button_text_font_weight":"bold","animations_hover_buttons":"grow","pagination_text_size":"t4","breadcrumb_truncate":"10","breadcrumb_text_transform":"none","card_style":"card","card_text_alignment":"left","card_corner_radius":12,"card_image_ratio":"square","card_image_position":"center","card_image_padding":8,"card_image_scale":97,"card_image_replace_background":false,"card_image_background":"rgba(0,0,0,0)","card_show_vendor":true,"card_image_show_rating":true,"swatch_placement":"below_title","card_enable_quick_add":true,"quick_add_out_of_stock":"notify","quick_add_icon_over_image":"mobile","card_title_size":"t2","card_price_size":"t3","card_title_transform":"none","card_title_weight":"medium","card_color_scheme":"scheme-2","collection_card_text_alignment":"center","collection_card_corner_radius":0,"collection_card_show_count":false,"collection_card_image_ratio":"circle","blog_card_style":"card","blog_card_corner_radius":8,"blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","badge_position":"top left","badge_shape":"rounded","badge_text_weight":"normal","show_search_types":true,"predictive_search_enabled":true,"predictive_search_show_vendor":false,"predictive_search_suggested_searches":"Dog harnesses\nCat toys\nPet food","currency_code_enabled":true,"cart_icon":"cart","atc_action":"drawer","cart_drawer_enabled":true,"cart_drawer_ctas":"both","cart_show_cart_note":true,"cart_show_vendor":true,"cart_drawer_background_color_scheme":"scheme-1","cart_drawer_color_scheme":"scheme-2","cart_related_heading":"How about it?","cart_shipping_bar_background_color":"#157631","cart_shipping_bar_background":"linear-gradient(90deg, rgba(254, 217, 81, 1) 11%, rgba(255, 70, 199, 1) 81%)","cart_drawer_promo_image_overlay_opacity":0,"cart_drawer_promo_text_size":"h5-size","cart_drawer_promo_text_position":"justify-start items-center","cart_drawer_promo_text_alignment":"left","cart_drawer_promo_text_padding":2,"cart_show_shipping_calculator":false,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#fcf6ef","background_gradient":"","text":"#2c463d","link":"#2c463d","caption":"#2c463d","accent_gradient":"","heading":"#192e28","heading_background_gradient":"","button_label":"#ffffff","button":"#2c463d","button_background_gradient":"","secondary_button_label":"#2c463d"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#157631","caption":"#121212","accent_gradient":"linear-gradient(85deg, rgba(1, 57, 28, 1) 7%, rgba(48, 159, 121, 1) 94%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#01391c","button_background_gradient":"linear-gradient(238deg, rgba(22, 123, 71, 1) 6%, rgba(37, 108, 84, 1) 94%)","secondary_button_label":"#1a612e"}},"scheme-3":{"settings":{"background":"#2a2c2c","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#2c463d","background_gradient":"linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#242833","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#000000","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#000000","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(240deg, rgba(252, 238, 214, 1), rgba(217, 173, 93, 1) 99%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#074318","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#da1414","background_gradient":"linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#002828","background_gradient":"linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)","text":"#fff8ec","link":"#fff8ec","caption":"#fff8ec","accent_gradient":"linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)","heading":"#fff8ec","heading_background_gradient":"","button_label":"#2c463d","button":"#fff8ec","button_background_gradient":"","secondary_button_label":"#fff8ec"}},"scheme-9":{"settings":{"background":"#002828","background_gradient":"linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)","text":"#fff8ec","link":"#fff8ec","caption":"#fff8ec","accent_gradient":"linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)","heading":"#fff8ec","heading_background_gradient":"","button_label":"#2c463d","button":"#fff8ec","button_background_gradient":"","secondary_button_label":"#fff8ec"}}}},"Hardware":{"color_scheme_notes":"<p><strong>Scheme 1<\/strong> - The main page background.<br\/><br\/><strong>Scheme 2<\/strong> - Pure white background. Used for cards, cart drawer and header.<br\/><br\/><strong>Scheme 3<\/strong> - An example color scheme with a dark background.<br\/><br\/><strong>Scheme 4<\/strong> - An example gradient background color scheme.<\/p><p><strong>Scheme 5<\/strong> - Used for the second message in the announcement bar.<\/p><p><strong>Scheme 6<\/strong> - Used for white text over an image.<\/p><p><strong>Scheme 7<\/strong> - Used on the deals collection.<\/p><p><strong>Scheme 8<\/strong> - Used in the header navigation and Brands page.<\/p><p><strong>Scheme 9<\/strong> - Used for the header navigation menu.<\/p>","color_overlay":"#050505","type_header_font":"open_sans_condensed_n7","heading_scale":100,"heading_text_transform":"none","type_body_font":"sans-serif","body_scale":100,"animations_reveal_on_scroll":false,"page_width":1360,"spacing_sections":"60","text_boxes_radius":16,"popup_corner_radius":4,"promo_corner_radius":6,"panel_corner_radius":6,"spacing_grid":16,"drawer_inset":false,"buttons_border_thickness":1,"buttons_radius":4,"button_letter_spacing":-2.5,"button_text_transform":"uppercase","button_text_font_weight":"bold","pagination_style":"show_more","pagination_text_size":"t5","pagination_border_width":"0.1","breadcrumb_text_weight":"normal","breadcrumb_text_size":"t6","breadcrumb_text_transform":"uppercase","card_style":"card","card_text_alignment":"left","card_image_ratio":"square","card_image_position":"center","card_image_padding":8,"card_image_scale":80,"card_image_dont_scale_hover":true,"card_show_vendor":true,"card_image_show_rating":true,"card_show_subtitle":true,"card_include_collection_url":true,"card_show_inventory":"low_stock","card_highlight_badge_show":true,"card_highlight_badge_label":"Fits:","card_highlight_badge_max":5,"card_highlight_badge_weight":"medium","card_highlight_badge_color":"#134e79","card_option_badge_options":"","card_option_badge_max":0,"swatch_placement":"top","swatch_alignment":"left","swatch_size":1.2,"swatch_hide_singles":true,"card_enable_quick_add":true,"quick_add_popup_style":"side","quick_add_out_of_stock":"notify","quick_add":"bulk","card_vendor_text_size":"t6","card_title_size":"t3","card_price_size":"t2","card_title_transform":"uppercase","card_title_weight":"bold","card_color_scheme":"scheme-2","collection_card_text_alignment":"center","collection_card_corner_radius":8,"collection_card_image_scale":100,"collection_card_show_count":false,"collection_card_image_ratio":"square","collection_card_image_cover":true,"collection_card_shadow":true,"blog_card_style":"card","blog_card_corner_radius":8,"blog_card_image_padding":20,"blog_card_color_scheme":"scheme-2","badge_position":"top left","badge_shape":"rounded","badge_text_weight":"normal","inventory_threshold":20,"show_search_types":true,"predictive_search_enabled":true,"predictive_search_show_vendor":true,"predictive_search_suggested_searches":"Lights\nTrim\nBMV\n3 Series\nBMV F20","predictive_search_search_by_product_description":true,"currency_code_enabled":false,"cart_icon":"cart","atc_action":"notification","cart_drawer_enabled":true,"cart_drawer_ctas":"both","cart_show_cart_note":true,"cart_show_vendor":true,"cart_terms":"","cart_drawer_background_color_scheme":"scheme-1","cart_drawer_color_scheme":"scheme-2","cart_related_heading":"You may also need...","cart_related_color_scheme":"scheme-2","cart_shipping_bar_background_color":"#ffab68","cart_shipping_bar_background":"linear-gradient(90deg, rgba(255, 228, 49, 1), rgba(249, 32, 32, 1) 100%)","cart_drawer_promo_text_size":"h6-size","cart_drawer_promo_text_position":"justify-start items-center","cart_drawer_promo_text_alignment":"left","cart_drawer_promo_text_padding":1.6,"cart_show_shipping_calculator":true,"media_radius":20,"card_image_hover_zoom":true,"collection_card_image_hover_zoom":true,"blog_card_image_hover_zoom":true,"logo_width":90,"drawer_border_thickness":1,"drawer_border_opacity":10,"drawer_shadow_opacity":0,"drawer_shadow_horizontal_offset":0,"drawer_shadow_vertical_offset":4,"drawer_shadow_blur":5,"sections":{"main-password-header":{"type":"main-password-header","settings":{"color_scheme":"scheme-1"}},"main-password-footer":{"type":"main-password-footer","settings":{}}},"content_for_index":[],"color_schemes":{"scheme-1":{"settings":{"background":"#f9f7f6","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"linear-gradient(180deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)","heading":"#121212","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#121212"}},"scheme-2":{"settings":{"background":"#ffffff","background_gradient":"","text":"#121212","link":"#1c70be","caption":"#121212","accent_gradient":"linear-gradient(275deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)","heading":"#121212","heading_background_gradient":"","button_label":"#f3f3f3","button":"#d86000","button_background_gradient":"linear-gradient(340deg, rgba(255, 166, 95, 1) 13%, rgba(216, 96, 0, 1) 86%)","secondary_button_label":"#dc6000"}},"scheme-3":{"settings":{"background":"#1b2529","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(180deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-4":{"settings":{"background":"#8c73ec","background_gradient":"linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#242833","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-5":{"settings":{"background":"#d86000","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#242424","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#242424"}},"scheme-6":{"settings":{"background":"#f8f8f8","background_gradient":"","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"linear-gradient(270deg, rgba(182, 219, 252, 1) 15%, rgba(47, 133, 209, 1) 85%)","heading":"#ffffff","heading_background_gradient":"","button_label":"#ffffff","button":"#121212","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-7":{"settings":{"background":"#da1414","background_gradient":"linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)","text":"#ffffff","link":"#ffffff","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#121212","button":"#ffffff","button_background_gradient":"","secondary_button_label":"#ffffff"}},"scheme-8":{"settings":{"background":"#1b2529","background_gradient":"","text":"#ffffff","link":"#ffab68","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#f3f3f3","button":"#d86000","button_background_gradient":"","secondary_button_label":"#d86000"}},"scheme-9":{"settings":{"background":"#323d41","background_gradient":"","text":"#ffffff","link":"#ffab68","caption":"#ffffff","accent_gradient":"","heading":"#ffffff","heading_background_gradient":"","button_label":"#f3f3f3","button":"#1b2529","button_background_gradient":"","secondary_button_label":"#f59345"}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "logo_width": 90,
+    "type_header_font": "jost_n5",
+    "heading_scale": 100,
+    "type_body_font": "sans-serif",
+    "body_scale": 100,
+    "spacing_sections": 60,
+    "buttons_border_thickness": 1,
+    "buttons_radius": 6,
+    "card_style": "card",
+    "card_image_padding": 8,
+    "card_text_alignment": "left",
+    "card_color_scheme": "scheme-2",
+    "collection_card_text_alignment": "center",
+    "collection_card_corner_radius": 0,
+    "blog_card_style": "card",
+    "blog_card_image_padding": 20,
+    "blog_card_color_scheme": "scheme-2",
+    "blog_card_corner_radius": 8,
+    "text_boxes_radius": 16,
+    "media_radius": 20,
+    "popup_corner_radius": 6,
+    "drawer_border_thickness": 1,
+    "drawer_border_opacity": 10,
+    "drawer_shadow_opacity": 0,
+    "drawer_shadow_horizontal_offset": 0,
+    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_blur": 5,
+    "badge_position": "top left",
+    "predictive_search_enabled": true,
+    "predictive_search_show_vendor": false,
+    "currency_code_enabled": true,
+    "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the second message in the announcement bar.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used on the deals collection</p><p><strong>Scheme 8</strong> - Used in the header navigation.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+    "color_overlay": "#010101",
+    "promo_corner_radius": 6,
+    "panel_corner_radius": 6,
+    "spacing_grid": 16,
+    "card_image_ratio": "adapt",
+    "card_image_position": "center",
+    "card_show_vendor": true,
+    "card_image_show_rating": true,
+    "card_enable_quick_add": true,
+    "quick_add_out_of_stock": "notify",
+    "collection_card_image_ratio": "circle",
+    "badge_shape": "rounded",
+    "badge_text_weight": "normal",
+    "predictive_search_suggested_searches": "Most searched for product\nPromoted products\nYour highest margin goods",
+    "cart_drawer_enabled": true,
+    "cart_drawer_ctas": "both",
+    "cart_show_cart_note": true,
+    "cart_show_vendor": false,
+    "card_image_hover_zoom": true,
+    "collection_card_image_hover_zoom": true,
+    "blog_card_image_hover_zoom": true,
+    "sections": {
+      "main-password-header": {
+        "type": "main-password-header",
+        "settings": {
+          "color_scheme": "scheme-1"
+        }
+      },
+      "main-password-footer": {
+        "type": "main-password-footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "color_schemes": {
+      "scheme-1": {
+        "settings": {
+          "background": "#f5f5f2",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-2": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#c58d7b",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#9b4124",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-3": {
+        "settings": {
+          "background": "#121212",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#121212",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-4": {
+        "settings": {
+          "background": "#8c73ec",
+          "background_gradient": "linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#242833",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-5": {
+        "settings": {
+          "background": "#2277c7",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-6": {
+        "settings": {
+          "background": "#f8f8f8",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#121212",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-7": {
+        "settings": {
+          "background": "#da1414",
+          "background_gradient": "linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#121212",
+          "secondary_button_label": "#ffffff",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-8": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#9b4124",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#9b4124",
+          "shadow": "#121212"
+        }
+      },
+      "scheme-9": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#121212",
+          "button": "#1c70be",
+          "button_label": "#f3f3f3",
+          "secondary_button_label": "#1c70be",
+          "shadow": "#121212"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Tech": {
+      "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the second message in the announcement bar.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used on the deals collection</p><p><strong>Scheme 8</strong> - Used in the header navigation.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+      "type_header_font": "jost_n5",
+      "color_overlay": "#010101",
+      "heading_scale": 100,
+      "type_body_font": "sans-serif",
+      "body_scale": 100,
+      "spacing_sections": "60",
+      "text_boxes_radius": 16,
+      "popup_corner_radius": 6,
+      "promo_corner_radius": 6,
+      "panel_corner_radius": 6,
+      "spacing_grid": 16,
+      "buttons_border_thickness": 1,
+      "buttons_radius": 6,
+      "card_style": "card",
+      "card_text_alignment": "left",
+      "card_image_ratio": "adapt",
+      "card_image_position": "center",
+      "card_image_padding": 8,
+      "card_show_vendor": true,
+      "card_image_show_rating": true,
+      "card_enable_quick_add": true,
+      "quick_add_out_of_stock": "notify",
+      "card_color_scheme": "scheme-2",
+      "collection_card_text_alignment": "center",
+      "collection_card_corner_radius": 0,
+      "collection_card_image_ratio": "circle",
+      "blog_card_style": "card",
+      "blog_card_corner_radius": 8,
+      "blog_card_image_padding": 20,
+      "blog_card_color_scheme": "scheme-2",
+      "badge_position": "top left",
+      "badge_shape": "rounded",
+      "badge_text_weight": "normal",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_suggested_searches": "Most searched for product\nPromoted products\nYour highest margin goods",
+      "currency_code_enabled": true,
+      "cart_drawer_enabled": true,
+      "cart_drawer_ctas": "both",
+      "cart_show_cart_note": true,
+      "cart_show_vendor": false,
+      "media_radius": 20,
+      "card_image_hover_zoom": true,
+      "collection_card_image_hover_zoom": true,
+      "blog_card_image_hover_zoom": true,
+      "logo_width": 90,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "scheme-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [],
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(139deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#121212"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#1c70be",
+            "button_background_gradient": "linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)",
+            "secondary_button_label": "#1c70be"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#121212",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#8c73ec",
+            "background_gradient": "linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#242833",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#2277c7",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#000000",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-7": {
+          "settings": {
+            "background": "#da1414",
+            "background_gradient": "linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)",
+            "text": "#FFFFFF",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#1c70be",
+            "button_background_gradient": "linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)",
+            "secondary_button_label": "#1c70be"
+          }
+        },
+        "scheme-9": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "radial-gradient(rgba(106, 172, 234, 1), rgba(37, 115, 190, 1) 88%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#1c70be",
+            "button_background_gradient": "linear-gradient(46deg, rgba(63, 136, 206, 1) 13%, rgba(117, 175, 231, 1) 86%)",
+            "secondary_button_label": "#1c70be"
+          }
+        }
+      }
+    },
+    "Fashion": {
+      "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the second message in the announcement bar.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used for the deals collection page.</p><p><strong>Scheme 8</strong> - Used in the header navigation.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+      "type_header_font": "playfair_display_n4",
+      "color_overlay": "#020202",
+      "heading_scale": 100,
+      "heading_letter_spacing": -20,
+      "heading_text_transform": "none",
+      "type_body_font": "roboto_n4",
+      "body_scale": 100,
+      "type_article_header_font": "playfair_display_n4",
+      "animations_reveal_on_scroll": true,
+      "page_width": 1440,
+      "spacing_sections": "50",
+      "text_boxes_radius": 4,
+      "popup_corner_radius": 2,
+      "promo_corner_radius": 2,
+      "panel_corner_radius": 2,
+      "controls_corner_radius": 4,
+      "swatch_corner_radius": 50,
+      "spacing_grid": 16,
+      "drawer_inset": false,
+      "buttons_border_thickness": 1,
+      "buttons_radius": 2,
+      "button_letter_spacing": -2,
+      "button_text_transform": "uppercase",
+      "button_text_font_weight": "normal",
+      "animations_hover_buttons": "lift",
+      "pagination_style": "show_more",
+      "pagination_text_size": "t6",
+      "breadcrumb_home_icon": false,
+      "breadcrumb_truncate": "7",
+      "breadcrumb_text_weight": "normal",
+      "breadcrumb_text_transform": "none",
+      "card_style": "card",
+      "card_text_alignment": "center",
+      "card_corner_radius": 4,
+      "card_image_ratio": "adapt",
+      "card_image_cover": false,
+      "card_image_position": "center",
+      "card_image_secondary_image": true,
+      "card_image_padding": 6,
+      "card_image_dont_scale_hover": false,
+      "card_show_vendor": false,
+      "card_image_show_rating": true,
+      "card_include_collection_url": true,
+      "swatch_placement": "top",
+      "swatch_alignment": "center",
+      "swatch_size": 1.4,
+      "swatch_limit": 5,
+      "swatch_hide_singles": true,
+      "card_enable_quick_add": true,
+      "quick_add_out_of_stock": "notify",
+      "quick_add_icon_over_image": "desktop",
+      "card_shadow": false,
+      "card_title_size": "t1",
+      "card_title_weight": "medium",
+      "card_color_scheme": "scheme-2",
+      "card_price_color": "#c61313",
+      "collection_card_text_alignment": "center",
+      "collection_card_corner_radius": 2,
+      "collection_card_show_count": false,
+      "collection_card_image_ratio": "portrait_tall",
+      "collection_card_image_cover": true,
+      "collection_card_image_position": "top",
+      "blog_card_style": "card",
+      "blog_card_corner_radius": 2,
+      "blog_card_image_ratio": "square",
+      "blog_card_image_position": "center",
+      "blog_card_image_padding": 20,
+      "blog_card_color_scheme": "scheme-2",
+      "blog_card_shadow": false,
+      "blog_card_image_background": "#FFFFFF",
+      "badge_position": "top left",
+      "badge_shape": "sharp",
+      "badge_text_size": "xs",
+      "badge_text_weight": "500",
+      "badge_sale_type": "value",
+      "badge_sale_border_color": "#b72635",
+      "badge_sale_background_gradient": "linear-gradient(229deg, rgba(183, 38, 53, 0.75) 4%, rgba(199, 41, 57, 1) 100%)",
+      "badge_new_border_color": "#2b4641",
+      "badge_new_bg_color": "#3c5c56",
+      "badge_new_background_gradient": "linear-gradient(299deg, rgba(53, 80, 75, 0.8) 13%, rgba(30, 64, 58, 1) 86%)",
+      "badge_preorder_text_color": "#ffffff",
+      "badge_preorder_border_color": "#6b6b7c",
+      "badge_preorder_background_gradient": "linear-gradient(299deg, rgba(53, 53, 80, 0.8) 13%, rgba(34, 30, 64, 1) 86%)",
+      "show_search_types": false,
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_suggested_searches": "Shirts\nJackets\nChinos",
+      "currency_code_enabled": false,
+      "cart_icon": "bag",
+      "cart_drawer_enabled": true,
+      "cart_drawer_ctas": "checkout",
+      "cart_drawer_scroll_entire": "off",
+      "cart_show_cart_note": true,
+      "cart_show_tax_message": false,
+      "cart_show_vendor": true,
+      "cart_drawer_background_color_scheme": "scheme-2",
+      "cart_drawer_color_scheme": "scheme-2",
+      "cart_related_layout": "carousel",
+      "cart_related_heading": "Pairs well with...",
+      "cart_related_color_scheme": "",
+      "cart_shipping_bar_background_color": "#35504b",
+      "cart_shipping_bar_background": "linear-gradient(86deg, rgba(162, 246, 231, 1), rgba(59, 112, 102, 1) 100%)",
+      "cart_drawer_promo_text_size": "h6-size",
+      "cart_drawer_promo_text_position": "justify-end items-start",
+      "cart_drawer_promo_text_alignment": "right",
+      "cart_drawer_custom_message_show": false,
+      "media_radius": 20,
+      "card_image_hover_zoom": true,
+      "collection_card_image_hover_zoom": true,
+      "blog_card_image_hover_zoom": true,
+      "logo_width": 90,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "scheme-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [],
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "linear-gradient(180deg, rgba(252, 245, 238, 1), rgba(252, 245, 238, 1) 100%)",
+            "text": "#35504b",
+            "link": "#35504b",
+            "caption": "#35504b",
+            "accent_gradient": "linear-gradient(284deg, rgba(165, 223, 168, 1) 15%, rgba(53, 80, 75, 1) 92%)",
+            "heading": "#28462f",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#35504b",
+            "button_background_gradient": "linear-gradient(232deg, rgba(53, 80, 75, 1) 13%, rgba(30, 64, 58, 1) 86%)",
+            "secondary_button_label": "#35504b"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#28462f",
+            "link": "#28462f",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)",
+            "heading": "#1f4127",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#3c5c56",
+            "button_background_gradient": "linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)",
+            "secondary_button_label": "#5c7671"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#253734",
+            "background_gradient": "linear-gradient(232deg, rgba(53, 80, 75, 1) 13%, rgba(30, 64, 58, 1) 86%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(270deg, rgba(164, 207, 199, 1), rgba(122, 174, 164, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#976e36",
+            "background_gradient": "linear-gradient(54deg, rgba(138, 97, 37, 1), rgba(218, 171, 83, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#242833",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#692f18",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#000000",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#000000",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-7": {
+          "settings": {
+            "background": "#a61221",
+            "background_gradient": "linear-gradient(229deg, rgba(183, 38, 53, 1) 4%, rgba(199, 41, 57, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#121212",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#253734",
+            "button_background_gradient": "linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)",
+            "secondary_button_label": "#5c7671"
+          }
+        },
+        "scheme-9": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#121212",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(0deg, rgba(51, 84, 78, 1) 13%, rgba(17, 143, 121, 1) 86%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#253734",
+            "button_background_gradient": "linear-gradient(180deg, rgba(67, 107, 100, 1), rgba(37, 55, 52, 1) 100%)",
+            "secondary_button_label": "#5c7671"
+          }
+        }
+      }
+    },
+    "Toys": {
+      "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the announcement bar and various sections.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used in various sections.</p><p><strong>Scheme 8</strong> - Used in the header navigation.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+      "type_header_font": "jost_n5",
+      "color_overlay": "#030303",
+      "heading_scale": 100,
+      "type_body_font": "sans-serif",
+      "body_scale": 100,
+      "animations_reveal_on_scroll": true,
+      "page_width": 1440,
+      "spacing_sections": "60",
+      "text_boxes_radius": 16,
+      "popup_corner_radius": 6,
+      "promo_corner_radius": 6,
+      "panel_corner_radius": 6,
+      "spacing_grid": 16,
+      "buttons_border_thickness": 2,
+      "buttons_radius": 26,
+      "button_text_font_weight": "bold",
+      "animations_hover_buttons": "grow",
+      "card_style": "card",
+      "card_text_alignment": "left",
+      "card_image_ratio": "square",
+      "card_image_position": "center",
+      "card_image_padding": 7,
+      "card_image_dont_scale_hover": true,
+      "card_image_replace_background": false,
+      "card_image_background": "rgba(0,0,0,0)",
+      "card_show_vendor": false,
+      "card_image_show_rating": true,
+      "card_include_collection_url": true,
+      "card_enable_quick_add": true,
+      "quick_add_out_of_stock": "notify",
+      "card_title_size": "t2",
+      "card_price_size": "t4",
+      "card_title_weight": "bold",
+      "card_color_scheme": "scheme-2",
+      "collection_card_text_alignment": "center",
+      "collection_card_corner_radius": 0,
+      "collection_card_show_count": false,
+      "collection_card_image_ratio": "circle",
+      "collection_card_image_cover": true,
+      "collection_card_image_position": "top",
+      "blog_card_style": "card",
+      "blog_card_corner_radius": 8,
+      "blog_card_image_padding": 20,
+      "blog_card_color_scheme": "scheme-2",
+      "badge_position": "top left",
+      "badge_shape": "pill",
+      "badge_text_size": "s",
+      "badge_text_weight": "bold",
+      "badge_sale_background_gradient": "linear-gradient(144deg, rgba(244, 43, 65, 1), rgba(218, 50, 67, 1) 97%)",
+      "badge_sold_out_background_gradient": "linear-gradient(127deg, rgba(13, 13, 13, 1) 11%, rgba(49, 49, 49, 1) 75%)",
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_suggested_searches": "Jigsaws\nGames\nColouring Books",
+      "currency_code_enabled": true,
+      "atc_action": "notification",
+      "cart_drawer_enabled": true,
+      "cart_drawer_ctas": "checkout",
+      "cart_show_cart_note": true,
+      "cart_show_tax_message": false,
+      "cart_show_vendor": false,
+      "cart_drawer_background_color_scheme": "",
+      "cart_drawer_color_scheme": "",
+      "cart_shipping_bar_background_color": "#105E94",
+      "cart_shipping_bar_background": "linear-gradient(251deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+      "cart_drawer_promo_image_overlay_opacity": 0,
+      "cart_drawer_promo_image_ratio": "adapt",
+      "cart_drawer_promo_text": "",
+      "cart_drawer_custom_message_show": true,
+      "cart_drawer_custom_message_icon": "snowflake",
+      "cart_drawer_custom_message_message": "<p><strong>Your custom message here.</strong></p>",
+      "cart_drawer_custom_message_color_scheme": "scheme-4",
+      "cart_show_shipping_calculator": true,
+      "media_radius": 20,
+      "card_image_hover_zoom": true,
+      "collection_card_image_hover_zoom": true,
+      "blog_card_image_hover_zoom": true,
+      "logo_width": 90,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "scheme-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [],
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#fdf9f9",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#0454a5",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(139deg, rgba(251, 51, 166, 1), rgba(127, 72, 176, 1) 50%, rgba(48, 145, 211, 1) 100%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#121212"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#0454a5",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(101deg, rgba(252, 47, 47, 0.72) 4%, rgba(207, 36, 36, 1) 88%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#0454a5",
+            "button_background_gradient": "linear-gradient(46deg, rgba(15, 85, 157, 1) 12%, rgba(39, 126, 214, 1) 86%)",
+            "secondary_button_label": "#0454a5"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#121212",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#E11732",
+            "background_gradient": "linear-gradient(180deg, rgba(225, 23, 50, 1) 3%, rgba(181, 0, 24, 1) 98%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#0454a5",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#0454a5",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#000000",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(310deg, rgba(17, 189, 251, 1) 15%, rgba(33, 249, 150, 1) 85%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-7": {
+          "settings": {
+            "background": "#c70f0f",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#E11732",
+            "background_gradient": "linear-gradient(180deg, rgba(225, 23, 50, 1) 3%, rgba(181, 0, 24, 1) 98%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#0454a5",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-9": {
+          "settings": {
+            "background": "#c70f0f",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        }
+      }
+    },
+    "Pets": {
+      "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the second message in the announcement bar.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used on the deals collection.</p><p><strong>Scheme 8</strong> - Used in the header navigation.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+      "type_header_font": "source_sans_pro_n6",
+      "color_overlay": "#040404",
+      "heading_scale": 102,
+      "heading_letter_spacing": -26,
+      "type_body_font": "sans-serif",
+      "body_scale": 100,
+      "animations_reveal_on_scroll": true,
+      "spacing_sections": "50",
+      "text_boxes_radius": 28,
+      "popup_corner_radius": 6,
+      "promo_corner_radius": 6,
+      "panel_corner_radius": 20,
+      "controls_corner_radius": 20,
+      "spacing_grid": 16,
+      "buttons_border_thickness": 2,
+      "buttons_radius": 28,
+      "button_letter_spacing": -0.5,
+      "button_text_transform": "none",
+      "button_text_font_weight": "bold",
+      "animations_hover_buttons": "grow",
+      "pagination_text_size": "t4",
+      "breadcrumb_truncate": "10",
+      "breadcrumb_text_transform": "none",
+      "card_style": "card",
+      "card_text_alignment": "left",
+      "card_corner_radius": 12,
+      "card_image_ratio": "square",
+      "card_image_position": "center",
+      "card_image_padding": 8,
+      "card_image_scale": 97,
+      "card_image_replace_background": false,
+      "card_image_background": "rgba(0,0,0,0)",
+      "card_show_vendor": true,
+      "card_image_show_rating": true,
+      "swatch_placement": "below_title",
+      "card_enable_quick_add": true,
+      "quick_add_out_of_stock": "notify",
+      "quick_add_icon_over_image": "mobile",
+      "card_title_size": "t2",
+      "card_price_size": "t3",
+      "card_title_transform": "none",
+      "card_title_weight": "medium",
+      "card_color_scheme": "scheme-2",
+      "collection_card_text_alignment": "center",
+      "collection_card_corner_radius": 0,
+      "collection_card_show_count": false,
+      "collection_card_image_ratio": "circle",
+      "blog_card_style": "card",
+      "blog_card_corner_radius": 8,
+      "blog_card_image_padding": 20,
+      "blog_card_color_scheme": "scheme-2",
+      "badge_position": "top left",
+      "badge_shape": "rounded",
+      "badge_text_weight": "normal",
+      "show_search_types": true,
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": false,
+      "predictive_search_suggested_searches": "Dog harnesses\nCat toys\nPet food",
+      "currency_code_enabled": true,
+      "cart_icon": "cart",
+      "atc_action": "drawer",
+      "cart_drawer_enabled": true,
+      "cart_drawer_ctas": "both",
+      "cart_show_cart_note": true,
+      "cart_show_vendor": true,
+      "cart_drawer_background_color_scheme": "scheme-1",
+      "cart_drawer_color_scheme": "scheme-2",
+      "cart_related_heading": "How about it?",
+      "cart_shipping_bar_background_color": "#157631",
+      "cart_shipping_bar_background": "linear-gradient(90deg, rgba(254, 217, 81, 1) 11%, rgba(255, 70, 199, 1) 81%)",
+      "cart_drawer_promo_image_overlay_opacity": 0,
+      "cart_drawer_promo_text_size": "h5-size",
+      "cart_drawer_promo_text_position": "justify-start items-center",
+      "cart_drawer_promo_text_alignment": "left",
+      "cart_drawer_promo_text_padding": 2,
+      "cart_show_shipping_calculator": false,
+      "media_radius": 20,
+      "card_image_hover_zoom": true,
+      "collection_card_image_hover_zoom": true,
+      "blog_card_image_hover_zoom": true,
+      "logo_width": 90,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "scheme-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [],
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#fcf6ef",
+            "background_gradient": "",
+            "text": "#2c463d",
+            "link": "#2c463d",
+            "caption": "#2c463d",
+            "accent_gradient": "",
+            "heading": "#192e28",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#2c463d",
+            "button_background_gradient": "",
+            "secondary_button_label": "#2c463d"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#157631",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(85deg, rgba(1, 57, 28, 1) 7%, rgba(48, 159, 121, 1) 94%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#01391c",
+            "button_background_gradient": "linear-gradient(238deg, rgba(22, 123, 71, 1) 6%, rgba(37, 108, 84, 1) 94%)",
+            "secondary_button_label": "#1a612e"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#2a2c2c",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#2c463d",
+            "background_gradient": "linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#242833",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#000000",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(270deg, rgba(255, 228, 49, 1) 42%, rgba(249, 100, 32, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#000000",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(240deg, rgba(252, 238, 214, 1), rgba(217, 173, 93, 1) 99%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#074318",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-7": {
+          "settings": {
+            "background": "#da1414",
+            "background_gradient": "linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#002828",
+            "background_gradient": "linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)",
+            "text": "#fff8ec",
+            "link": "#fff8ec",
+            "caption": "#fff8ec",
+            "accent_gradient": "linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)",
+            "heading": "#fff8ec",
+            "heading_background_gradient": "",
+            "button_label": "#2c463d",
+            "button": "#fff8ec",
+            "button_background_gradient": "",
+            "secondary_button_label": "#fff8ec"
+          }
+        },
+        "scheme-9": {
+          "settings": {
+            "background": "#002828",
+            "background_gradient": "linear-gradient(227deg, rgba(1, 57, 28, 1) 7%, rgba(44, 70, 61, 1) 94%)",
+            "text": "#fff8ec",
+            "link": "#fff8ec",
+            "caption": "#fff8ec",
+            "accent_gradient": "linear-gradient(240deg, rgba(250, 212, 143, 1), rgba(195, 149, 64, 1) 100%)",
+            "heading": "#fff8ec",
+            "heading_background_gradient": "",
+            "button_label": "#2c463d",
+            "button": "#fff8ec",
+            "button_background_gradient": "",
+            "secondary_button_label": "#fff8ec"
+          }
+        }
+      }
+    },
+    "Hardware": {
+      "color_scheme_notes": "<p><strong>Scheme 1</strong> - The main page background.<br/><br/><strong>Scheme 2</strong> - Pure white background. Used for cards, cart drawer and header.<br/><br/><strong>Scheme 3</strong> - An example color scheme with a dark background.<br/><br/><strong>Scheme 4</strong> - An example gradient background color scheme.</p><p><strong>Scheme 5</strong> - Used for the second message in the announcement bar.</p><p><strong>Scheme 6</strong> - Used for white text over an image.</p><p><strong>Scheme 7</strong> - Used on the deals collection.</p><p><strong>Scheme 8</strong> - Used in the header navigation and Brands page.</p><p><strong>Scheme 9</strong> - Used for the header navigation menu.</p>",
+      "color_overlay": "#050505",
+      "type_header_font": "open_sans_condensed_n7",
+      "heading_scale": 100,
+      "heading_text_transform": "none",
+      "type_body_font": "sans-serif",
+      "body_scale": 100,
+      "animations_reveal_on_scroll": false,
+      "page_width": 1360,
+      "spacing_sections": "60",
+      "text_boxes_radius": 16,
+      "popup_corner_radius": 4,
+      "promo_corner_radius": 6,
+      "panel_corner_radius": 6,
+      "spacing_grid": 16,
+      "drawer_inset": false,
+      "buttons_border_thickness": 1,
+      "buttons_radius": 4,
+      "button_letter_spacing": -2.5,
+      "button_text_transform": "uppercase",
+      "button_text_font_weight": "bold",
+      "pagination_style": "show_more",
+      "pagination_text_size": "t5",
+      "pagination_border_width": "0.1",
+      "breadcrumb_text_weight": "normal",
+      "breadcrumb_text_size": "t6",
+      "breadcrumb_text_transform": "uppercase",
+      "card_style": "card",
+      "card_text_alignment": "left",
+      "card_image_ratio": "square",
+      "card_image_position": "center",
+      "card_image_padding": 8,
+      "card_image_scale": 80,
+      "card_image_dont_scale_hover": true,
+      "card_show_vendor": true,
+      "card_image_show_rating": true,
+      "card_show_subtitle": true,
+      "card_include_collection_url": true,
+      "card_show_inventory": "low_stock",
+      "card_highlight_badge_show": true,
+      "card_highlight_badge_label": "Fits:",
+      "card_highlight_badge_max": 5,
+      "card_highlight_badge_weight": "medium",
+      "card_highlight_badge_color": "#134e79",
+      "card_option_badge_options": "",
+      "card_option_badge_max": 0,
+      "swatch_placement": "top",
+      "swatch_alignment": "left",
+      "swatch_size": 1.2,
+      "swatch_hide_singles": true,
+      "card_enable_quick_add": true,
+      "quick_add_popup_style": "side",
+      "quick_add_out_of_stock": "notify",
+      "quick_add": "bulk",
+      "card_vendor_text_size": "t6",
+      "card_title_size": "t3",
+      "card_price_size": "t2",
+      "card_title_transform": "uppercase",
+      "card_title_weight": "bold",
+      "card_color_scheme": "scheme-2",
+      "collection_card_text_alignment": "center",
+      "collection_card_corner_radius": 8,
+      "collection_card_image_scale": 100,
+      "collection_card_show_count": false,
+      "collection_card_image_ratio": "square",
+      "collection_card_image_cover": true,
+      "collection_card_shadow": true,
+      "blog_card_style": "card",
+      "blog_card_corner_radius": 8,
+      "blog_card_image_padding": 20,
+      "blog_card_color_scheme": "scheme-2",
+      "badge_position": "top left",
+      "badge_shape": "rounded",
+      "badge_text_weight": "normal",
+      "inventory_threshold": 20,
+      "show_search_types": true,
+      "predictive_search_enabled": true,
+      "predictive_search_show_vendor": true,
+      "predictive_search_suggested_searches": "Lights\nTrim\nBMV\n3 Series\nBMV F20",
+      "predictive_search_search_by_product_description": true,
+      "currency_code_enabled": false,
+      "cart_icon": "cart",
+      "atc_action": "notification",
+      "cart_drawer_enabled": true,
+      "cart_drawer_ctas": "both",
+      "cart_show_cart_note": true,
+      "cart_show_vendor": true,
+      "cart_terms": "",
+      "cart_drawer_background_color_scheme": "scheme-1",
+      "cart_drawer_color_scheme": "scheme-2",
+      "cart_related_heading": "You may also need...",
+      "cart_related_color_scheme": "scheme-2",
+      "cart_shipping_bar_background_color": "#ffab68",
+      "cart_shipping_bar_background": "linear-gradient(90deg, rgba(255, 228, 49, 1), rgba(249, 32, 32, 1) 100%)",
+      "cart_drawer_promo_text_size": "h6-size",
+      "cart_drawer_promo_text_position": "justify-start items-center",
+      "cart_drawer_promo_text_alignment": "left",
+      "cart_drawer_promo_text_padding": 1.6,
+      "cart_show_shipping_calculator": true,
+      "media_radius": 20,
+      "card_image_hover_zoom": true,
+      "collection_card_image_hover_zoom": true,
+      "blog_card_image_hover_zoom": true,
+      "logo_width": 90,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "sections": {
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "color_scheme": "scheme-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [],
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#f9f7f6",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(180deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#121212"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text": "#121212",
+            "link": "#1c70be",
+            "caption": "#121212",
+            "accent_gradient": "linear-gradient(275deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)",
+            "heading": "#121212",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#d86000",
+            "button_background_gradient": "linear-gradient(340deg, rgba(255, 166, 95, 1) 13%, rgba(216, 96, 0, 1) 86%)",
+            "secondary_button_label": "#dc6000"
+          }
+        },
+        "scheme-3": {
+          "settings": {
+            "background": "#1b2529",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(180deg, rgba(244, 173, 116, 1), rgba(216, 96, 0, 1) 100%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-4": {
+          "settings": {
+            "background": "#8c73ec",
+            "background_gradient": "linear-gradient(135deg, rgba(173, 102, 238, 1) 3%, rgba(82, 218, 236, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#242833",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-5": {
+          "settings": {
+            "background": "#d86000",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#242424",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#242424"
+          }
+        },
+        "scheme-6": {
+          "settings": {
+            "background": "#f8f8f8",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "linear-gradient(270deg, rgba(182, 219, 252, 1) 15%, rgba(47, 133, 209, 1) 85%)",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#ffffff",
+            "button": "#121212",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-7": {
+          "settings": {
+            "background": "#da1414",
+            "background_gradient": "linear-gradient(229deg, rgba(240, 69, 87, 1) 4%, rgba(221, 39, 57, 1) 100%)",
+            "text": "#ffffff",
+            "link": "#ffffff",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#121212",
+            "button": "#ffffff",
+            "button_background_gradient": "",
+            "secondary_button_label": "#ffffff"
+          }
+        },
+        "scheme-8": {
+          "settings": {
+            "background": "#1b2529",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffab68",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#d86000",
+            "button_background_gradient": "",
+            "secondary_button_label": "#d86000"
+          }
+        },
+        "scheme-9": {
+          "settings": {
+            "background": "#323d41",
+            "background_gradient": "",
+            "text": "#ffffff",
+            "link": "#ffab68",
+            "caption": "#ffffff",
+            "accent_gradient": "",
+            "heading": "#ffffff",
+            "heading_background_gradient": "",
+            "button_label": "#f3f3f3",
+            "button": "#1b2529",
+            "button_background_gradient": "",
+            "secondary_button_label": "#f59345"
+          }
+        }
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".product-card .card__media img {transform: none !important;}"
+    ]
+  }
+}
