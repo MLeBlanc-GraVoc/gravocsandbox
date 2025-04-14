@@ -1444,7 +1444,7 @@
       ".product--no-media .product__media-wrapper {display: block;}",
       ".product--no-media.product--slider .slider--desktop + .slider-buttons {display: none;}",
       ".product--no-media .product__media-wrapper img {width: 100%; height: auto;}",
-      ".product--no-media .product__media-wrapper.product-media-container {display: flex;}"
+      ".product--no-media .product-media-container {display: flex;}"
     ]
   }
 }
