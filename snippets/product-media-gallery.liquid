@@ -131,6 +131,7 @@
           class="product__media-item grid__item slider__slide is-active fallback-ratio"
         >
           <div class="product-media-container media-type-image media-fit-contain global-media-settings gradient" style="--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;">
+            <!--
             <img
               src="https://cdn.shopify.com/s/files/1/0727/3676/8254/files/Clarke-Product-Photo-Not-Available-Light.jpg?v=1744404205"
               class="object-contain"
@@ -138,6 +139,8 @@
               width="600"
               alt="Product image not available"
             >
+            -->
+            {% render 'icon-no-photo' %}
           </div>
         </li>
       {%- endif -%}
