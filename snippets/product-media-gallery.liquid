@@ -96,7 +96,7 @@
       role="list"
     >
           
-      {%- if product.media.size >= 0 -%}
+      {%- if product.media.size > 0 -%}
         {%- for media in product.media -%}
           {%- liquid
             if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1
@@ -126,15 +126,14 @@
             %}
           </li>
         {%- endfor -%}
-        {%- for media not in product.media -%}
-          <li
-            class="product__media-item grid__item slider__slide is-active fallback-ratio"
-          >
-            <div class="product-media-container media-type-image media-fit-contain global-media-settings gradient" style="--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;">
-              {% render 'icon-no-photo' %}
-            </div>
-          </li>
-        {%- endfor -%}
+      {%- else -%}
+        <li
+          class="product__media-item grid__item slider__slide is-active fallback-ratio"
+        >
+          <div class="product-media-container media-type-image media-fit-contain global-media-settings gradient" style="--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;">
+            {% render 'icon-no-photo' %}
+          </div>
+        </li>
       {%- endif -%}
 
     </ul>
