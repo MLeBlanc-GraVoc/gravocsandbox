@@ -1442,7 +1442,8 @@
       ".product-card .card__media img {transform: none !important;}",
       ".fallback-ratio {--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;}",
       ".product--no-media .product__media-wrapper {display: block;}",
-      ".product--no-media.product--slider .slider--desktop+.slider-buttons {display: none;}"
+      ".product--no-media.product--slider .slider--desktop + .slider-buttons {display: none;}",
+      ".product--no-media .product__media-wrapper img {width: 100%; height: auto;}"
     ]
   }
 }
