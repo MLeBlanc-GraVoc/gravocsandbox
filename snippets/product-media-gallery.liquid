@@ -15,10 +15,10 @@
   {% render 'product-media-gallery', is_duplicate: true %}
 {% endcomment %}
 
-{%- liquid
-  assign has_media = product.media.size > 0
-  assign media_count = has_media | default: 1
+{%- assign has_media = product.media.size > 0 -%}
+{%- assign media_count = has_media | default: 1 -%}
 
+{%- liquid
   if media_count <= 1 or section.settings.slider_controls_mobile == false
     assign hide_mobile_slider = true
   endif
