@@ -102,7 +102,7 @@
         {% endif %}
         product--slider-desktop
         product--mobile-{% if section.settings.thumbnail_layout == 'both' or section.settings.thumbnail_layout == 'mobile' %}show{% else %}hide{% endif %}
-        {% if product == blank %}grid--2-col-desktop{% else %}{% if product.media.size > 0 %}grid--2-col-desktop{% else %}product--no-media{% endif %}{% endif %}"
+        {% if product == blank %}grid--2-col-desktop{% else %}{% if product.media.size > 0 %}grid--2-col-desktop{% else %}product--no-media-fallback-image{% endif %}{% endif %}"
          data-product-handle="{{ product.handle }}"
          {% if product.vendor %}data-product-vendor="{{ product.vendor | handleize }}"{% endif %}
       >
