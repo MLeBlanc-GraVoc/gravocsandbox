@@ -126,6 +126,7 @@
             %}
           </li>
         {%- endfor -%}
+      {% comment %}
       {%- else -%}
         <li
           class="product__media-item grid__item slider__slide is-active fallback-ratio"
@@ -135,6 +136,7 @@
           </div>
         </li>
       {%- endif -%}
+      {% endcomment %}
 
     </ul>
 
