@@ -15,7 +15,11 @@
   {% render 'product-media-gallery', is_duplicate: true %}
 {% endcomment %}
 
-{%- assign has_media = product.media.size > 0 -%}
+{% if product.media.size > 0 %}
+  {% assign has_media = true %}
+{% else %}
+  {% assign has_media = false %}
+{% endif %}
 {%- assign media_count = has_media | default: 1 -%}
 
 {%- liquid
