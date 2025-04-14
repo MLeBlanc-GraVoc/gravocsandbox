@@ -16,7 +16,8 @@
 {% endcomment %}
 
 {%- liquid
-  assign media_count = product.media.size
+  assign has_media = product.media.size > 0
+  assign media_count = has_media | default: 1
 
   if media_count <= 1 or section.settings.slider_controls_mobile == false
     assign hide_mobile_slider = true
@@ -96,7 +97,7 @@
       role="list"
     >
           
-      {%- if product.media.size > 0 -%}
+      {%- if has_media -%}
         {%- for media in product.media -%}
           {%- liquid
             if media == product.selected_or_first_available_variant.featured_media or product.selected_or_first_available_variant.featured_media == null and forloop.index == 1
@@ -128,7 +129,8 @@
         {%- endfor -%}
       {%- else -%}
         <li
-          class="product__media-item grid__item slider__slide is-active fallback-ratio"
+          class="product__media-item grid__item slider__slide is-active fallback-ratio" 
+          data-media-id="fallback-media"
         >
           <div class="product-media-container media-type-image media-fit-contain global-media-settings gradient" style="--ratio: 1; --ratio-percent: 100%; --preview-ratio: 1;">
             {% render 'icon-no-photo' %}
